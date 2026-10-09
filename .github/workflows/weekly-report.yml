@@ -1,0 +1,63 @@
+name: Weekly Friday report
+
+# Every Friday at 13:00 UTC (9am US Eastern in summer, 6pm in Pakistan).
+on:
+  schedule:
+    - cron: '0 13 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  report:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+
+      - name: Search Console report
+        id: gsc
+        continue-on-error: true
+        env:
+          GSC_SITE_URL: ${{ secrets.GSC_SITE_URL }}
+          GSC_SERVICE_ACCOUNT_JSON: ${{ secrets.GSC_SERVICE_ACCOUNT_JSON }}
+        run: node --experimental-strip-types scripts/weekly-report.ts 2> gsc-error.txt
+
+      - name: Competitor watch
+        run: node --experimental-strip-types scripts/competitor-watch.ts
+
+      - name: Assemble issue body
+        run: |
+          DATE=$(date -u +%F)
+          {
+            if [ -f "reports/$DATE.md" ]; then cat "reports/$DATE.md"; else
+              echo "# Weekly search report, $DATE"; echo
+              echo "**Search Console data is not available this week, so no ranking numbers are reported.**"; echo
+              echo '```'; cat gsc-error.txt; echo '```'; fi
+            echo; echo '---'; echo
+            cat "reports/competitors/$DATE.md"
+          } > issue.md
+
+      - name: Commit reports and competitor snapshot
+        run: |
+          git config user.name "aventrio-reports[bot]"
+          git config user.email "reports@aventrio.co"
+          git add reports/
+          git diff --cached --quiet || git commit -m "Weekly report $(date -u +%F)"
+          git push
+
+      - name: Open the report as an issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Weekly report $(date -u +%F)" --body-file issue.md
+
+      - name: Fail visibly if Search Console is not connected
+        if: steps.gsc.outcome == 'failure'
+        run: |
+          cat gsc-error.txt
+          exit 1
