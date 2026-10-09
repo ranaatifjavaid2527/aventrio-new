@@ -148,13 +148,13 @@ realistically winnable for a new, low authority site in the next 6 to 12 months.
 | Gap | Competitors with it | Winnable? | Reasoning |
 |---|---|---|---|
 | Dedicated outsourced SDR service page | Belkins, CIENCE, Cleverly, SalesHive | **Mid-tail yes, head term no** | "outsourced sdr services" is hard. "outsourced sdr team", "dedicated sdr team" and "sdr as a service" are reachable once a page exists. Without the page, nothing is winnable. |
-| Pricing or cost page | Belkins, CIENCE, SalesHive, Cleverly | **Yes** | Cost queries are answered by vendor blogs with inconsistent ranges. A clear page explaining what the fee covers, the minimum term and the comparison to an in-house hire can compete. **Needs a decision from you; see section 4.** |
+| Pricing or cost page | Belkins, CIENCE, SalesHive, Cleverly | **Yes** | Cost queries are answered by vendor blogs with inconsistent ranges. A clear page explaining what the fee covers, the minimum term and the comparison to an in-house hire can compete. **Declined by the client; cost queries go to the comparison page.** |
 | In-house vs outsourced comparison | CIENCE (`/alternatives`, `/buying-guide`), Cleverly (`/comparison/*`) | **Yes** | Aventrio's homepage table ("Three ways to get meetings") is already the content. It needs its own URL. |
 | Pipeline audit page | Belkins (`/deliverability-consulting`) partially | **Yes** | No strong owner in the results. Also a lower-commitment entry offer. |
 | Account executive page | Few | **Yes** | Thin competition for "outsourced account executive". |
 | Sales recruitment page | Specialist recruiters | **Partly** | Recruiters dominate; worth a page for completeness and internal linking, low SEO expectation. |
 | Industry pages | Belkins, SalesAR, SalesHive | **Yes for narrow pairs** | "outsourced sdr for saas" and "it services lead generation" are reachable. Must be written from real method and experience, no invented clients. |
-| ROI calculator as a page | Belkins (`/roi-calculator`), CIENCE (`/calculator`) | **Yes** | Calculators earn links and get cited by AI assistants. See the recommendation in section 4. |
+| ROI calculator as a page | Belkins (`/roi-calculator`), CIENCE (`/calculator`) | **Yes** | Calculators earn links and get cited by AI assistants. **Declined by the client.** |
 | Deliverability and burned domain guides | Belkins (approach pages), tool vendors | **Partly** | Tool vendors own this; Aventrio can win the angle "what to do after outbound went wrong", which no tool vendor writes honestly. |
 | Glossary | SalesHive, CIENCE | **Low priority** | Big effort, low commercial return for a small site. |
 | Case studies, client results, reviews pages | All | **Blocked** | Requires real clients who agree to be named. Scaffold the route only, as the brief says. |
@@ -171,36 +171,28 @@ One primary keyword per page. No two pages share a primary or a secondary.
 |---|---|---|---|
 | `/` | outbound sales agency | b2b outbound sales agency, outsourced sdr team | Existing |
 | `/about` | Aventrio (brand) | sales development firm, sdr team us hours | Existing |
-| `/services/outsourced-sdr` | outsourced sdr services | sdr outsourcing, sdr as a service, dedicated sdr team | **New** |
+| `/services/outsourced-sdr` | outsourced sdr services | sdr outsourcing, sdr as a service, outsourced sdr month to month | **New** |
 | `/services/account-executives` | outsourced account executive | fractional account executive | **New** |
 | `/services/pipeline-audit` | sales pipeline audit | cold email deliverability audit, outbound audit | **New** |
 | `/services/sales-recruitment` | sdr recruiting agency | hire remote sdr | **New** |
 | `/services/account-based-marketing` | account based outbound | abm outreach for b2b | **New, low priority** |
 | `/services/revenue-operations` | revops services for b2b startups | crm hygiene for sales teams | **New, low priority** |
-| `/pricing` | outsourced sdr cost | outsourced sdr pricing, outsourced sdr month to month | **New, needs your decision** |
-| `/compare/in-house-vs-outsourced-sdr` | in-house vs outsourced sdr | fully loaded cost of an sdr, how long to ramp an sdr | **New** |
-| `/tools/outbound-roi-calculator` | outbound roi calculator | cost per meeting calculator | **New, see note** |
+| `/compare/in-house-vs-outsourced-sdr` | in-house vs outsourced sdr | outsourced sdr cost, fully loaded cost of an sdr, how long to ramp an sdr | **New** |
 | `/industries/software-saas` | outsourced sdr for saas | outbound agency for saas | **Scaffold, content later** |
 | `/industries/it-services` | lead generation for it services companies | msp lead generation | **Scaffold, content later** |
 | `/book` | none (conversion page) | | New, `noindex` is reasonable but optional |
 | `/privacy`, `/terms` | none | | Existing |
 
-Notes on two decisions:
+Decisions recorded 9 October 2026:
 
-- **Pricing page.** The current FAQ says the rate is quoted on the call. A page
-  can still rank without a number by explaining the model (flat fee per rep, what
-  is included, minimum term, what is not charged). It ranks and converts much
-  better with at least a "from" figure. **Do you want to publish a starting
-  price?** If not, I will build it as "How pricing works" with no invented
-  ranges.
-- **ROI calculator.** The brief moves the calculator from the popup to a homepage
-  section. I recommend doing that **and** giving it a standalone URL, with the
-  homepage section linking to it. The standalone page can rank and be linked to.
-  The homepage section alone cannot. They do not compete, because the homepage
-  targets a different primary term.
+- **No pricing page.** Cost queries are answered on the comparison page and in
+  the homepage FAQ, using the existing "flat monthly fee per rep" answer. No
+  figures are published.
+- **No calculator anywhere on the site.** The ROI calculator is removed from the
+  popup and is not moved to the homepage or a standalone page.
 
 The homepage should link to every service page from the services section, and
-each service page should link back to `/pricing`, `/compare/...` and `/book`.
+each service page should link back to `/compare/...` and `/book`.
 
 ---
 
@@ -212,27 +204,26 @@ where it exists.
 | Rank | Page | Opportunity | Effort | Why |
 |---|---|---|---|---|
 | 1 | `/services/outsourced-sdr` | High | Low | Core offer, copy already exists across the homepage and `llms.txt`. Unlocks every SDR mid-tail term. |
-| 2 | `/compare/in-house-vs-outsourced-sdr` | High | Low to medium | Comparison table already exists. Strong for AI-assistant citations. |
-| 3 | `/pricing` | High | Low (after your decision) | Highest commercial intent of any informational query in this market. |
-| 4 | `/services/pipeline-audit` | Medium | Low | Weak competition, and a cheaper way in for cautious buyers. |
-| 5 | `/tools/outbound-roi-calculator` | Medium | Low | Calculator exists. Earns links. |
-| 6 | `/services/account-executives` | Medium | Low | Thin competition. |
-| 7 | `/industries/software-saas`, `/industries/it-services` | Medium | Medium | Needs genuine method detail per industry, no invented proof. |
-| 8 | `/services/sales-recruitment` | Low to medium | Low | Completeness and internal links. |
-| 9 | Guide: "Outbound failed once. What to fix before trying again." | Medium | Medium | Owns the burned domain and failed outbound queries from the buyer's side. |
-| 10 | ABM and RevOps service pages | Low | Low | Completeness only. |
+| 2 | `/compare/in-house-vs-outsourced-sdr` | High | Low to medium | Comparison table already exists. Also carries the cost queries. Strong for AI-assistant citations. |
+| 3 | `/services/pipeline-audit` | Medium | Low | Weak competition, and a cheaper way in for cautious buyers. |
+| 4 | `/services/account-executives` | Medium | Low | Thin competition. |
+| 5 | `/industries/software-saas`, `/industries/it-services` | Medium | Medium | Needs genuine method detail per industry, no invented proof. |
+| 6 | `/services/sales-recruitment` | Low to medium | Low | Completeness and internal links. |
+| 7 | Guide: "Outbound failed once. What to fix before trying again." | Medium | Medium | Owns the burned domain and failed outbound queries from the buyer's side. |
+| 8 | ABM and RevOps service pages | Low | Low | Completeness only. |
+| Declined | `/pricing`, ROI calculator | | | Declined by the client on 9 October 2026. |
 | Blocked | Case studies, reviews | High | Needs real clients | Route scaffolded, no content until you supply named, approved work. |
 
 **Bad idea flag:** building all of these at once would spread a new site thin.
-I recommend launching with ranks 1 to 5, then adding one page every week or two
+I recommend launching with ranks 1 to 4, then adding one page every week or two
 once Search Console shows which terms Google is testing the site for.
 
 ---
 
 ## 6. Copy changes for approval
 
-**None of these have been applied.** They are proposals. Approve, reject or edit
-each row.
+**Status: approved by the client on 9 October 2026.** C1 is applied as the
+process-metrics replacement. C5 no longer references a calculator.
 
 ### 6a. Keyword-driven changes
 
@@ -258,7 +249,7 @@ each item is real.**
 | C2 | Home, "Hiring reps is slow" | "...and about a third don't make it past the first year." | A statistic with no source. | Remove the statistic: "A US SDR takes months to source, hire and ramp, and if the hire doesn't work out you carry that cost either way." Or give me the source. |
 | C3 | Home, same block | "Top 1%" / "Global talent, US-trained" | An unverifiable selection claim. | "Selected and US-trained" / "Reps hired for their written English and call skills, managed day to day by sales leads who've carried a US quota." Or tell me what the actual acceptance rate is. |
 | C4 | Home process H2 | Four steps. Fourteen days. Then meetings. | Reads as an implied outcome promise. On day 14 outreach starts; meetings are not assured. | Four steps. Fourteen days to first send. |
-| C5 | Home FAQ, "What does it cost?" | "...a managed team typically lands well under half the annual cost." | A comparative cost claim with no stated basis. | "...compare that against a fully loaded in-house hire, and the ROI calculator below shows the comparison with your own numbers." Or keep it if you can show the calculation. |
+| C5 | Home FAQ, "What does it cost?" | "...a managed team typically lands well under half the annual cost." | A comparative cost claim with no stated basis. | "...compare that against a fully loaded in-house hire: salary, employer tax, benefits, tooling, recruiting and the ramp months before a rep produces anything." No ratio is claimed. |
 | C6 | Site-wide | hello@aventrio.co (9 places, plus `llms.txt`) | You chose atif@aventrio.co as the contact address. | Replace everywhere. |
 
 ---
