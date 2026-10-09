@@ -41,12 +41,12 @@ export default function BookPage() {
                   key={e}
                   className="grid grid-cols-[1.75rem_1fr] gap-3 text-[0.98rem] text-ink-soft"
                 >
-                  <span className="font-mono text-[0.74rem] text-green">0{i + 1}</span>
+                  <span className="font-mono text-[0.74rem] text-green-deep">0{i + 1}</span>
                   {e}
                 </li>
               ))}
             </ol>
-            <p className="mt-8 border-t border-line pt-5 text-[0.9rem] text-muted">
+            <p className="mt-8 border-t border-line pt-5 text-[0.9rem] text-subtle">
               {book.questionsNote}
             </p>
             <p className="mt-4 text-[0.9rem] text-ink-soft">

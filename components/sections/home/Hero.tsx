@@ -30,7 +30,7 @@ export function Hero() {
               {hero.secondaryCta.label}
             </LinkButton>
           </div>
-          <p className="mt-6 font-mono text-[0.76rem] tracking-[0.02em] text-muted">{hero.note}</p>
+          <p className="mt-6 font-mono text-[0.76rem] tracking-[0.02em] text-subtle">{hero.note}</p>
         </div>
         <HeroTabs />
       </Container>

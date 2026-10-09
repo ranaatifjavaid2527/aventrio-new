@@ -8,7 +8,7 @@ export default function NotFound() {
     <section className="relative overflow-hidden bg-paper py-[var(--section-y)]">
       <div aria-hidden="true" className="grid-texture" />
       <Container className="relative max-w-2xl text-center">
-        <p className="t-eyebrow text-green">404</p>
+        <p className="t-eyebrow text-green-deep">404</p>
         <h1 className="t-h2 mt-4">That page isn&apos;t here.</h1>
         <p className="mt-5 text-lg text-ink-soft">
           It may have moved when the site was rebuilt. The homepage has everything.

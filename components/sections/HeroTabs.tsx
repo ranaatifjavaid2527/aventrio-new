@@ -5,6 +5,7 @@ import { useCallback, useEffect, useId, useRef, useState, type KeyboardEvent } f
 import { heroTabs } from '@/content/home'
 import { site } from '@/content/site'
 import { ClutchWidget } from '@/components/ui/ClutchWidget'
+import { Icon } from '@/components/ui/Icon'
 
 const ADVANCE_MS = 7000
 
@@ -133,7 +134,7 @@ export function HeroTabs() {
             aria-label={userPaused ? 'Resume rotating views' : 'Pause rotating views'}
             className="grid size-9 shrink-0 place-items-center rounded-full border border-line bg-paper/80 text-xs text-ink-soft hover:text-ink"
           >
-            <span aria-hidden="true">{userPaused ? '▶' : '❚❚'}</span>
+            <Icon name={userPaused ? 'play' : 'pause'} className="size-3.5" />
           </button>
         ) : null}
       </div>
@@ -174,7 +175,7 @@ export function HeroTabs() {
             in
           </span>
           <span className="text-[0.8rem] font-semibold">Reply · VP Engineering</span>
-          <span className="ml-auto font-mono text-[0.62rem] text-muted">12m</span>
+          <span className="ml-auto font-mono text-[0.62rem] text-subtle">12m</span>
         </div>
         <p className="mt-2 text-[0.78rem] leading-snug text-ink-soft">
           Accepted <b className="text-ink">Tuesday 11:00</b>. Brief sent to your calendar.
@@ -185,7 +186,7 @@ export function HeroTabs() {
         style={{ y: driftB }}
         className="absolute top-[42%] -right-6 hidden rounded-2xl border border-line bg-paper px-3.5 py-2.5 text-ink shadow-[0_24px_50px_-24px_var(--ink)] lg:block"
       >
-        <p className="font-mono text-[0.62rem] tracking-[0.1em] text-muted uppercase">
+        <p className="font-mono text-[0.62rem] tracking-[0.1em] text-subtle uppercase">
           Your calendar
         </p>
         <p className="text-[0.85rem] font-semibold">2 meetings added</p>
@@ -312,7 +313,7 @@ function Panel({ k }: { k: TabKey }) {
           rel="noopener"
           className="mt-3 inline-flex items-center gap-2 text-[0.92rem] font-medium text-mint underline-offset-4 hover:underline"
         >
-          {c.cta} <span aria-hidden="true">↗</span>
+          {c.cta} <Icon name="arrowUpRight" />
         </a>
       ) : null}
     </>

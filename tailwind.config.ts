@@ -14,6 +14,7 @@ const config: Config = {
         'ink-2': 'var(--ink-2)',
         'ink-soft': 'var(--ink-soft)',
         muted: 'var(--muted)',
+        subtle: 'var(--subtle)',
         surface: 'var(--surface)',
         'surface-2': 'var(--surface-2)',
         green: 'var(--green)',

@@ -27,7 +27,7 @@ export function Services() {
                     : 'border-line bg-paper hover:border-line-strong'
                 }`}
               >
-                <p className={`t-eyebrow ${featured ? 'text-mint' : 'text-muted'}`}>{s.tag}</p>
+                <p className={`t-eyebrow ${featured ? 'text-mint' : 'text-subtle'}`}>{s.tag}</p>
                 <h3 className="t-h3 mt-5 text-[1.5rem]">{s.title}</h3>
                 <p
                   className={`mt-3 text-[0.98rem] ${featured ? 'text-on-ink-soft' : 'text-ink-soft'}`}

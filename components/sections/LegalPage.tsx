@@ -30,7 +30,7 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
       <Container className="relative max-w-3xl">
         <Eyebrow>Legal</Eyebrow>
         <h1 className="t-h2">{doc.title}</h1>
-        <p className="mt-4 font-mono text-[0.78rem] text-muted">Last updated {doc.updated}</p>
+        <p className="mt-4 font-mono text-[0.78rem] text-subtle">Last updated {doc.updated}</p>
         <div className="mt-10 space-y-4 text-lg text-ink-soft">
           {doc.intro.map((p) => (
             <p key={p.slice(0, 24)}>{p}</p>

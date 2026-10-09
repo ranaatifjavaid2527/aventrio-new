@@ -18,7 +18,9 @@
   /* Derived tokens, all built from the base palette above */
   --ink-2: color-mix(in oklab, var(--ink) 88%, var(--on-ink));
   --green-deep: color-mix(in oklab, var(--green) 72%, var(--ink));
-  --on-ink-faint: rgba(255, 252, 244, 0.5);
+  /* Small secondary text. --muted is 3.4:1 on paper, below AA, so text uses this instead. */
+  --subtle: color-mix(in oklab, var(--muted) 55%, var(--ink-soft));
+  --on-ink-faint: rgba(255, 252, 244, 0.6);
   --line: color-mix(in oklab, var(--ink) 11%, transparent);
   --line-strong: color-mix(in oklab, var(--ink) 20%, transparent);
   --line-ink: rgba(255, 252, 244, 0.12);
@@ -120,19 +122,21 @@ p {
   text-transform: uppercase;
 }
 
-/* Accent word: green to mint only. No warm tones. */
+/*
+ * Accent word. On paper it is flat --green: mint on cream is about 1.6:1 and
+ * would fail contrast even at display size, while --green passes 3:1 for
+ * large text. On ink it is a green-to-mint gradient. No warm tones anywhere.
+ */
 .accent-word {
-  background: linear-gradient(100deg, var(--green) 10%, var(--mint) 95%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
-  /* keeps descenders from clipping inside the gradient box */
-  padding-bottom: 0.08em;
+  color: var(--green);
 }
 .on-ink .accent-word {
   background: linear-gradient(100deg, var(--mint) 0%, var(--green) 110%);
   -webkit-background-clip: text;
   background-clip: text;
+  color: transparent;
+  /* keeps descenders from clipping inside the gradient box */
+  padding-bottom: 0.08em;
 }
 
 /* ---------- Grid texture, masked so it fades behind text ---------- */
