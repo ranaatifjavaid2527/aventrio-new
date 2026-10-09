@@ -68,14 +68,14 @@ export async function POST(req: NextRequest) {
 
   const apiKey = process.env.RESEND_API_KEY
   const to = process.env.LEAD_TO_EMAIL || site.email
-  const from = process.env.LEAD_FROM_EMAIL
+  const from = process.env.LEAD_FROM_EMAIL || 'Aventrio website <leads@aventrio.co>'
 
-  if (!apiKey || !from) {
+  if (!apiKey) {
     if (process.env.NODE_ENV !== 'production') {
       console.info('[lead] email delivery not configured; would have sent:', { email, page })
       return json(200, { ok: true })
     }
-    console.error('[lead] RESEND_API_KEY or LEAD_FROM_EMAIL is not set')
+    console.error('[lead] RESEND_API_KEY is not set')
     return json(503, { error: 'unavailable' })
   }
 

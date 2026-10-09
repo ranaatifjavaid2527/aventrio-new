@@ -54,9 +54,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   await headers()
 
   // Never show a form that cannot deliver: the popup needs Resend configured (or local dev)
-  const leadEnabled =
-    process.env.NODE_ENV !== 'production' ||
-    Boolean(process.env.RESEND_API_KEY && process.env.LEAD_FROM_EMAIL)
+  const leadEnabled = process.env.NODE_ENV !== 'production' || Boolean(process.env.RESEND_API_KEY)
 
   return (
     <html lang="en-US" className={`${sans.variable} ${mono.variable}`}>
