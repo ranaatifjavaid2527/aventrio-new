@@ -8,6 +8,7 @@ import { MotionProvider } from '@/components/ui/MotionProvider'
 import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
 import { DeferredWidgets } from '@/components/sections/DeferredWidgets'
+import { lead } from '@/content/lead'
 import './globals.css'
 
 // Google Sans Flex: display and body. Google Sans Code: labels and mono.
@@ -54,7 +55,8 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   await headers()
 
   // Never show a form that cannot deliver: the popup needs Resend configured (or local dev)
-  const leadEnabled = process.env.NODE_ENV !== 'production' || Boolean(process.env.RESEND_API_KEY)
+  const leadEnabled =
+    lead.enabled && (process.env.NODE_ENV !== 'production' || Boolean(process.env.RESEND_API_KEY))
 
   return (
     <html lang="en-US" className={`${sans.variable} ${mono.variable}`}>
