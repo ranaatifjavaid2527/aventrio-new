@@ -10,11 +10,12 @@ const CookieBanner = dynamic(() => import('./CookieBanner').then((m) => m.Cookie
 })
 const Analytics = dynamic(() => import('./Analytics').then((m) => m.Analytics), { ssr: false })
 
-export function DeferredWidgets() {
+/** leadEnabled is decided on the server: the popup only appears when email delivery is configured. */
+export function DeferredWidgets({ leadEnabled }: { leadEnabled: boolean }) {
   return (
     <>
       <CookieBanner />
-      <LeadPopup />
+      {leadEnabled ? <LeadPopup /> : null}
       <Analytics />
     </>
   )

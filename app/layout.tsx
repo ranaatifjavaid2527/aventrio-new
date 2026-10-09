@@ -53,6 +53,11 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   // required for the per-request CSP nonce set in proxy.ts.
   await headers()
 
+  // Never show a form that cannot deliver: the popup needs Resend configured (or local dev)
+  const leadEnabled =
+    process.env.NODE_ENV !== 'production' ||
+    Boolean(process.env.RESEND_API_KEY && process.env.LEAD_FROM_EMAIL)
+
   return (
     <html lang="en-US" className={`${sans.variable} ${mono.variable}`}>
       <body>
@@ -60,7 +65,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <Header />
           <main id="main">{children}</main>
           <Footer />
-          <DeferredWidgets />
+          <DeferredWidgets leadEnabled={leadEnabled} />
         </MotionProvider>
       </body>
     </html>

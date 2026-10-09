@@ -95,25 +95,26 @@ Practices drops to 79. The calendar loads only when scrolled into view.
 
 ## Deployment (Vercel)
 
-1. Create a Vercel project from this repository. In **Settings, Git**, leave it
-   connected but note `vercel.json` disables automatic deployments, so only CI
-   deploys.
+Vercel deploys from its GitHub integration: every push to `main` goes to
+production and every other branch gets a preview URL. The quality gate runs in
+GitHub Actions on the same pushes.
+
+1. Vercel project imported from `ranaatifjavaid2527/aventrio-new`, framework
+   Next.js. `vercel.json` sets the install command (pnpm via corepack).
 2. **Settings, Environment Variables** (Production and Preview):
    `RESEND_API_KEY`, `LEAD_TO_EMAIL=atif@aventrio.co`,
    `LEAD_FROM_EMAIL="Aventrio website <leads@aventrio.co>"`, and optionally the
-   analytics variables.
+   analytics variables. Until the Resend variables are set, the lead popup is
+   hidden rather than shown broken.
 3. In Resend, add and verify the domain `aventrio.co` (it gives SPF and DKIM
    records to add in DNS). `LEAD_FROM_EMAIL` must use that domain.
-4. GitHub repository secrets: `VERCEL_TOKEN` (Vercel, Account Settings,
-   Tokens), `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` (from `vercel link`, in
-   `.vercel/project.json`).
+4. Recommended: **Settings, Deployment Checks**, require the GitHub check
+   "Quality gate" so a failing commit is never promoted to production.
 5. Domain: add `aventrio.co` and `www.aventrio.co` in Vercel, then at the DNS
    host point the apex A record and the `www` CNAME at the values Vercel shows.
    **Do not touch the MX records**: email stays on the cPanel mailbox.
 6. HSTS is sent with `preload`. Only submit the domain to hstspreload.org once
    every subdomain you use is on HTTPS, because removal takes months.
-
-The old cPanel FTP deploy workflow has been removed.
 
 ## Weekly Friday report
 

@@ -1,7 +1,8 @@
 name: Quality gate and deploy
 
-# Nothing deploys unless every check passes. Vercel's own Git integration is
-# switched off in vercel.json, so this workflow is the only path to production.
+# Runs the quality gate on every pull request and push. Vercel deploys from its
+# GitHub integration; to stop a failing commit reaching production, turn on
+# Deployment Checks in Vercel (Settings, Deployment Checks) and require this job.
 
 on:
   pull_request:
@@ -61,38 +62,3 @@ jobs:
           name: lighthouse-reports
           path: lighthouse-reports/
           retention-days: 30
-
-  deploy:
-    name: Deploy to Vercel
-    needs: gate
-    runs-on: ubuntu-latest
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name == github.repository
-    environment: ${{ github.ref == 'refs/heads/main' && github.event_name == 'push' && 'production' || 'preview' }}
-    env:
-      VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
-      VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: pnpm/action-setup@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version-file: .nvmrc
-          cache: pnpm
-      - name: Check Vercel is configured
-        run: |
-          if [ -z "${{ secrets.VERCEL_TOKEN }}" ] || [ -z "$VERCEL_ORG_ID" ] || [ -z "$VERCEL_PROJECT_ID" ]; then
-            echo "::error::VERCEL_TOKEN, VERCEL_ORG_ID and VERCEL_PROJECT_ID secrets are required. See README, Deployment."
-            exit 1
-          fi
-      - run: pnpm add --global vercel@latest
-      - name: Deploy
-        run: |
-          if [ "${{ github.ref }}" = "refs/heads/main" ] && [ "${{ github.event_name }}" = "push" ]; then
-            vercel pull --yes --environment=production --token=${{ secrets.VERCEL_TOKEN }}
-            vercel build --prod --token=${{ secrets.VERCEL_TOKEN }}
-            vercel deploy --prebuilt --prod --token=${{ secrets.VERCEL_TOKEN }}
-          else
-            vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
-            vercel build --token=${{ secrets.VERCEL_TOKEN }}
-            vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }}
-          fi
