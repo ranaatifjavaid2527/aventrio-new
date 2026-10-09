@@ -1,0 +1,67 @@
+import type { Metadata, Viewport } from 'next'
+import { Google_Sans_Code, Google_Sans_Flex } from 'next/font/google'
+import { headers } from 'next/headers'
+import type { ReactNode } from 'react'
+import { site } from '@/content/site'
+import { tokens } from '@/lib/tokens'
+import { MotionProvider } from '@/components/ui/MotionProvider'
+import { Header } from '@/components/sections/Header'
+import { Footer } from '@/components/sections/Footer'
+import { CookieBanner } from '@/components/sections/CookieBanner'
+import { LeadPopup } from '@/components/sections/LeadPopup'
+import { Analytics } from '@/components/sections/Analytics'
+import './globals.css'
+
+// Google Sans Flex: display and body. Google Sans Code: labels and mono.
+// Both are SIL OFL fonts, self-hosted by next/font, so there is no request to Google at runtime.
+// next/font has no metrics for these families, so the size-adjusted fallbacks
+// are declared in globals.css from measured values, keeping the swap shift-free.
+const sans = Google_Sans_Flex({
+  subsets: ['latin'],
+  variable: '--font-sans',
+  display: 'swap',
+  adjustFontFallback: false,
+  fallback: ['Google Sans Flex Fallback', 'Arial', 'sans-serif'],
+})
+const mono = Google_Sans_Code({
+  subsets: ['latin'],
+  variable: '--font-mono',
+  display: 'swap',
+  adjustFontFallback: false,
+  fallback: ['Google Sans Code Fallback', 'Courier New', 'monospace'],
+})
+
+export const metadata: Metadata = {
+  metadataBase: new URL(site.url),
+  title: { default: `${site.name}: outbound SDR teams for B2B`, template: `%s | ${site.name}` },
+  description: site.tagline,
+  applicationName: site.name,
+  formatDetection: { telephone: false, email: false, address: false },
+}
+
+export const viewport: Viewport = {
+  themeColor: tokens.paper,
+  width: 'device-width',
+  initialScale: 1,
+}
+
+export default async function RootLayout({ children }: { children: ReactNode }) {
+  // Reading request headers opts every page into dynamic rendering, which is
+  // required for the per-request CSP nonce set in proxy.ts.
+  await headers()
+
+  return (
+    <html lang="en-US" className={`${sans.variable} ${mono.variable}`}>
+      <body>
+        <MotionProvider>
+          <Header />
+          <main id="main">{children}</main>
+          <Footer />
+          <CookieBanner />
+          <LeadPopup />
+          <Analytics />
+        </MotionProvider>
+      </body>
+    </html>
+  )
+}
