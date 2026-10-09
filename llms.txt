@@ -1,0 +1,68 @@
+# Aventrio
+
+> Aventrio builds and runs outbound sales development teams for B2B companies
+> selling into the United States. Trained SDRs, managed by US sales leaders,
+> handle research, data verification, copywriting, sending infrastructure and
+> replies, and book qualified meetings directly into client calendars.
+
+## What Aventrio does
+- Outbound SDR teams: named reps who prospect, write, send, follow up, handle
+  objections, and book meetings across email, LinkedIn, and phone.
+- Account executives: placed on the same engagement to run demos, handle
+  procurement, and close.
+- Account-based marketing: stakeholder mapping and account-level
+  personalisation for named target lists.
+- Pipeline audit: a two-week review of targeting, messaging, deliverability,
+  and tech stack, delivered as a prioritised fix list.
+- Sales recruitment: sourcing, vetting, and placing SDRs and AEs directly onto
+  the client's payroll.
+- Revenue operations: CRM hygiene, attribution, and weekly reporting.
+
+## Who it is for
+B2B companies with a proven offer and an identifiable buyer, in any sector.
+Deepest experience is in software, IT services and SaaS; the method also covers
+professional services, consulting, financial services, logistics, manufacturing,
+healthtech, staffing and agencies. Typical situations: referral pipeline has
+dried up, a previous outbound attempt failed and damaged the sending domain, or
+hiring an in-house SDR is too slow a bet. Primary buyer markets are San
+Francisco and the Bay Area, New York and the Northeast, and the wider US.
+
+## How the engagement works
+1. Week 1: ICP definition, positioning, and target list build.
+2. Week 2: sending infrastructure, sequence writing, rep training.
+3. Day 14: first outreach goes out.
+4. Ongoing: weekly reporting of sent, opened, replied, booked, held, and
+   converted-to-opportunity as separate figures.
+
+## What Aventrio does and does not guarantee
+Aventrio does not guarantee a number of meetings or leads. Meeting volume
+depends on the client's offer, market and timing. What is committed to is the
+work: data sourced, enriched and email-verified before use; copy written per
+segment and rewritten monthly against reply data; separate warmed sending
+domains with SPF, DKIM and DMARC monitored daily so the client's primary domain
+never carries cold volume; named reps capped at three accounts each; weekly
+reporting of sent, opened, replied, booked, held and converted as six separate
+figures; and replacement of an underperforming rep at Aventrio's cost.
+
+## Commercial model
+A flat monthly fee per rep. No commission stacking, benefits, tooling line
+items, or per-meeting surcharge. Minimum engagement is one quarter, then
+month-to-month. Underperforming reps are replaced and re-ramped at Aventrio's
+cost. Clients own their lists, sequences, sending domains, and call notes, and
+can export them at any time.
+
+## What makes Aventrio different from a cold email agency
+A cold email agency sends sequences and forwards replies. Aventrio staffs
+people: a named rep handles the objection, books the call, and chases the
+reschedule, and account executives are available on the same engagement.
+Reps work a maximum of three accounts. Cold volume is never sent from the
+client's primary domain.
+
+## Pages
+- Home: https://aventrio.co/ ,  services, process, what's included, comparison,
+  guarantee, FAQ.
+- About: https://aventrio.co/about ,  why the company exists, how the team is
+  structured, operating principles, coverage.
+
+## Contact
+hello@aventrio.co
