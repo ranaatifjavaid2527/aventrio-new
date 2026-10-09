@@ -1,7 +1,7 @@
 # Aventrio
 
-> Aventrio builds and runs outbound sales development teams for B2B companies
-> selling into the United States. Trained SDRs, managed by US sales leaders,
+> Aventrio builds and runs outbound sales development teams for technology
+> companies selling into the United States. Trained SDRs, managed by US sales leaders,
 > handle research, data verification, copywriting, sending infrastructure and
 > replies, and book qualified meetings directly into client calendars.
 
@@ -73,6 +73,11 @@ client's primary domain.
   source, hire and ramp. An outsourced team starts in 14 days and the rep is
   replaced at Aventrio's cost if they underperform. In-house is better when the
   product needs months of internal training.
+
+## Founder
+Atif Javaid, Founder & CEO (https://www.linkedin.com/in/atif-javaid/). Works with
+tech startups and technology companies across software, SaaS and IT services,
+and builds relationships with founders, operators and investors in tech.
 
 ## Pages
 - Home: https://aventrio.co/ : services, process, what's included, comparison,

@@ -44,6 +44,7 @@ export function PersonCard({ person, priority = false }: { person: Person; prior
           </a>
         ) : null}
       </figcaption>
+      {person.bio ? <p className="mt-4 text-[0.95rem] text-ink-soft">{person.bio}</p> : null}
     </figure>
   )
 }

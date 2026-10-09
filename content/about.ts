@@ -4,7 +4,7 @@ export const aboutHero = {
   eyebrow: 'About Aventrio',
   titleLead: 'Outbound is a craft.',
   titleAccent: 'We staff it like one.',
-  lede: "Aventrio is a sales development firm for B2B companies selling into the United States. We build the team, verify the data, write the outreach, own the sending infrastructure and work the replies, then report the numbers honestly enough that you can tell whether it's working.",
+  lede: "Aventrio is a sales development firm for technology companies selling into the United States. We build the team, verify the data, write the outreach, own the sending infrastructure and work the replies, then report the numbers honestly enough that you can tell whether it's working.",
 }
 
 export const founderNote = {

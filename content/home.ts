@@ -4,11 +4,11 @@
  */
 
 export const hero = {
-  eyebrow: 'Done-for-you outbound, built and run end to end',
+  eyebrow: 'Outbound for tech companies, built and run end to end',
   // K3: category term in the H1, "pipeline" stays the accent word
   titleLead: 'Outbound SDR teams that build your',
   titleAccent: 'pipeline.',
-  lede: 'Trained SDRs, managed by US sales leaders, prospecting and booking qualified meetings for your team. We build the whole outbound function for B2B companies selling into the US: research, data, copy, sending infrastructure, and the people working the replies.',
+  lede: 'Trained SDRs, managed by US sales leaders, booking qualified meetings for software, SaaS and IT services companies. We build the whole outbound function for tech teams selling into the US: research, data, copy, sending infrastructure, and the people working the replies.',
   primaryCta: 'Book a strategy call',
   secondaryCta: { label: "See what's included", href: '#included' },
   note: 'First outreach goes out in 14 days. Month-to-month after the first quarter.',
@@ -342,7 +342,7 @@ export const industries = {
   eyebrow: "Where we've sold",
   title: 'Any market with a buyer we can name.',
   intro:
-    'Outbound works wherever the buyer is identifiable and the offer is already proven. The category matters far less than whether we can describe who says yes and why. Our deepest experience is software and IT services, and the method transfers.',
+    'Most of our work is with technology companies: startups finding their first repeatable buyer, and established firms opening a new segment. The method transfers to any B2B market with a buyer we can name.',
   items: [
     'B2B SaaS',
     'Software development',

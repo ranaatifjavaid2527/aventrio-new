@@ -1,6 +1,6 @@
 import { aboutCta, aboutHero, coverage, founderNote, roles, rules } from '@/content/about'
 import { site } from '@/content/site'
-import { advisors, advisorsIntro, founder } from '@/content/team'
+import { advisors, advisorsIntro, founder, network } from '@/content/team'
 import { PersonCard } from '@/components/ui/PersonCard'
 import { BookCallButton } from '@/components/ui/BookCallButton'
 import { Container } from '@/components/ui/Container'
@@ -15,9 +15,9 @@ import { FinalCta } from '@/components/sections/FinalCta'
 import { pageMetadata } from '@/lib/metadata'
 import { breadcrumbLd, graph, organizationLd, webPageLd, websiteLd } from '@/lib/jsonld'
 
-const title = 'About Aventrio | The Team Behind Your Outbound'
+const title = 'About Aventrio | Outbound and Partnerships for Tech Companies'
 const description =
-  'Aventrio is a sales development firm for B2B companies selling into the US. Meet the founder, the team structure, and the operating principles behind every outbound engagement we run.'
+  'Aventrio is a sales development firm for technology companies selling into the US. Meet the founder, the team structure, and the operating principles behind every outbound engagement we run.'
 
 export const metadata = pageMetadata({ title, description, path: '/about', absoluteTitle: true })
 
@@ -79,7 +79,26 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section id="advisors" labelledBy="advisors-title" className="pt-0">
+      <Section id="network" labelledBy="network-title" grid="edges" className="bg-surface/40">
+        <SectionHeading
+          id="network-title"
+          eyebrow={network.eyebrow}
+          title={network.title}
+          intro={network.intro}
+        />
+        <RevealGroup as="ul" className="grid gap-4 lg:grid-cols-3">
+          {network.items.map((n) => (
+            <RevealItem as="li" key={n.title}>
+              <Spotlight className="h-full rounded-card border border-line bg-paper p-7">
+                <h3 className="t-h3">{n.title}</h3>
+                <p className="mt-3 text-[0.98rem] text-ink-soft">{n.body}</p>
+              </Spotlight>
+            </RevealItem>
+          ))}
+        </RevealGroup>
+      </Section>
+
+      <Section id="advisors" labelledBy="advisors-title">
         <SectionHeading
           id="advisors-title"
           eyebrow={advisorsIntro.eyebrow}
