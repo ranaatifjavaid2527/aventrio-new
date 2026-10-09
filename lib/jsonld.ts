@@ -1,6 +1,7 @@
 import { faq } from '@/content/faq'
 import { services } from '@/content/home'
 import { sameAs, site } from '@/content/site'
+import { founder } from '@/content/team'
 
 const ORG_ID = `${site.url}/#org`
 const WEBSITE_ID = `${site.url}/#website`
@@ -49,6 +50,12 @@ export function organizationLd() {
     description:
       'Aventrio builds and runs outbound sales development teams for B2B companies. Trained SDRs managed by US sales leaders handle research, copy, sending infrastructure and replies, and book qualified meetings into client calendars.',
     ...(sameAs.length ? { sameAs } : {}),
+    founder: {
+      '@type': 'Person',
+      name: founder.name,
+      jobTitle: founder.role,
+      ...(founder.linkedin ? { sameAs: [founder.linkedin] } : {}),
+    },
     areaServed: areaServed(),
     knowsAbout: [
       'Outbound sales development',

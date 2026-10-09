@@ -1,5 +1,7 @@
 import { aboutCta, aboutHero, coverage, founderNote, roles, rules } from '@/content/about'
 import { site } from '@/content/site'
+import { advisors, advisorsIntro, founder } from '@/content/team'
+import { PersonCard } from '@/components/ui/PersonCard'
 import { BookCallButton } from '@/components/ui/BookCallButton'
 import { Container } from '@/components/ui/Container'
 import { Eyebrow } from '@/components/ui/Eyebrow'
@@ -53,6 +55,9 @@ export default function AboutPage() {
               eyebrow={founderNote.eyebrow}
               title={founderNote.title}
             />
+            <Reveal>
+              <PersonCard person={founder} />
+            </Reveal>
           </div>
           <Reveal>
             <p className="t-eyebrow mb-6 text-subtle">{founderNote.label}</p>
@@ -72,6 +77,21 @@ export default function AboutPage() {
             </div>
           </Reveal>
         </div>
+      </Section>
+
+      <Section id="advisors" labelledBy="advisors-title" className="pt-0">
+        <SectionHeading
+          id="advisors-title"
+          eyebrow={advisorsIntro.eyebrow}
+          title={advisorsIntro.title}
+        />
+        <RevealGroup as="ul" className="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          {advisors.map((a) => (
+            <RevealItem as="li" key={a.name}>
+              <PersonCard person={a} />
+            </RevealItem>
+          ))}
+        </RevealGroup>
       </Section>
 
       <Section id="team" labelledBy="roles-title" grid="edges" className="bg-surface/40">
