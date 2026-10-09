@@ -3,6 +3,7 @@ import { BookCallButton } from '@/components/ui/BookCallButton'
 import { LinkButton } from '@/components/ui/Button'
 import { Container } from '@/components/ui/Container'
 import { Eyebrow } from '@/components/ui/Eyebrow'
+import { ClutchWidget } from '@/components/ui/ClutchWidget'
 import { HeroTabs } from '../HeroTabs'
 
 /** The H1 and lede render without entrance animation so they paint immediately (LCP). */
@@ -31,6 +32,7 @@ export function Hero() {
             </LinkButton>
           </div>
           <p className="mt-6 font-mono text-[0.76rem] tracking-[0.02em] text-subtle">{hero.note}</p>
+          <ClutchWidget className="mt-5 w-[220px]" />
         </div>
         <HeroTabs />
       </Container>

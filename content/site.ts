@@ -23,8 +23,8 @@ export const site = {
    * and the footer link switch on.
    */
   clutch: {
-    profileUrl: null as string | null,
-    companyId: null as string | null,
+    profileUrl: 'https://clutch.co/profile/aventrio' as string | null,
+    companyId: '2066105' as string | null,
     widgetType: '2',
     height: '45',
   },
@@ -36,7 +36,7 @@ export const site = {
   legal: {
     entityName: null as string | null,
     registeredAddress: 'Lahore, Pakistan' as string | null,
-    governingLaw: null as string | null,
+    governingLaw: 'Pakistan' as string | null,
   },
 
   /** Structured data only. Never rendered as a list on any page. */
