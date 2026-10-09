@@ -1,0 +1,253 @@
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
+
+/* Design tokens. Values must match lib/tokens.ts (checked in CI). */
+:root {
+  --paper: #fffcf4;
+  --ink: #0e251d;
+  --ink-soft: #505050;
+  --muted: #8a8a8a;
+  --surface: #f5f5f5;
+  --surface-2: #efefef;
+  --green: #1a9c77;
+  --mint: #1fdba5;
+  --coral: #d8434b;
+  --on-ink: #fffcf4;
+  --on-ink-soft: rgba(255, 252, 244, 0.74);
+
+  /* Derived tokens, all built from the base palette above */
+  --ink-2: color-mix(in oklab, var(--ink) 88%, var(--on-ink));
+  --green-deep: color-mix(in oklab, var(--green) 72%, var(--ink));
+  --on-ink-faint: rgba(255, 252, 244, 0.5);
+  --line: color-mix(in oklab, var(--ink) 11%, transparent);
+  --line-strong: color-mix(in oklab, var(--ink) 20%, transparent);
+  --line-ink: rgba(255, 252, 244, 0.12);
+  --grid-paper: color-mix(in oklab, var(--ink) 7%, transparent);
+  --grid-ink: rgba(255, 252, 244, 0.06);
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --section-y: clamp(80px, 10vw, 140px);
+
+  color-scheme: light;
+}
+
+/*
+ * Metric-matched fallbacks, measured from the shipped latin subsets:
+ * Google Sans Flex averages 0.4474em per character against Arial's 0.4432em,
+ * with ascent 0.966em and descent 0.286em. Google Sans Code matches Courier New width.
+ */
+@font-face {
+  font-family: 'Google Sans Flex Fallback';
+  src: local('Arial'), local('ArialMT'), local('Helvetica'), local('Liberation Sans');
+  size-adjust: 100.96%;
+  ascent-override: 95.68%;
+  descent-override: 28.33%;
+  line-gap-override: 0%;
+}
+@font-face {
+  font-family: 'Google Sans Code Fallback';
+  src: local('Courier New'), local('CourierNewPSMT'), local('Liberation Mono');
+  size-adjust: 99.98%;
+  ascent-override: 96.62%;
+  descent-override: 28.61%;
+  line-gap-override: 0%;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 1.0625rem;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  letter-spacing: -0.03em;
+  line-height: 1.06;
+  text-wrap: balance;
+}
+
+p {
+  text-wrap: pretty;
+}
+
+::selection {
+  background: var(--mint);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--green);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+.on-ink :focus-visible {
+  outline-color: var(--mint);
+}
+
+/* ---------- Display type ---------- */
+.t-display {
+  font-size: clamp(2.75rem, 6.4vw, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.035em;
+}
+.t-h2 {
+  font-size: clamp(2.1rem, 4.2vw, 3.5rem);
+  line-height: 1.02;
+}
+.t-h3 {
+  font-size: clamp(1.2rem, 1.6vw, 1.4rem);
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+.t-eyebrow {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* Accent word: green to mint only. No warm tones. */
+.accent-word {
+  background: linear-gradient(100deg, var(--green) 10%, var(--mint) 95%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  /* keeps descenders from clipping inside the gradient box */
+  padding-bottom: 0.08em;
+}
+.on-ink .accent-word {
+  background: linear-gradient(100deg, var(--mint) 0%, var(--green) 110%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+/* ---------- Grid texture, masked so it fades behind text ---------- */
+.grid-texture {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(to right, var(--grid-paper) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-paper) 1px, transparent 1px);
+  background-size: 56px 56px;
+  background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 62% at 50% 42%, transparent 14%, #000 78%);
+  mask-image: radial-gradient(ellipse 70% 62% at 50% 42%, transparent 14%, #000 78%);
+}
+.grid-texture[data-tone='ink'] {
+  background-image:
+    linear-gradient(to right, var(--grid-ink) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--grid-ink) 1px, transparent 1px);
+}
+.grid-texture[data-mask='edges'] {
+  -webkit-mask-image: linear-gradient(90deg, #000 0%, transparent 30%, transparent 70%, #000 100%);
+  mask-image: linear-gradient(90deg, #000 0%, transparent 30%, transparent 70%, #000 100%);
+}
+
+/* ---------- Rind divider: the seam between light and dark, used once ---------- */
+.rind-band {
+  height: 22px;
+  background: repeating-linear-gradient(
+    100deg,
+    var(--ink) 0 14px,
+    var(--green-deep) 14px 21px,
+    var(--ink) 21px 34px
+  );
+  border-top: 1px solid var(--line-strong);
+}
+
+/* ---------- Spotlight hover for cards ---------- */
+.spotlight {
+  position: relative;
+  isolation: isolate;
+}
+.spotlight::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+  background: radial-gradient(
+    360px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in oklab, var(--green) 14%, transparent),
+    transparent 65%
+  );
+}
+.on-ink .spotlight::before {
+  background: radial-gradient(
+    360px circle at var(--mx, 50%) var(--my, 50%),
+    color-mix(in oklab, var(--mint) 16%, transparent),
+    transparent 65%
+  );
+}
+.spotlight:hover::before {
+  opacity: 1;
+}
+
+/* Live dot */
+.live-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: var(--mint);
+  box-shadow: 0 0 0 0 color-mix(in oklab, var(--mint) 60%, transparent);
+  animation: live-pulse 2.2s var(--ease-out) infinite;
+}
+@keyframes live-pulse {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in oklab, var(--mint) 55%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 9px transparent;
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent;
+  }
+}
+
+/* Hero tab auto-advance progress */
+@keyframes tab-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* FAQ disclosure marker */
+details > summary {
+  list-style: none;
+}
+details > summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Global reduced-motion guard. Framer Motion is also wrapped in
+   MotionConfig reducedMotion="user" in the root layout. */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
