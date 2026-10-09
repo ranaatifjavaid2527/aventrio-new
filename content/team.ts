@@ -30,7 +30,7 @@ export const advisors: Person[] = [
     name: 'Malik Mudassir',
     role: 'Advisor to Aventrio',
     initials: 'MM',
-    photo: null,
+    photo: '/team/malik-mudassir.jpg',
     linkedin: 'https://www.linkedin.com/in/malikmudassir/',
   },
 ]
