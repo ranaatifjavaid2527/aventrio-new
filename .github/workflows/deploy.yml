@@ -1,6 +1,5 @@
 name: Validate and deploy to cPanel
 
-# Runs on every push to main. Also runnable by hand from the Actions tab.
 on:
   push:
     branches: [main]
@@ -16,15 +15,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: actions/setup-node@v4
         with:
           node-version: '20'
-
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-
       - name: Run site checks
         run: python3 tools/validate.py
 
@@ -34,7 +30,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Upload changed files over FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
@@ -43,6 +38,8 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           protocol: ftps
+          port: 21
+          timeout: 120000
           exclude: |
             **/.git*
             **/.git*/**
@@ -54,4 +51,4 @@ jobs:
             **/assets/aventrio-wordmark*.png
 
       - name: Done
-        run: echo "Deployed to production. Check https://aventrio.co"
+        run: echo "Deployed. Check https://aventrio.co"
