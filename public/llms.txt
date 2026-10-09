@@ -58,11 +58,29 @@ reschedule, and account executives are available on the same engagement.
 Reps work a maximum of three accounts. Cold volume is never sent from the
 client's primary domain.
 
+## Frequently asked
+- Does Aventrio guarantee a number of meetings? No. Meeting volume depends on
+  the client's offer, market and timing. Aventrio commits to the work instead:
+  verified data, copy rewritten monthly, monitored sending infrastructure,
+  named reps capped at three accounts, and weekly reporting that separates
+  booked, held and converted.
+- How fast does it start? First outreach goes out 14 days after kickoff.
+- What does it cost? A flat monthly fee per rep, quoted on a call. Minimum
+  term one quarter, then month-to-month.
+- Who owns the data? The client: lists, sequences, sending domains and call
+  notes are exportable at any time, including on cancellation.
+- Outsourced SDR team or in-house hire? An in-house SDR takes months to
+  source, hire and ramp. An outsourced team starts in 14 days and the rep is
+  replaced at Aventrio's cost if they underperform. In-house is better when the
+  product needs months of internal training.
+
 ## Pages
-- Home: https://aventrio.co/ ,  services, process, what's included, comparison,
-  guarantee, FAQ.
-- About: https://aventrio.co/about ,  why the company exists, how the team is
+- Home: https://aventrio.co/ : services, process, what's included, comparison,
+  commitments, FAQ.
+- About: https://aventrio.co/about : why the company exists, how the team is
   structured, operating principles, coverage.
+- Book a call: https://aventrio.co/book : 30 minute strategy call, booked on
+  the page.
 
 ## Contact
-hello@aventrio.co
+atif@aventrio.co

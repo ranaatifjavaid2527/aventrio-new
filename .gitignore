@@ -7,11 +7,21 @@ Thumbs.db
 .idea/
 *.swp
 
-# node
+# node and next
 node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
 npm-debug.log*
+.lighthouseci/
+
+# env (never commit secrets)
+.env
+.env.*
+!.env.example
 
 # local scratch
-.ci-check.js
 *.bak
 *.tmp
+.claude/launch.json
