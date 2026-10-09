@@ -1,0 +1,33 @@
+import type { MetadataRoute } from 'next'
+import { caseStudies } from '@/content/caseStudies'
+import { industryPages } from '@/content/industries'
+import { site } from '@/content/site'
+
+/** Generated from the routes that actually have content. Empty scaffolds are left out. */
+export default function sitemap(): MetadataRoute.Sitemap {
+  const now = new Date()
+  const url = (p: string) => new URL(p, site.url).toString()
+  const core: MetadataRoute.Sitemap = [
+    { url: url('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
+    { url: url('/about'), lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: url('/book'), lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: url('/privacy'), lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+    { url: url('/terms'), lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+  ]
+  const industries = industryPages.map((p) => ({
+    url: url(`/industries/${p.slug}`),
+    lastModified: now,
+    priority: 0.7,
+  }))
+  const cases = caseStudies.length
+    ? [
+        { url: url('/case-studies'), lastModified: now, priority: 0.6 },
+        ...caseStudies.map((c) => ({
+          url: url(`/case-studies/${c.slug}`),
+          lastModified: now,
+          priority: 0.6,
+        })),
+      ]
+    : []
+  return [...core, ...industries, ...cases]
+}
