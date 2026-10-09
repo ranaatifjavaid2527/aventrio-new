@@ -1,0 +1,107 @@
+{
+  "https://www.belkins.io/": {
+    "url": "https://www.belkins.io/",
+    "status": 200,
+    "title": "Belkins - #1 B2B Lead Generation Agency",
+    "description": "Since 2017, we’ve helped clients generate $2B+ in revenue. Our omnichannel approach guarantees 100-400 yearly appointments with your ideal clients.",
+    "h1": "B2B LEAD GENERATION AGENCY"
+  },
+  "https://www.belkins.io/outsourced-sdr-services": {
+    "url": "https://www.belkins.io/outsourced-sdr-services",
+    "status": 200,
+    "title": "Outsourced SDR Agency | Belkins",
+    "description": "Scale your sales team without the hiring overhead. Belkins recruits, trains, and manages a dedicated SDR unit around your ideal clients and growth targets.",
+    "h1": "Outsourced SDR agency"
+  },
+  "https://www.belkins.io/appointment-setting": {
+    "url": "https://www.belkins.io/appointment-setting",
+    "status": 200,
+    "title": "B2B Appointment Setting Services | Award-Winning Agency",
+    "description": "Get 20+ sales-qualified meetings monthly. Belkins connects you with decision-makers who are ready to talk, ensuring a consistent and high-quality lead flow.",
+    "h1": "Lead generation and appointment setting services"
+  },
+  "https://www.cience.com/": {
+    "url": "https://www.cience.com/",
+    "status": 200,
+    "title": "CIENCE | Managed B2B Lead Generation and GTM Execution",
+    "description": "CIENCE builds qualified sales meetings through managed SDR teams, audience data, outbound campaigns, inbound qualification, and AI-supported GTM execution.",
+    "h1": "We build the revenue system, then we run it."
+  },
+  "https://www.cience.com/outbound-sdr": {
+    "url": "https://www.cience.com/outbound-sdr",
+    "status": 200,
+    "title": "Outsourced SDR Services | Outbound Lead Generation | CIENCE",
+    "description": "CIENCE runs outsourced SDR services: trained SDR teams with AI-supported research, outreach, and appointment setting for outbound lead generation on graph8.",
+    "h1": "Outsourced SDR teams that run your outbound lead generation ."
+  },
+  "https://www.cience.com/sales-outsourcing": {
+    "url": "https://www.cience.com/sales-outsourcing",
+    "status": 200,
+    "title": "Sales Outsourcing | B2B Outsourced Sales | CIENCE",
+    "description": "What B2B sales outsourcing covers, which parts you should keep in-house, what it costs, and the four reasons these engagements fail. From CIENCE, 2,500+ clients.",
+    "h1": "Work out which part to outsource before you buy any of it."
+  },
+  "https://www.cleverly.co/": {
+    "url": "https://www.cleverly.co/",
+    "status": 200,
+    "title": "Cleverly - World-class B2B Lead Generation Agency",
+    "description": "Done-for-you outbound lead generation for B2B companies across cold email, cold calling and LinkedIn. Cleverly is the only B2B lead gen agency with 1,000+ 5-star reviews.",
+    "h1": "$5M B2B Lead Generation Agency Scales Qualified Leads Across Linkedin, Cold Email & Cold Calling"
+  },
+  "https://www.cleverly.co/outsourced-sdr": {
+    "url": "https://www.cleverly.co/outsourced-sdr",
+    "status": 200,
+    "title": "Outsourced SDR Services | Cleverly",
+    "description": "Cleverly is an outsourced SDR company that prospects, qualifies, and books meetings on your calendar so your sales team can focus on closing.",
+    "h1": "Outsourced SDR service that fills your pipeline with 10–30 qualified meetings every month"
+  },
+  "https://www.saleshive.com/": {
+    "url": "https://www.saleshive.com/",
+    "status": 200,
+    "title": "B2B Sales Agency That Books Qualified Meetings | SalesHive",
+    "description": "The B2B sales agency that books qualified meetings: US-based SDRs run cold calling and email on our own AI platform. No long-term contracts.",
+    "h1": "B2B sales. Built for scale."
+  },
+  "https://www.saleshive.com/sdr-outsourcing": {
+    "url": "https://www.saleshive.com/sdr-outsourcing",
+    "status": 200,
+    "title": "SDR Outsourcing Services: Outsourced SDRs & SDR as a Service | SalesHive",
+    "description": "SDR outsourcing services from a dedicated, US-based team. SalesHive provides trained SDRs, strategy, and an AI platform, month to month.",
+    "h1": "SDR outsourcing, trained like your best hire."
+  },
+  "https://www.saleshive.com/sales-development-agency": {
+    "url": "https://www.saleshive.com/sales-development-agency",
+    "status": 200,
+    "title": "Sales Development Agency: B2B Pipeline, Built for You | SalesHive",
+    "description": "SalesHive is the sales development agency that runs strategy, lists, SDR outreach, reply handling, and appointment setting to book qualified meetings.",
+    "h1": "A sales development agency, live in weeks."
+  },
+  "https://www.saleshive.com/pricing": {
+    "url": "https://www.saleshive.com/pricing",
+    "status": 200,
+    "title": "SalesHive Pricing | Flat Monthly SDR Team, No Contracts",
+    "description": "SalesHive pricing is one flat monthly fee for your SDR team, strategist, AI platform, data, and tools. No setup fees, no long-term contracts. Get a quote in 30 minutes.",
+    "h1": "One fee. The whole outbound engine."
+  },
+  "https://salesar.io/": {
+    "url": "https://salesar.io/",
+    "status": 200,
+    "title": "B2B Lead Generation Agency | SalesAR",
+    "description": "SalesAR is a B2B lead generation agency helping companies book qualified meetings through targeted outreach, prospect research, and appointment setting.",
+    "h1": "B2B Lead Generation Agency"
+  },
+  "https://www.leadbird.io/": {
+    "url": "https://www.leadbird.io/",
+    "status": 200,
+    "title": "LeadBird — B2B Lead Generation, 100% Done For You",
+    "description": "Get B2B leads 100% done for you across every channel. Emails, calls, LinkedIn outreach — fully managed and synced directly into your CRM.",
+    "h1": ""
+  },
+  "https://www.salesloft.com/": {
+    "url": "https://www.salesloft.com/",
+    "status": 200,
+    "title": "The Leading Predictive Revenue System",
+    "description": "Turn buyer signals into action with Salesloft's AI Predictive Revenue System. Learn how top revenue teams close deals faster and explore the platform.",
+    "h1": "Create . Convert . Grow ."
+  }
+}
