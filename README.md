@@ -1,140 +1,125 @@
 # aventrio.co
 
-Static site. Four pages, no build step, no framework. Every page is
-self-contained: the CSS, the JavaScript and the logo are embedded, so a page
-works even if it is opened on its own.
+Next.js (App Router) site for Aventrio, an outbound sales development firm.
+The previous static HTML site is kept in `legacy/` for reference only.
 
-```
-index.html      homepage
-about.html      about
-privacy.html    privacy policy
-terms.html      terms of service
-assets/         logo, favicon, social image, team photos
-robots.txt      crawler rules, including AI crawlers
-sitemap.xml     the four pages
-llms.txt        structured summary for AI answer engines
-.htaccess       clean URLs, HTTPS, caching, security headers
-tools/          the pre-deploy quality gate
-```
-
----
-
-## How deployment works now
-
-```
-   edit a file  ->  git push  ->  GitHub Actions  ->  quality gate  ->  cPanel
-                                                          |
-                                                      fails? nothing ships
-```
-
-No more manual uploads. Push to `main` and the site updates in about a minute.
-If the quality gate finds a problem the deploy is blocked and you get an email
-from GitHub, so a broken page cannot reach production.
-
----
-
-## One-time setup
-
-### 1. Create the repository
+## Quick start
 
 ```bash
-cd /path/to/this/folder
-git init
-git add .
-git commit -m "Initial site"
-git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/aventrio-site.git
-git push -u origin main
+nvm use            # Node 24 LTS, see .nvmrc
+corepack enable    # pnpm, pinned in package.json
+pnpm install
+cp .env.example .env.local
+pnpm dev           # http://localhost:3000
 ```
 
-### 2. Find your FTP details in cPanel
+Without `RESEND_API_KEY`, the lead form logs submissions to the console in
+development and returns an error in production. It never fails silently.
 
-In cPanel open **FTP Accounts**. You want:
+## Where things live
 
-| What | Where it comes from | Example |
-|---|---|---|
-| Server | your host's FTP hostname | `ftp.aventrio.co` |
-| Username | the FTP account | `deploy@aventrio.co` |
-| Password | the one you set | |
-| Directory | where the site lives | `public_html/` |
+```
+app/                  routes, metadata, OG images, sitemap, robots, /api/lead
+components/ui/        primitives: buttons, sections, reveals, count-up, icons
+components/sections/  page sections, header, footer, popup, cookie banner
+content/              all copy. Edit text here, not in components
+lib/                  tokens, JSON-LD, metadata, consent, booking, rate limit
+proxy.ts              per-request CSP nonce
+next.config.ts        security headers, .html redirects
+scripts/              quality gate, Lighthouse, weekly report, competitor watch
+docs/                 keyword research, Cal.com and Search Console setup
+reports/              weekly reports and competitor snapshots (written by CI)
+```
 
-Create a **dedicated FTP account** for deployments rather than using your main
-cPanel login. If the credentials ever leak, you revoke one account instead of
-handing over the whole hosting panel.
+### Switching things on
 
-### 3. Add them to GitHub as secrets
+All in `content/site.ts`. Anything left `null` is hidden, never shown as a placeholder.
 
-Repository > **Settings** > **Secrets and variables** > **Actions** > **New
-repository secret**. Add four:
+| Setting                                                             | What it turns on                                                            |
+| ------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `clutch.profileUrl` + `clutch.companyId`                            | Clutch tab in the hero, official widget, footer link, `sameAs`              |
+| `linkedin`                                                          | Footer link and `sameAs` in Organization schema                             |
+| `legal.entityName`, `legal.registeredAddress`, `legal.governingLaw` | Fills the privacy policy and terms. **The gate fails until these are set.** |
+| `cal.link`                                                          | The Cal.com event used by the inline embed and the modal                    |
 
-- `FTP_SERVER`
-- `FTP_USERNAME`
-- `FTP_PASSWORD`
-- `FTP_SERVER_DIR`  (usually `public_html/`)
+Analytics is off unless `NEXT_PUBLIC_ANALYTICS_PROVIDER=plausible` is set. When
+it is off there is no cookie banner, because there is nothing to consent to.
+When it is on, nothing loads until the visitor accepts.
 
-Secrets are encrypted and never appear in logs.
+## House rules (enforced in CI)
 
-### 4. Push
+- No en or em dashes anywhere: copy, code, comments, metadata.
+- No raw hex colours in components. Use the tokens in `app/globals.css` (mirrored in `lib/tokens.ts` for OG images; CI fails if they drift).
+- No invented proof: no testimonials, client names, logos, counts or statistics unless supplied and approved.
+- No promised outcomes. The "We won't promise you a number" section stays.
+- No list of countries on any page. Geography lives in US market copy and in structured data only.
+- Exactly one `<h1>` per page.
 
-That's it. Every push to `main` now validates and deploys. Watch it run in the
-**Actions** tab.
-
----
-
-## Daily use
+## Quality gate
 
 ```bash
-git add .
-git commit -m "Update the FAQ"
-git push
+pnpm gate                       # dashes, types, lint, prettier, build, site validator
+scripts/lighthouse.sh applied   # Lighthouse budget, enforced
 ```
 
-Before pushing, you can run the same checks locally:
+`pnpm validate` starts the production server and checks every page: status,
+balanced markup, single H1, heading order, JSON-LD parses, required meta, alt
+text, internal links and anchors, no dashes, no unfilled placeholders, security
+headers and CSP nonce, `.html` redirects, robots rules for AI crawlers, sitemap
+URLs, the lead API's rejection paths, OG images, and token drift.
 
-```bash
-python3 tools/validate.py
-```
+GitHub Actions (`.github/workflows/ci.yml`) runs all of it on every pull
+request and push. Deployment only happens after the gate passes.
 
-It checks: tag balance, CSS braces, JavaScript syntax, structured data, broken
-anchors, missing pages, missing alt text, missing meta tags, duplicate `<h1>`,
-unfilled placeholders, and the house rule that we never use em dashes.
+## Performance
 
----
+Budget from the brief: Performance 95 or more, Accessibility 100, Best Practices
+95 or more, SEO 100, LCP under 2.0s, CLS under 0.05, mobile throttled.
 
-## Two settings that still need your values
+Lighthouse has two throttling methods and they disagree on this site:
 
-Both live near the top of the `<script>` block in each HTML page.
+| Method                                             | What it does                                                               | Home page result (local)         |
+| -------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------- |
+| Applied (`devtools`)                               | Actually loads the page on slow 4G with a 4x slower CPU                    | Performance 100, LCP 0.9s, CLS 0 |
+| Simulated (`simulate`, used by PageSpeed Insights) | Estimates from a dependency graph, counting every async script against LCP | Performance 93, LCP 3.2s, CLS 0  |
 
-**Booking link** (currently empty, so buttons scroll to the booking section):
+CI enforces the budget on the applied method and reports the simulated one
+without failing. The simulated LCP floor comes from the Next.js and React
+runtime (about 130 KB gzipped) that every App Router page ships; the text that
+is the LCP element is painted at first paint. Re-check with PageSpeed Insights
+against production after launch, where Brotli and Vercel's CDN apply.
 
-```js
-var BOOKING_URL = '';   // e.g. 'https://cal.com/aventrio/30min'
-```
+Known exception: on `/book`, when the Cal.com calendar is in view, Cal.com's
+Cloudflare cookie (`__cf_bm`) is flagged as a third-party cookie and Best
+Practices drops to 79. The calendar loads only when scrolled into view.
 
-**Lead form endpoint** (currently empty, so the form opens a pre-filled email):
+## Deployment (Vercel)
 
-```js
-var LEAD_FORM_ENDPOINT = '';   // e.g. 'https://formspree.io/f/xxxxxxx'
-```
+1. Create a Vercel project from this repository. In **Settings, Git**, leave it
+   connected but note `vercel.json` disables automatic deployments, so only CI
+   deploys.
+2. **Settings, Environment Variables** (Production and Preview):
+   `RESEND_API_KEY`, `LEAD_TO_EMAIL=atif@aventrio.co`,
+   `LEAD_FROM_EMAIL="Aventrio website <leads@aventrio.co>"`, and optionally the
+   analytics variables.
+3. In Resend, add and verify the domain `aventrio.co` (it gives SPF and DKIM
+   records to add in DNS). `LEAD_FROM_EMAIL` must use that domain.
+4. GitHub repository secrets: `VERCEL_TOKEN` (Vercel, Account Settings,
+   Tokens), `VERCEL_ORG_ID` and `VERCEL_PROJECT_ID` (from `vercel link`, in
+   `.vercel/project.json`).
+5. Domain: add `aventrio.co` and `www.aventrio.co` in Vercel, then at the DNS
+   host point the apex A record and the `www` CNAME at the values Vercel shows.
+   **Do not touch the MX records**: email stays on the cPanel mailbox.
+6. HSTS is sent with `preload`. Only submit the domain to hstspreload.org once
+   every subdomain you use is on HTTPS, because removal takes months.
 
-Change them in all four pages, or ask and they can be centralised.
+The old cPanel FTP deploy workflow has been removed.
 
----
+## Weekly Friday report
 
-## Analytics
-
-Analytics must only load after cookie consent. There is an empty
-`loadAnalytics()` function in each page for exactly this. Put your snippet
-inside it and nothing fires until a visitor accepts. Do not paste a tracker
-into `<head>`, that is what makes a cookie banner meaningless.
-
----
-
-## Alternative: cPanel's own Git deployment
-
-`.cpanel.yml` is included if you would rather have cPanel pull from GitHub
-instead of GitHub pushing over FTP. In cPanel go to **Git Version Control**,
-clone the repo, then use **Update from Remote** and **Deploy HEAD Commit**.
-Replace `CPANEL_USERNAME` in that file with your real cPanel user first.
-
-Use one route or the other, not both: they will overwrite each other.
+`.github/workflows/weekly-report.yml` runs every Friday: it pulls Search
+Console data (`scripts/weekly-report.ts`), diffs competitor title tags, meta
+descriptions and H1s (`scripts/competitor-watch.ts`), commits both to
+`reports/`, and opens an issue with the result. Setup:
+`docs/search-console-setup.md`. Without Search Console it reports that plainly
+and never estimates.
