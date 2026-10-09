@@ -55,7 +55,7 @@ export default function AboutPage() {
             />
           </div>
           <Reveal>
-            <p className="t-eyebrow mb-6 text-muted">{founderNote.label}</p>
+            <p className="t-eyebrow mb-6 text-subtle">{founderNote.label}</p>
             <div className="space-y-5 text-[1.08rem] text-ink-soft">
               {founderNote.paragraphs.map((p) => (
                 <p key={p.slice(0, 32)}>{p}</p>
@@ -92,7 +92,7 @@ export default function AboutPage() {
                   {r.code}
                 </span>
                 <h3 className="t-h3 mt-6">{r.title}</h3>
-                <p className="mt-1 font-mono text-[0.72rem] text-muted">{r.sub}</p>
+                <p className="mt-1 font-mono text-[0.72rem] text-subtle">{r.sub}</p>
                 <p className="mt-4 flex-1 text-[0.98rem] text-ink-soft">{r.body}</p>
                 <p className="mt-6 border-t border-line pt-4 text-[0.88rem] font-medium text-green-deep">
                   {r.owns}
@@ -118,11 +118,13 @@ export default function AboutPage() {
           className="grid gap-px overflow-hidden rounded-card border border-line-ink bg-line-ink md:grid-cols-2"
         >
           {rules.items.map((r, i) => (
-            <RevealItem as="li" key={r.title} className="bg-ink p-7 sm:p-9">
-              <span className="font-mono text-[0.74rem] text-mint">0{i + 1}</span>
-              <h3 className="t-h3 mt-5">{r.title}</h3>
-              <p className="mt-3 text-[0.98rem] text-on-ink-soft">{r.body}</p>
-            </RevealItem>
+            <li key={r.title} className="bg-ink">
+              <RevealItem className="p-7 sm:p-9">
+                <span className="font-mono text-[0.74rem] text-mint">0{i + 1}</span>
+                <h3 className="t-h3 mt-5">{r.title}</h3>
+                <p className="mt-3 text-[0.98rem] text-on-ink-soft">{r.body}</p>
+              </RevealItem>
+            </li>
           ))}
         </RevealGroup>
       </Section>

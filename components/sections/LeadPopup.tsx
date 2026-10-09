@@ -5,6 +5,7 @@ import { usePathname } from 'next/navigation'
 import { useEffect, useId, useRef, useState, type FormEvent } from 'react'
 import { lead } from '@/content/lead'
 import { buttonClasses } from '@/components/ui/Button'
+import { Icon } from '@/components/ui/Icon'
 import { useBannerOpen } from '@/lib/consent'
 import { keys, storage } from '@/lib/storage'
 
@@ -109,7 +110,7 @@ export function LeadPopup() {
         aria-label="Close"
         className="absolute top-3 right-3 grid size-9 place-items-center rounded-full text-on-ink-soft transition-colors hover:bg-ink-2 hover:text-on-ink"
       >
-        <span aria-hidden="true">✕</span>
+        <Icon name="close" />
       </button>
 
       {status === 'done' ? (

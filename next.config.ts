@@ -18,6 +18,10 @@ const securityHeaders = [
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  experimental: {
+    // Tailwind output is small: inlining it removes a render-blocking request (FCP and LCP)
+    inlineCss: true,
+  },
   images: {
     formats: ['image/avif', 'image/webp'],
   },

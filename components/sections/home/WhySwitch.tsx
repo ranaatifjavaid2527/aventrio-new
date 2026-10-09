@@ -21,11 +21,13 @@ export function WhySwitch() {
             className="grid gap-px overflow-hidden rounded-card border border-line-ink bg-line-ink sm:grid-cols-2"
           >
             {whySwitch.points.map((p) => (
-              <RevealItem as="li" key={p.title} className="bg-ink p-6">
-                <p className="font-mono text-[0.8rem] text-mint">{p.kicker}</p>
-                <h3 className="mt-3 text-[1.1rem] font-semibold tracking-[-0.02em]">{p.title}</h3>
-                <p className="mt-2 text-[0.94rem] text-on-ink-soft">{p.body}</p>
-              </RevealItem>
+              <li key={p.title} className="bg-ink">
+                <RevealItem className="p-6">
+                  <p className="font-mono text-[0.8rem] text-mint">{p.kicker}</p>
+                  <h3 className="mt-3 text-[1.1rem] font-semibold tracking-[-0.02em]">{p.title}</h3>
+                  <p className="mt-2 text-[0.94rem] text-on-ink-soft">{p.body}</p>
+                </RevealItem>
+              </li>
             ))}
           </RevealGroup>
         </div>

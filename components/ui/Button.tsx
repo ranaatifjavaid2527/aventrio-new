@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { Icon } from './Icon'
 import type { ReactNode } from 'react'
 
 export type ButtonVariant = 'solid' | 'ghost'
@@ -30,7 +31,7 @@ export function Arrow() {
       aria-hidden="true"
       className="transition-transform duration-300 ease-out group-hover:translate-x-1"
     >
-      →
+      <Icon name="arrowRight" />
     </span>
   )
 }

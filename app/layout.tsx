@@ -7,9 +7,7 @@ import { tokens } from '@/lib/tokens'
 import { MotionProvider } from '@/components/ui/MotionProvider'
 import { Header } from '@/components/sections/Header'
 import { Footer } from '@/components/sections/Footer'
-import { CookieBanner } from '@/components/sections/CookieBanner'
-import { LeadPopup } from '@/components/sections/LeadPopup'
-import { Analytics } from '@/components/sections/Analytics'
+import { DeferredWidgets } from '@/components/sections/DeferredWidgets'
 import './globals.css'
 
 // Google Sans Flex: display and body. Google Sans Code: labels and mono.
@@ -19,14 +17,19 @@ import './globals.css'
 const sans = Google_Sans_Flex({
   subsets: ['latin'],
   variable: '--font-sans',
-  display: 'swap',
+  // optional: no late swap, so the hero text is final at first paint (LCP).
+  // The metric-matched fallback keeps a first visit on a slow network close in look and size.
+  display: 'optional',
   adjustFontFallback: false,
   fallback: ['Google Sans Flex Fallback', 'Arial', 'sans-serif'],
 })
 const mono = Google_Sans_Code({
   subsets: ['latin'],
   variable: '--font-mono',
+  // Labels only, never the LCP element: off the critical path, and swapped in
+  // when it arrives (the metric-matched fallback keeps the swap shift-free)
   display: 'swap',
+  preload: false,
   adjustFontFallback: false,
   fallback: ['Google Sans Code Fallback', 'Courier New', 'monospace'],
 })
@@ -57,9 +60,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <Header />
           <main id="main">{children}</main>
           <Footer />
-          <CookieBanner />
-          <LeadPopup />
-          <Analytics />
+          <DeferredWidgets />
         </MotionProvider>
       </body>
     </html>

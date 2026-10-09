@@ -18,13 +18,15 @@ export function StatStrip() {
           className="grid grid-cols-2 gap-px overflow-hidden rounded-card border border-line bg-line lg:grid-cols-4"
         >
           {strip.stats.map((s) => (
-            <RevealItem as="li" key={s.label} className="bg-paper p-6 sm:p-8">
-              <CountUp
-                value={s.value}
-                className="text-[clamp(2.6rem,4.6vw,3.7rem)] leading-none font-medium tracking-[-0.04em]"
-              />
-              <p className="mt-3 text-[0.92rem] text-ink-soft">{s.label}</p>
-            </RevealItem>
+            <li key={s.label} className="bg-paper">
+              <RevealItem className="p-6 sm:p-8">
+                <CountUp
+                  value={s.value}
+                  className="text-[clamp(2.6rem,4.6vw,3.7rem)] leading-none font-medium tracking-[-0.04em]"
+                />
+                <p className="mt-3 text-[0.92rem] text-ink-soft">{s.label}</p>
+              </RevealItem>
+            </li>
           ))}
         </RevealGroup>
       </Container>
