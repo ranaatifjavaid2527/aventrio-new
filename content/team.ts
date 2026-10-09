@@ -16,7 +16,7 @@ export const founder: Person = {
   name: 'Atif Javaid',
   role: 'Founder',
   initials: 'AJ',
-  photo: null,
+  photo: '/team/atif-javaid.jpg',
   linkedin: null,
 }
 
