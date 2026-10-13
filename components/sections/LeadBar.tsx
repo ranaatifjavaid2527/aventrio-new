@@ -58,12 +58,15 @@ export function LeadBar() {
   useEffect(() => {
     if (pathname === '/book') return
     if (session.get(keys.barSeenThisSession) || quiet()) return
-    const delay = MIN_DELAY_MS + Math.random() * (MAX_DELAY_MS - MIN_DELAY_MS)
+    // Random target between 10 and 20 seconds, measured from page start rather
+    // than from when this code finished loading, so slow loads stay in the window
+    const target = MIN_DELAY_MS + Math.random() * (MAX_DELAY_MS - MIN_DELAY_MS)
+    const delay = Math.max(0, target - performance.now())
     const t = window.setTimeout(() => {
       if (session.get(keys.barSeenThisSession) || quiet()) return
       session.set(keys.barSeenThisSession, '1')
       console.info(
-        `[lead-bar] shown after ${(performance.now() / 1000).toFixed(1)}s (scheduled ${(delay / 1000).toFixed(1)}s)`,
+        `[lead-bar] shown after ${(performance.now() / 1000).toFixed(1)}s (target ${(target / 1000).toFixed(1)}s)`,
       )
       syncCookieOffset()
       setDays(upcomingWeekdays(5))
