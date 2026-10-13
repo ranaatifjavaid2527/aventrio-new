@@ -94,7 +94,7 @@ export function HeroTabs() {
           role="tablist"
           aria-label="What the service looks like"
           onKeyDown={onKeyDown}
-          className="flex [scrollbar-width:none] gap-1 overflow-x-auto rounded-full border border-line bg-paper p-1"
+          className="flex min-w-0 [scrollbar-width:none] gap-1 overflow-x-auto rounded-full border border-line bg-paper p-1"
         >
           {TABS.map((k, i) => {
             const selected = i === active

@@ -18,7 +18,7 @@ export function Hero() {
         aria-hidden="true"
         className="pointer-events-none absolute -top-40 -left-40 size-[620px] rounded-full bg-[radial-gradient(circle,color-mix(in_oklab,var(--green)_14%,transparent),transparent_65%)]"
       />
-      <Container className="relative grid items-center gap-16 lg:grid-cols-[0.95fr_1.05fr] lg:gap-12">
+      <Container className="relative grid grid-cols-[minmax(0,1fr)] items-center gap-16 lg:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] lg:gap-12">
         <div className="max-w-[38rem]">
           <Eyebrow>{hero.eyebrow}</Eyebrow>
           <h1 id="hero-title" className="t-display">
