@@ -1,16 +1,46 @@
 'use client'
 
 import Link from 'next/link'
+import { useEffect, useRef } from 'react'
 import { reopenConsent, setConsent, useBannerOpen } from '@/lib/consent'
 import { buttonClasses } from '@/components/ui/Button'
 
 /** Shown only when an analytics tool is configured. Declining is as easy as accepting. */
 export function CookieBanner() {
   const open = useBannerOpen()
+  const ref = useRef<HTMLDivElement>(null)
+
+  // Publish open state and height on <html> so the lead bar can move above the banner in CSS
+  useEffect(() => {
+    const root = document.documentElement
+    const el = ref.current
+    if (!open || !el) {
+      root.removeAttribute('data-cookie-open')
+      return
+    }
+    const publish = () =>
+      root.style.setProperty('--cookie-h', `${el.getBoundingClientRect().height}px`)
+    // Measure now, then keep it current. Relying on the observer's first report alone
+    // left the variable unset on first load, so the bar sat on top of the banner.
+    publish()
+    root.setAttribute('data-cookie-open', '')
+    const ro = new ResizeObserver(publish)
+    ro.observe(el)
+    window.addEventListener('resize', publish)
+    return () => {
+      ro.disconnect()
+      window.removeEventListener('resize', publish)
+      root.removeAttribute('data-cookie-open')
+      root.style.removeProperty('--cookie-h')
+    }
+  }, [open])
+
   if (!open) return null
 
   return (
     <div
+      ref={ref}
+      data-cookie-banner
       role="dialog"
       aria-modal="false"
       aria-labelledby="cookie-title"

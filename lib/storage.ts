@@ -19,8 +19,27 @@ export const storage = {
   },
 }
 
+/** sessionStorage counterpart, same never-throw contract. */
+export const session = {
+  get(key: string): string | null {
+    try {
+      return window.sessionStorage.getItem(key)
+    } catch {
+      return null
+    }
+  },
+  set(key: string, value: string) {
+    try {
+      window.sessionStorage.setItem(key, value)
+    } catch {
+      /* unavailable: worst case the bar can show again this session */
+    }
+  },
+}
+
 export const keys = {
   consent: 'av_consent_v1',
-  leadSuppressedUntil: 'av_lead_suppressed_until',
   knownEmail: 'av_known_email',
+  barSeenThisSession: 'av_bar_seen',
+  barQuietUntil: 'av_bar_quiet_until',
 } as const

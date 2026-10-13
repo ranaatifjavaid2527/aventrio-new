@@ -5,6 +5,7 @@
  */
 const paths = {
   arrowRight: 'M3 8h10M9 4l4 4-4 4',
+  arrowUp: 'M8 13V3M4 7l4-4 4 4',
   arrowUpRight: 'M5 11L11 5M6 5h5v5',
   check: 'M3.5 8.5l3 3 6-7',
   close: 'M4 4l8 8M12 4l-8 8',

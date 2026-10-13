@@ -43,10 +43,51 @@ export function loadCal(): Promise<CalFn> {
   return calPromise
 }
 
-export async function openBookingModal() {
+/** Opens the Cal.com overlay. `extra` can preselect a day: { date: 'YYYY-MM-DD', month: 'YYYY-MM' }. */
+export async function openBookingModal(extra: Record<string, string> = {}) {
   const cal = await loadCal()
   cal('modal', {
     calLink: site.cal.link,
-    config: { layout: 'month_view', ...bookingPrefill() },
+    config: { layout: 'month_view', ...bookingPrefill(), ...extra },
   })
+}
+
+export type BookingDay = {
+  /** YYYY-MM-DD in the visitor's own calendar */
+  date: string
+  /** YYYY-MM */
+  month: string
+  weekday: string
+  day: number
+  label: string
+  /** Direct Cal.com link, used when the embed cannot load */
+  href: string
+}
+
+const pad = (n: number) => String(n).padStart(2, '0')
+
+/**
+ * The next `count` weekdays starting today, skipping Saturday and Sunday.
+ * Computed from the visitor's clock at render time, so it rolls forward daily.
+ */
+export function upcomingWeekdays(count = 5, from = new Date()): BookingDay[] {
+  const days: BookingDay[] = []
+  const d = new Date(from.getFullYear(), from.getMonth(), from.getDate())
+  while (days.length < count) {
+    const dow = d.getDay()
+    if (dow !== 0 && dow !== 6) {
+      const date = `${d.getFullYear()}-${pad(d.getMonth() + 1)}-${pad(d.getDate())}`
+      const month = date.slice(0, 7)
+      days.push({
+        date,
+        month,
+        weekday: d.toLocaleDateString('en-US', { weekday: 'short' }),
+        day: d.getDate(),
+        label: d.toLocaleDateString('en-US', { weekday: 'long', month: 'long', day: 'numeric' }),
+        href: `https://cal.com/${site.cal.link}?date=${date}&month=${month}`,
+      })
+    }
+    d.setDate(d.getDate() + 1)
+  }
+  return days
 }

@@ -3,6 +3,17 @@ export const lead = {
   /** Master switch. Keep false until a test lead has reached the inbox. */
   enabled: true,
   title: 'Looking for remote SDRs or someone to run your outbound?',
+  /** Spotlight bar copy. The call length follows the configured Cal.com event. */
+  bar: {
+    placeholder: 'Enter your work email',
+    send: 'Send email',
+    divider: 'or grab a time',
+    sub: 'Leave your email, or book a 30 minute call.',
+    dismiss: 'Not now',
+    done: "Got it. We'll be in touch from atif@aventrio.co.",
+    invalid: "That email doesn't look right. Check it and try again.",
+    pillLabel: (label: string) => `Book a call on ${label}`,
+  },
   body: "Leave your work email and we'll reply personally. No list, no drip sequence.",
   placeholder: 'you@company.com',
   label: 'Work email',

@@ -225,6 +225,66 @@ p {
   }
 }
 
+/* ---------- Lead bar: Spotlight-style, floats over the page ---------- */
+/* position: fixed, so its appearance can never shift layout (CLS stays 0). */
+.lead-bar {
+  position: fixed;
+  z-index: 45;
+  left: 50%;
+  bottom: 11vh;
+  width: min(420px, calc(100vw - 28px));
+  translate: -50% 0;
+  background: var(--ink);
+  color: var(--on-ink);
+  border: 1px solid var(--line-ink);
+  border-radius: 14px;
+  box-shadow:
+    0 1px 5px rgba(0, 0, 0, 0.22),
+    0 18px 44px -16px rgba(0, 0, 0, 0.55);
+  animation: lead-bar-in 550ms var(--ease-out) both;
+}
+/* Cookie banner open: both stay visible, the bar moves above the banner */
+html[data-cookie-open] .lead-bar {
+  bottom: max(23vh, calc(var(--cookie-h, 0px) + 32px));
+}
+@media (max-width: 620px) {
+  .lead-bar {
+    bottom: 14px;
+    width: calc(100vw - 20px);
+  }
+  html[data-cookie-open] .lead-bar {
+    bottom: calc(var(--cookie-h, 0px) + 28px);
+  }
+}
+@keyframes lead-bar-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px) scale(0.985);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.lead-pill {
+  display: block;
+  text-align: center;
+  padding: 6px 0 5px;
+  border: 1px solid rgba(255, 252, 244, 0.16);
+  border-radius: 9px;
+  color: var(--on-ink);
+  transition:
+    background-color 0.2s var(--ease-out),
+    border-color 0.2s var(--ease-out),
+    transform 0.2s var(--ease-out);
+}
+.lead-pill:hover,
+.lead-pill:focus-visible {
+  background: color-mix(in oklab, var(--green) 16%, transparent);
+  border-color: var(--green);
+  transform: translateY(-1px);
+}
+
 /* Hero tab auto-advance progress */
 @keyframes tab-progress {
   from {
