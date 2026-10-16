@@ -23,9 +23,9 @@
   "https://www.cience.com/": {
     "url": "https://www.cience.com/",
     "status": 200,
-    "title": "CIENCE | Managed B2B Lead Generation and GTM Execution",
-    "description": "CIENCE builds qualified sales meetings through managed SDR teams, audience data, outbound campaigns, inbound qualification, and AI-supported GTM execution.",
-    "h1": "We build the revenue system, then we run it."
+    "title": "CIENCE | B2B Appointment Setting and Lead Generation Agency",
+    "description": "CIENCE SDR teams book qualified sales meetings for B2B companies by phone, email, and LinkedIn. 2,500+ clients over 10+ years. Fixed monthly fee plus a commission for each held meeting.",
+    "h1": "We book qualified sales meetings for B2B teams."
   },
   "https://www.cience.com/outbound-sdr": {
     "url": "https://www.cience.com/outbound-sdr",
@@ -60,28 +60,28 @@
     "status": 200,
     "title": "B2B Sales Agency That Books Qualified Meetings | SalesHive",
     "description": "The B2B sales agency that books qualified meetings: US-based SDRs run cold calling and email on our own AI platform. No long-term contracts.",
-    "h1": "B2B sales. Built for scale."
+    "h1": "It starts with one conversation."
   },
   "https://www.saleshive.com/sdr-outsourcing": {
     "url": "https://www.saleshive.com/sdr-outsourcing",
     "status": 200,
     "title": "SDR Outsourcing Services: Outsourced SDRs & SDR as a Service | SalesHive",
     "description": "SDR outsourcing services from a dedicated, US-based team. SalesHive provides trained SDRs, strategy, and an AI platform, month to month.",
-    "h1": "SDR outsourcing, trained like your best hire."
+    "h1": "Add SDRs. Keep your focus on selling."
   },
   "https://www.saleshive.com/sales-development-agency": {
     "url": "https://www.saleshive.com/sales-development-agency",
     "status": 200,
     "title": "Sales Development Agency: B2B Pipeline, Built for You | SalesHive",
     "description": "SalesHive is the sales development agency that runs strategy, lists, SDR outreach, reply handling, and appointment setting to book qualified meetings.",
-    "h1": "A sales development agency, live in weeks."
+    "h1": "Build pipeline with a managed team."
   },
   "https://www.saleshive.com/pricing": {
     "url": "https://www.saleshive.com/pricing",
     "status": 200,
-    "title": "SalesHive Pricing | Flat Monthly SDR Team, No Contracts",
-    "description": "SalesHive pricing is one flat monthly fee for your SDR team, strategist, AI platform, data, and tools. No setup fees, no long-term contracts. Get a quote in 30 minutes.",
-    "h1": "One fee. The whole outbound engine."
+    "title": "SalesHive Pricing | Sales Outsourcing & SDR Plans",
+    "description": "Compare SalesHive sales outsourcing plans by SDR team, channels, and outreach volume. One monthly fee includes strategy, data, and tools. Get a custom quote.",
+    "h1": "One monthly fee. The team behind your pipeline."
   },
   "https://salesar.io/": {
     "url": "https://salesar.io/",
