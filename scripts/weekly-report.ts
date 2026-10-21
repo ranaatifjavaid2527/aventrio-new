@@ -30,19 +30,19 @@ function die(message: string): never {
 }
 
 function readConfig() {
-  const siteUrl = process.env.GSC_SITE_URL?.trim()
+  // The property is verified as a Domain property; override only if that changes
+  const siteUrl = process.env.GSC_SITE_URL?.trim() || 'sc-domain:aventrio.co'
   const raw = process.env.GSC_SERVICE_ACCOUNT_JSON?.trim()
-  if (!siteUrl || !raw) {
+  if (!raw) {
     die(
       [
         'Google Search Console is not connected yet, so there is no ranking data to report.',
         'This script will not estimate or invent numbers.',
         '',
-        'To connect it, follow docs/search-console-setup.md, then set:',
-        '  GSC_SITE_URL              e.g. sc-domain:aventrio.co',
-        '  GSC_SERVICE_ACCOUNT_JSON  the full JSON key of the service account',
-        '',
-        'In GitHub, add both as repository secrets (Settings, Secrets and variables, Actions).',
+        'The property sc-domain:aventrio.co is verified and the reader account',
+        'search-console-reader@silken-waters-512311-t1.iam.gserviceaccount.com has access.',
+        'One step remains: create a JSON key for that account and add it to GitHub as the',
+        'repository secret GSC_SERVICE_ACCOUNT_JSON. See docs/search-console-setup.md.',
       ].join('\n'),
     )
   }

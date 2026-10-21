@@ -6,10 +6,11 @@ import { analyticsEnabled } from '@/lib/analytics'
 import { CookiePreferencesLink } from './CookieBanner'
 
 const services = [
-  { label: 'Outsourced SDR teams', href: '/#services' },
-  { label: 'Account executives', href: '/#services' },
+  { label: 'Outsourced SDR teams', href: '/services/outsourced-sdr' },
+  { label: 'Account executives', href: '/services/account-executives' },
+  { label: 'Pipeline audit', href: '/services/pipeline-audit' },
+  { label: 'In-house vs outsourced SDR', href: '/compare/in-house-vs-outsourced-sdr' },
   { label: 'Account-based marketing', href: '/#services' },
-  { label: 'Pipeline audit', href: '/#services' },
   { label: 'Sales recruitment', href: '/#services' },
 ]
 

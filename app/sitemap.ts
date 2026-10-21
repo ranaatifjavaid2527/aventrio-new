@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { caseStudies } from '@/content/caseStudies'
 import { industryPages } from '@/content/industries'
+import { seoPages } from '@/content/seoPages'
 import { site } from '@/content/site'
 
 /** Generated from the routes that actually have content. Empty scaffolds are left out. */
@@ -14,6 +15,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: url('/privacy'), lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     { url: url('/terms'), lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
   ]
+  const landing = seoPages.map((p) => ({
+    url: url(p.path),
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.9,
+  }))
   const industries = industryPages.map((p) => ({
     url: url(`/industries/${p.slug}`),
     lastModified: now,
@@ -29,5 +36,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         })),
       ]
     : []
-  return [...core, ...industries, ...cases]
+  return [...core, ...landing, ...industries, ...cases]
 }

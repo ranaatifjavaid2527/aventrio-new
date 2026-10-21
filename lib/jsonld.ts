@@ -102,6 +102,34 @@ export function serviceLd() {
   }))
 }
 
+/** FAQPage for a keyword page's own questions, so each page carries its own answers. */
+export function pageFaqLd(path: string, items: { q: string; a: string[] }[]) {
+  const url = new URL(path, site.url).toString()
+  return {
+    '@type': 'FAQPage',
+    '@id': `${url}#faq`,
+    mainEntity: items.map((f) => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a.join(' ') },
+    })),
+  }
+}
+
+/** Service node with the dedicated page as its URL. */
+export function servicePageLd(name: string, description: string, path: string) {
+  return {
+    '@type': 'Service',
+    '@id': `${site.url}/#service-${slug(name)}`,
+    name,
+    serviceType: name,
+    description,
+    url: new URL(path, site.url).toString(),
+    provider: { '@id': ORG_ID },
+    areaServed: areaServed(),
+  }
+}
+
 export function websiteLd() {
   return {
     '@type': 'WebSite',

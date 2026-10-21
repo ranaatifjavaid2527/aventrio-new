@@ -17,7 +17,17 @@ import { readFileSync } from 'node:fs'
 const ROOT = new URL('..', import.meta.url).pathname
 const PORT = process.env.PORT || '3311'
 const BASE = process.env.BASE_URL || `http://localhost:${PORT}`
-const PAGES = ['/', '/about', '/privacy', '/terms', '/book']
+const PAGES = [
+  '/',
+  '/about',
+  '/privacy',
+  '/terms',
+  '/book',
+  '/services/outsourced-sdr',
+  '/services/pipeline-audit',
+  '/services/account-executives',
+  '/compare/in-house-vs-outsourced-sdr',
+]
 const PAIRED = [
   'section',
   'div',

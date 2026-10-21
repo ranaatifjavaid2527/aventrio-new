@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import { services } from '@/content/home'
+import { servicePageFor } from '@/content/seoPages'
 import { RevealGroup, RevealItem } from '@/components/ui/Reveal'
 import { Section } from '@/components/ui/Section'
 import { SectionHeading } from '@/components/ui/SectionHeading'
@@ -18,6 +20,7 @@ export function Services() {
       <RevealGroup className="grid gap-4 md:grid-cols-2 lg:grid-cols-6">
         {services.items.map((s) => {
           const featured = 'featured' in s && s.featured
+          const page = servicePageFor(s.title)
           return (
             <RevealItem key={s.title} className={`${span[s.size]} ${featured ? 'on-ink' : ''}`}>
               <Spotlight
@@ -28,7 +31,18 @@ export function Services() {
                 }`}
               >
                 <p className={`t-eyebrow ${featured ? 'text-mint' : 'text-subtle'}`}>{s.tag}</p>
-                <h3 className="t-h3 mt-5 text-[1.5rem]">{s.title}</h3>
+                <h3 className="t-h3 mt-5 text-[1.5rem]">
+                  {page ? (
+                    <Link
+                      href={page.path}
+                      className={`underline decoration-1 underline-offset-4 ${featured ? 'decoration-mint/50 hover:text-mint' : 'decoration-line-strong hover:text-green-deep'}`}
+                    >
+                      {s.title}
+                    </Link>
+                  ) : (
+                    s.title
+                  )}
+                </h3>
                 <p
                   className={`mt-3 text-[0.98rem] ${featured ? 'text-on-ink-soft' : 'text-ink-soft'}`}
                 >
