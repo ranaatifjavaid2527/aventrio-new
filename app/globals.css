@@ -230,10 +230,10 @@ p {
 .lead-bar {
   position: fixed;
   z-index: 45;
-  left: 50%;
-  bottom: 11vh;
-  width: min(420px, calc(100vw - 28px));
-  translate: -50% 0;
+  /* Bottom right corner, where the original lead popup sat */
+  right: 24px;
+  bottom: 24px;
+  width: min(420px, calc(100vw - 48px));
   background: var(--ink);
   color: var(--on-ink);
   border: 1px solid var(--line-ink);
@@ -245,12 +245,13 @@ p {
 }
 /* Cookie banner open: both stay visible, the bar moves above the banner */
 html[data-cookie-open] .lead-bar {
-  bottom: max(23vh, calc(var(--cookie-h, 0px) + 32px));
+  bottom: calc(var(--cookie-h, 0px) + 32px);
 }
-@media (max-width: 620px) {
+@media (max-width: 639px) {
   .lead-bar {
-    bottom: 14px;
-    width: calc(100vw - 20px);
+    right: 12px;
+    bottom: 12px;
+    width: calc(100vw - 24px);
   }
   html[data-cookie-open] .lead-bar {
     bottom: calc(var(--cookie-h, 0px) + 28px);
