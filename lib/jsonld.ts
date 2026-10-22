@@ -52,6 +52,7 @@ export function organizationLd() {
     ...(sameAs.length ? { sameAs } : {}),
     founder: {
       '@type': 'Person',
+      '@id': `${site.url}/about#founder`,
       name: founder.name,
       jobTitle: founder.role,
       worksFor: { '@id': ORG_ID },
@@ -130,6 +131,76 @@ export function servicePageLd(name: string, description: string, path: string) {
   }
 }
 
+function authorLd() {
+  return {
+    '@type': 'Person',
+    '@id': `${site.url}/about#founder`,
+    name: founder.name,
+    jobTitle: founder.role,
+    url: `${site.url}/about`,
+    worksFor: { '@id': ORG_ID },
+    ...(founder.linkedin ? { sameAs: [founder.linkedin] } : {}),
+  }
+}
+
+type PostLd = {
+  path: string
+  headline: string
+  description: string
+  published: string
+  updated?: string
+  keywords: string[]
+  citations: string[]
+  wordCount: number
+}
+
+/** BlogPosting with a named author, so the post is attributable in search and AI answers. */
+export function blogPostingLd(p: PostLd) {
+  const url = new URL(p.path, site.url).toString()
+  return {
+    '@type': 'BlogPosting',
+    '@id': `${url}#post`,
+    url,
+    mainEntityOfPage: { '@id': `${url}#page` },
+    headline: p.headline,
+    description: p.description,
+    image: `${url}/opengraph-image`,
+    datePublished: p.published,
+    dateModified: p.updated ?? p.published,
+    inLanguage: 'en-US',
+    author: authorLd(),
+    publisher: { '@id': ORG_ID },
+    isPartOf: { '@id': `${site.url}/blog#blog` },
+    keywords: p.keywords.join(', '),
+    wordCount: p.wordCount,
+    citation: p.citations,
+  }
+}
+
+export function blogLd(
+  name: string,
+  description: string,
+  items: { path: string; headline: string; published: string }[],
+) {
+  return {
+    '@type': 'Blog',
+    '@id': `${site.url}/blog#blog`,
+    url: `${site.url}/blog`,
+    name,
+    description,
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en-US',
+    blogPost: items.map((i) => ({
+      '@type': 'BlogPosting',
+      '@id': `${new URL(i.path, site.url).toString()}#post`,
+      url: new URL(i.path, site.url).toString(),
+      headline: i.headline,
+      datePublished: i.published,
+      author: { '@id': `${site.url}/about#founder` },
+    })),
+  }
+}
+
 export function websiteLd() {
   return {
     '@type': 'WebSite',
@@ -166,7 +237,7 @@ export function breadcrumbLd(trail: { name: string; path: string }[]) {
 }
 
 export function webPageLd(
-  type: 'WebPage' | 'AboutPage' | 'ContactPage',
+  type: 'WebPage' | 'AboutPage' | 'ContactPage' | 'CollectionPage',
   path: string,
   name: string,
   description: string,

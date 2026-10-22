@@ -1,4 +1,5 @@
 import type { MetadataRoute } from 'next'
+import { postPath, posts } from '@/content/blog'
 import { caseStudies } from '@/content/caseStudies'
 import { industryPages } from '@/content/industries'
 import { seoPages } from '@/content/seoPages'
@@ -21,6 +22,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     changeFrequency: 'monthly' as const,
     priority: 0.9,
   }))
+  const articles: MetadataRoute.Sitemap = [
+    {
+      url: url('/blog'),
+      lastModified: posts[0] ? new Date(posts[0].updated ?? posts[0].published) : now,
+      changeFrequency: 'daily',
+      priority: 0.8,
+    },
+    ...posts.map((p) => ({
+      url: url(postPath(p)),
+      lastModified: new Date(p.updated ?? p.published),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
+  ]
   const industries = industryPages.map((p) => ({
     url: url(`/industries/${p.slug}`),
     lastModified: now,
@@ -36,5 +51,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
         })),
       ]
     : []
-  return [...core, ...landing, ...industries, ...cases]
+  return [...core, ...landing, ...articles, ...industries, ...cases]
 }

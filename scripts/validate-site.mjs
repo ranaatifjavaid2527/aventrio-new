@@ -277,6 +277,14 @@ async function main() {
     await waitForServer()
   }
   checkTokens()
+  // Blog posts are checked from the sitemap, so new posts are covered without editing this list
+  const sm = await (await get('/sitemap.xml')).text()
+  for (const m of sm.matchAll(/<loc>https:\/\/aventrio\.co(\/blog[^<]*)<\/loc>/g))
+    if (!PAGES.includes(m[1])) PAGES.push(m[1])
+  if (!PAGES.includes('/blog')) fail('/sitemap.xml', 'blog index missing')
+  const rss = await get('/blog/feed.xml')
+  if (rss.status !== 200 || !(rss.headers.get('content-type') || '').includes('rss'))
+    fail('/blog/feed.xml', `feed returns ${rss.status}`)
   const linkTargets = { links: new Set(), ids: new Map() }
   for (const p of PAGES) await checkPage(p, linkTargets)
   await checkLinks(linkTargets)
