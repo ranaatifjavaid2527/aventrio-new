@@ -4,11 +4,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useRef, useState } from 'react'
-import { nav } from '@/content/site'
+import type { NavItem } from '@/content/site'
 import { BookCallButton } from '@/components/ui/BookCallButton'
 import { Container } from '@/components/ui/Container'
 
-export function Header() {
+export function Header({ nav }: { nav: NavItem[] }) {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const pathname = usePathname()

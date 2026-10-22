@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import { caseStudies } from '@/content/caseStudies'
 import { site } from '@/content/site'
 import { Container } from '@/components/ui/Container'
 import { analyticsEnabled } from '@/lib/analytics'
@@ -17,6 +18,7 @@ const services = [
 const company = [
   { label: 'About', href: '/about' },
   { label: 'Blog', href: '/blog' },
+  ...(caseStudies.length ? [{ label: 'Case studies', href: '/case-studies' }] : []),
   { label: "What's included", href: '/#included' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Book a call', href: '/book' },

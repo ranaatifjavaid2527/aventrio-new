@@ -41,10 +41,11 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: now,
     priority: 0.7,
   }))
-  const cases = caseStudies.length
+  const realCases = caseStudies.filter((c) => !c.sample)
+  const cases = realCases.length
     ? [
         { url: url('/case-studies'), lastModified: now, priority: 0.6 },
-        ...caseStudies.map((c) => ({
+        ...realCases.map((c) => ({
           url: url(`/case-studies/${c.slug}`),
           lastModified: now,
           priority: 0.6,

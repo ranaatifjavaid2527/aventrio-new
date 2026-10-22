@@ -45,10 +45,13 @@ export const site = {
 
 export const sameAs = [site.linkedin, site.clutch.profileUrl].filter((u): u is string => Boolean(u))
 
-export const nav = [
+export type NavItem = { label: string; href: string }
+
+/** Case studies are added after Services by the layout, only once at least one exists. */
+export const nav: NavItem[] = [
   { label: 'Services', href: '/#services' },
   { label: 'How it runs', href: '/#process' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },
-] as const
+]

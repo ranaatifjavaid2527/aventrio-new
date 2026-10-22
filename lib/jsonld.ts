@@ -201,6 +201,25 @@ export function blogLd(
   }
 }
 
+/** Anonymised case study: an Article about the service, published by Aventrio. */
+export function caseStudyLd(path: string, headline: string, description: string, service: string) {
+  const url = new URL(path, site.url).toString()
+  return {
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    url,
+    mainEntityOfPage: { '@id': `${url}#page` },
+    headline,
+    description,
+    about: {
+      '@id': `${site.url}/#service-${slug(service === 'Outsourced SDR' ? 'Outsourced SDR teams' : service)}`,
+    },
+    author: { '@id': ORG_ID },
+    publisher: { '@id': ORG_ID },
+    inLanguage: 'en-US',
+  }
+}
+
 export function websiteLd() {
   return {
     '@type': 'WebSite',

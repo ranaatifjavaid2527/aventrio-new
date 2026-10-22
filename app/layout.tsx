@@ -2,10 +2,11 @@ import type { Metadata, Viewport } from 'next'
 import { Google_Sans_Code, Google_Sans_Flex } from 'next/font/google'
 import { headers } from 'next/headers'
 import type { ReactNode } from 'react'
-import { site } from '@/content/site'
+import { nav, site } from '@/content/site'
 import { tokens } from '@/lib/tokens'
 import { MotionProvider } from '@/components/ui/MotionProvider'
 import { Header } from '@/components/sections/Header'
+import { caseStudies } from '@/content/caseStudies'
 import { Footer } from '@/components/sections/Footer'
 import { DeferredWidgets } from '@/components/sections/DeferredWidgets'
 import { lead } from '@/content/lead'
@@ -62,7 +63,13 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
     <html lang="en-US" className={`${sans.variable} ${mono.variable}`}>
       <body>
         <MotionProvider>
-          <Header />
+          <Header
+            nav={
+              caseStudies.length
+                ? [nav[0]!, { label: 'Case studies', href: '/case-studies' }, ...nav.slice(1)]
+                : nav
+            }
+          />
           <main id="main">{children}</main>
           <Footer />
           <DeferredWidgets leadEnabled={leadEnabled} />
