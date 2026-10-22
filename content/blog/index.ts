@@ -1,16 +1,16 @@
 /**
- * Blog posts. To publish, add a file in ./posts and list it here. Every post must
- * follow the house rules: no dashes, no invented numbers, every figure linked to
- * its source and labelled when it is a vendor claim, no promised outcomes.
+ * Blog posts. To publish, add a file in ./posts and list it here. Researched posts
+ * waiting for their slot live in ./drafts and are not imported until they are due:
+ * one post per publishing day, three a week (Monday, Wednesday, Friday). Every
+ * post must follow the house rules: no dashes, no invented numbers, every figure
+ * linked to its source and labelled when it is a vendor claim, no promised outcomes.
  */
 import type { BlogBlock, BlogPost } from './types'
-import { aiSdrVsHumanSdr } from './posts/ai-sdr-vs-human-sdr'
 import { coldEmailDeliverability2026 } from './posts/cold-email-deliverability-2026'
-import { outboundSignalsOverVolume } from './posts/outbound-signals-over-volume'
 
 export type { BlogBlock, BlogPost } from './types'
 
-const all: BlogPost[] = [coldEmailDeliverability2026, aiSdrVsHumanSdr, outboundSignalsOverVolume]
+const all: BlogPost[] = [coldEmailDeliverability2026]
 
 /** Newest first; same-day posts keep the order above. */
 export const posts = [...all].sort((a, b) => b.published.localeCompare(a.published))
