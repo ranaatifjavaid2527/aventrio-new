@@ -8,6 +8,7 @@ const LeadBar = dynamic(() => import('./LeadBar').then((m) => m.LeadBar), { ssr:
 const CookieBanner = dynamic(() => import('./CookieBanner').then((m) => m.CookieBanner), {
   ssr: false,
 })
+const CopyGuard = dynamic(() => import('./CopyGuard').then((m) => m.CopyGuard), { ssr: false })
 const Analytics = dynamic(() => import('./Analytics').then((m) => m.Analytics), { ssr: false })
 
 /** leadEnabled is decided on the server: the lead bar only appears when email delivery is configured. */
@@ -17,6 +18,7 @@ export function DeferredWidgets({ leadEnabled }: { leadEnabled: boolean }) {
       <CookieBanner />
       {leadEnabled ? <LeadBar /> : null}
       <Analytics />
+      <CopyGuard />
     </>
   )
 }

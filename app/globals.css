@@ -315,3 +315,20 @@ details > summary::-webkit-details-marker {
     scroll-behavior: auto !important;
   }
 }
+
+/* Copy protection: page text cannot be selected. Form fields stay selectable. */
+body {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+input,
+textarea,
+select,
+[contenteditable='true'] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+img {
+  -webkit-user-drag: none;
+}
