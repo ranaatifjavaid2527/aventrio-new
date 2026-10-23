@@ -6,3 +6,4 @@ reports/
 .lighthouseci/
 public/
 docs/
+.claude
