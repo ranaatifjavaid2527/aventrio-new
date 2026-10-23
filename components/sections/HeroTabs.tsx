@@ -111,7 +111,7 @@ export function HeroTabs() {
                 aria-controls={id(k, 'panel')}
                 tabIndex={selected ? 0 : -1}
                 onClick={() => select(i)}
-                className={`relative h-9 shrink-0 overflow-hidden rounded-full px-3.5 text-[0.82rem] font-medium whitespace-nowrap transition-colors sm:px-4 ${
+                className={`relative h-9 shrink-0 overflow-hidden rounded-full px-3.5 text-[0.82rem] font-medium whitespace-nowrap transition-[color,background-color,transform] duration-150 active:scale-[0.97] sm:px-4 ${
                   selected ? 'bg-ink text-on-ink' : 'text-ink-soft hover:text-ink'
                 }`}
               >
@@ -132,7 +132,7 @@ export function HeroTabs() {
             type="button"
             onClick={() => setUserPaused((p) => !p)}
             aria-label={userPaused ? 'Resume rotating views' : 'Pause rotating views'}
-            className="grid size-9 shrink-0 place-items-center rounded-full border border-line bg-paper/80 text-xs text-ink-soft hover:text-ink"
+            className="grid size-9 shrink-0 place-items-center rounded-full border border-line bg-paper/80 text-xs text-ink-soft transition-[color,transform] duration-150 hover:text-ink active:scale-[0.97]"
           >
             <Icon name={userPaused ? 'play' : 'pause'} className="size-3.5" />
           </button>
@@ -153,8 +153,10 @@ export function HeroTabs() {
                 tabIndex={selected ? 0 : -1}
                 aria-hidden={!selected}
                 inert={!selected}
-                className={`col-start-1 row-start-1 p-4 transition-[opacity,transform] duration-500 ease-out sm:p-5 ${
-                  selected ? 'opacity-100' : 'pointer-events-none translate-y-2 opacity-0'
+                className={`col-start-1 row-start-1 p-4 transition-[opacity,transform] ease-out sm:p-5 ${
+                  selected
+                    ? 'opacity-100 duration-300'
+                    : 'pointer-events-none translate-y-1 opacity-0 duration-150'
                 }`}
               >
                 <Panel k={k} />
@@ -167,7 +169,7 @@ export function HeroTabs() {
       {/* Floating cards: decorative depth, hidden from assistive tech */}
       <m.div
         aria-hidden="true"
-        style={{ y: driftA }}
+        style={reduce ? undefined : { y: driftA }}
         className="absolute -bottom-8 -left-6 hidden w-60 rounded-2xl border border-line bg-paper p-3.5 text-ink shadow-[0_24px_50px_-24px_var(--ink)] lg:block"
       >
         <div className="flex items-center gap-2">
@@ -183,7 +185,7 @@ export function HeroTabs() {
       </m.div>
       <m.div
         aria-hidden="true"
-        style={{ y: driftB }}
+        style={reduce ? undefined : { y: driftB }}
         className="absolute top-[42%] -right-6 hidden rounded-2xl border border-line bg-paper px-3.5 py-2.5 text-ink shadow-[0_24px_50px_-24px_var(--ink)] lg:block"
       >
         <p className="font-mono text-[0.62rem] tracking-[0.1em] text-subtle uppercase">

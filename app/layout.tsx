@@ -62,6 +62,10 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
   return (
     <html lang="en-US" className={`${sans.variable} ${mono.variable}`}>
       <body>
+        {/* Without JavaScript, revealed content is shown at once instead of staying hidden */}
+        <noscript>
+          <style>{'[data-reveal]{opacity:1!important;transform:none!important}'}</style>
+        </noscript>
         <MotionProvider>
           <Header
             nav={
@@ -70,7 +74,9 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
                 : nav
             }
           />
-          <main id="main">{children}</main>
+          <main id="main" tabIndex={-1} className="outline-none">
+            {children}
+          </main>
           <Footer />
           <DeferredWidgets leadEnabled={leadEnabled} />
         </MotionProvider>

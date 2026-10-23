@@ -46,7 +46,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
 
   return (
     <header
-      className={`sticky top-0 z-30 transition-[background-color,border-color,backdrop-filter] duration-300 ${
+      className={`sticky top-0 z-30 transition-[background-color,border-color] duration-200 ease-out ${
         scrolled || menuOpen
           ? 'border-b border-line bg-paper/85 backdrop-blur-md'
           : 'border-b border-transparent bg-paper/0'
@@ -74,7 +74,11 @@ export function Header({ nav }: { nav: NavItem[] }) {
           <ul className="flex items-center gap-8 text-[0.95rem] text-ink-soft">
             {nav.map((item) => (
               <li key={item.href}>
-                <Link href={item.href} className="transition-colors hover:text-ink">
+                <Link
+                  href={item.href}
+                  aria-current={item.href === pathname ? 'page' : undefined}
+                  className="transition-colors hover:text-ink aria-[current=page]:text-ink"
+                >
                   {item.label}
                 </Link>
               </li>
@@ -93,24 +97,28 @@ export function Header({ nav }: { nav: NavItem[] }) {
             aria-controls="mobile-menu"
             aria-label={menuOpen ? 'Close menu' : 'Open menu'}
             onClick={() => setMenuOpen((o) => !o)}
-            className="grid size-10 place-items-center rounded-full border border-line-strong md:hidden"
+            className="grid size-10 place-items-center rounded-full border border-line-strong transition-transform duration-150 active:scale-[0.96] md:hidden"
           >
             <span aria-hidden="true" className="relative block h-3 w-4">
               <span
-                className={`absolute left-0 h-px w-4 bg-ink transition-transform duration-300 ${menuOpen ? 'top-1.5 rotate-45' : 'top-0'}`}
+                className={`absolute top-1.5 left-0 h-px w-4 bg-ink transition-transform duration-200 ease-out ${menuOpen ? 'rotate-45' : '-translate-y-1.5'}`}
               />
               <span
                 className={`absolute top-1.5 left-0 h-px w-4 bg-ink transition-opacity ${menuOpen ? 'opacity-0' : ''}`}
               />
               <span
-                className={`absolute left-0 h-px w-4 bg-ink transition-transform duration-300 ${menuOpen ? 'top-1.5 -rotate-45' : 'top-3'}`}
+                className={`absolute top-1.5 left-0 h-px w-4 bg-ink transition-transform duration-200 ease-out ${menuOpen ? '-rotate-45' : 'translate-y-1.5'}`}
               />
             </span>
           </button>
         </div>
       </Container>
 
-      <div id="mobile-menu" hidden={!menuOpen} className="border-t border-line bg-paper md:hidden">
+      <div
+        id="mobile-menu"
+        hidden={!menuOpen}
+        className="max-h-[calc(100dvh-4rem)] overflow-y-auto overscroll-contain border-t border-line bg-paper md:hidden"
+      >
         <Container className="py-6">
           <nav aria-label="Mobile">
             <ul className="flex flex-col gap-1">
@@ -119,6 +127,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
                   <Link
                     href={item.href}
                     onClick={() => setMenuOpen(false)}
+                    aria-current={item.href === pathname ? 'page' : undefined}
                     className="block py-3 text-2xl font-semibold tracking-[-0.03em]"
                   >
                     {item.label}

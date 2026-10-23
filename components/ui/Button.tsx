@@ -12,7 +12,7 @@ export function buttonClasses(
   size: 'md' | 'sm' = 'md',
 ) {
   const base =
-    'group inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] transition-[background-color,border-color,color,box-shadow,transform] duration-300 ease-out active:scale-[0.98] whitespace-nowrap'
+    'group inline-flex items-center justify-center gap-2 rounded-full font-medium tracking-[-0.01em] transition-[background-color,border-color,color,transform] duration-150 ease-out active:scale-[0.97] whitespace-nowrap'
   const sizes = size === 'sm' ? 'h-10 px-5 text-[0.9rem]' : 'h-12 px-6 text-[0.98rem]'
   const solid =
     tone === 'ink'
@@ -29,7 +29,7 @@ export function Arrow() {
   return (
     <span
       aria-hidden="true"
-      className="transition-transform duration-300 ease-out group-hover:translate-x-1"
+      className="transition-transform duration-200 ease-out group-hover:translate-x-1"
     >
       <Icon name="arrowRight" />
     </span>

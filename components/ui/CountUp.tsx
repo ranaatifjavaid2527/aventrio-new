@@ -1,7 +1,7 @@
 'use client'
 
 import { animate, useInView, useReducedMotion } from 'framer-motion'
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useRef } from 'react'
 
 /**
  * Counts from zero to `value` when scrolled into view. The final value is
@@ -10,16 +10,20 @@ import { useEffect, useRef, useState } from 'react'
  */
 export function CountUp({ value, className = '' }: { value: number; className?: string }) {
   const ref = useRef<HTMLSpanElement>(null)
-  const inView = useInView(ref, { once: true, margin: '0px 0px -15% 0px' })
+  const numRef = useRef<HTMLSpanElement>(null)
+  // Same margin as the reveal around it, so the count starts as the number appears
+  const inView = useInView(ref, { once: true, margin: '0px 0px -10% 0px' })
   const reduce = useReducedMotion()
-  const [display, setDisplay] = useState<number | null>(null)
 
   useEffect(() => {
     if (!inView || reduce || value === 0) return
     const controls = animate(0, value, {
       duration: 1.4,
       ease: [0.22, 1, 0.36, 1],
-      onUpdate: (v) => setDisplay(Math.round(v)),
+      // Written straight to the DOM: no React render per frame
+      onUpdate: (v) => {
+        if (numRef.current) numRef.current.textContent = String(Math.round(v))
+      },
     })
     return () => controls.stop()
   }, [inView, reduce, value])
@@ -29,7 +33,9 @@ export function CountUp({ value, className = '' }: { value: number; className?: 
       <span className="invisible col-start-1 row-start-1" aria-hidden="true">
         {value}
       </span>
-      <span className="col-start-1 row-start-1">{display ?? value}</span>
+      <span ref={numRef} className="col-start-1 row-start-1">
+        {value}
+      </span>
     </span>
   )
 }

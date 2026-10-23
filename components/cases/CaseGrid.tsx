@@ -39,7 +39,7 @@ export function CaseGrid({ cases }: { cases: CaseStudy[] }) {
                 type="button"
                 aria-pressed={on}
                 onClick={() => setActive(o.label)}
-                className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-4 text-[0.88rem] font-medium whitespace-nowrap transition-colors duration-300 ${
+                className={`inline-flex h-10 shrink-0 items-center gap-2 rounded-full border px-4 text-[0.88rem] font-medium whitespace-nowrap transition-[color,background-color,border-color,transform] duration-150 active:scale-[0.97] ${
                   on
                     ? 'border-ink bg-ink text-on-ink'
                     : 'border-line-strong bg-paper text-ink-soft hover:border-ink hover:text-ink'
@@ -85,7 +85,7 @@ export function CaseGrid({ cases }: { cases: CaseStudy[] }) {
               className="group mt-7 inline-flex items-center gap-2 self-start rounded-full bg-ink px-5 py-2.5 text-[0.92rem] font-medium text-on-ink transition-colors hover:bg-green-deep"
             >
               Book a strategy call
-              <span className="transition-transform duration-300 ease-out group-hover:translate-x-1">
+              <span className="transition-transform duration-200 ease-out group-hover:translate-x-1">
                 <Icon name="arrowRight" className="size-3.5" />
               </span>
             </Link>

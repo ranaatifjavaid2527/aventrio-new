@@ -24,7 +24,7 @@ export function Services() {
           return (
             <RevealItem key={s.title} className={`${span[s.size]} ${featured ? 'on-ink' : ''}`}>
               <Spotlight
-                className={`h-full rounded-card border p-7 transition-colors duration-300 sm:p-8 ${
+                className={`h-full rounded-card border p-7 transition-colors duration-200 sm:p-8 ${
                   featured
                     ? 'border-line-ink bg-ink text-on-ink'
                     : 'border-line bg-paper hover:border-line-strong'

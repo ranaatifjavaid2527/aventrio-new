@@ -47,8 +47,11 @@ export function BookingInline() {
           config={{ layout: 'month_view', theme: 'light', ...prefill }}
         />
       ) : (
-        <p className="absolute inset-0 grid place-items-center font-mono text-[0.8rem] text-subtle">
-          Loading the calendar
+        <p
+          role="status"
+          className="absolute inset-0 grid place-items-center font-mono text-[0.8rem] text-subtle"
+        >
+          Loading the calendar…
         </p>
       )}
       <noscript>

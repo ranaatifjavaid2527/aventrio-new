@@ -18,7 +18,7 @@ export function Industries() {
           <RevealItem
             as="li"
             key={name}
-            className="rounded-full border border-line-ink px-4 py-2 text-[0.95rem] text-on-ink-soft transition-colors hover:border-mint hover:text-on-ink"
+            className="rounded-full border border-line-ink px-4 py-2 text-[0.95rem] text-on-ink-soft"
           >
             {name}
           </RevealItem>

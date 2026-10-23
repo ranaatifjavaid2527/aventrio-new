@@ -64,13 +64,23 @@ export function CaseCard({ c, featured = false, headingLevel = 'h2' }: Props) {
   const H = headingLevel
   return (
     <article
-      className={`group relative flex h-full flex-col overflow-hidden rounded-[22px] border p-6 transition-[transform,border-color,box-shadow] duration-500 ease-out focus-within:-translate-y-0.5 hover:-translate-y-0.5 sm:p-7 ${
+      className={`group relative isolate flex h-full flex-col rounded-[22px] border p-6 transition-[transform,border-color] duration-200 ease-out focus-within:-translate-y-0.5 hover:-translate-y-0.5 sm:p-7 ${
         featured
           ? 'on-ink border-line-ink bg-ink text-on-ink shadow-[0_50px_100px_-50px_var(--ink)] md:p-9'
-          : 'border-line bg-paper hover:border-line-strong hover:shadow-[0_30px_60px_-40px_var(--ink)]'
+          : 'border-line bg-paper hover:border-line-strong'
       }`}
     >
-      {featured ? <div aria-hidden="true" className="grid-texture" data-tone="ink" /> : null}
+      {featured ? (
+        <div aria-hidden="true" className="absolute inset-0 overflow-hidden rounded-[22px]">
+          <div className="grid-texture" data-tone="ink" />
+        </div>
+      ) : (
+        /* Hover shadow fades in by opacity, so the card is not repainted per frame */
+        <span
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 -z-10 rounded-[22px] opacity-0 shadow-[0_30px_60px_-40px_var(--ink)] transition-opacity duration-200 ease-out group-hover:opacity-100"
+        />
+      )}
       <div
         className={`relative flex h-full flex-col ${featured ? 'gap-8 lg:grid lg:grid-cols-[1.15fr_1fr] lg:items-end lg:gap-12' : ''}`}
       >
@@ -116,7 +126,7 @@ export function CaseCard({ c, featured = false, headingLevel = 'h2' }: Props) {
             className={`mt-5 inline-flex items-center gap-2 text-[0.9rem] font-medium ${featured ? 'text-mint' : 'text-green-deep'}`}
           >
             Read the case
-            <span className="transition-transform duration-300 ease-out group-hover:translate-x-1">
+            <span className="transition-transform duration-200 ease-out group-hover:translate-x-1">
               <Icon name="arrowRight" className="size-3.5" />
             </span>
           </p>

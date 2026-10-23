@@ -77,31 +77,46 @@ export function LeadBar() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  /** Keyboard users keep their place: focus returns to the page, not the top of <body>. */
+  function releaseFocus() {
+    if (barRef.current?.contains(document.activeElement)) document.getElementById('main')?.focus()
+  }
+
   function close() {
     storage.set(keys.barQuietUntil, String(Date.now() + QUIET_MS))
+    releaseFocus()
     setPhase('hidden')
   }
 
-  // Escape and click outside both dismiss
+  // Escape and click outside both dismiss. A click, not pointerdown: on a phone
+  // the first touch of a scroll fires pointerdown and would close the bar at once.
   useEffect(() => {
     if (phase === 'hidden') return
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'Escape') close()
+      if (e.key !== 'Escape') return
+      // Escape that belongs to something else (mobile menu, booking overlay) is left alone
+      const a = document.activeElement
+      if (!a || a === document.body || barRef.current?.contains(a)) close()
     }
-    const onPointer = (e: PointerEvent) => {
+    const onPointer = (e: globalThis.MouseEvent) => {
       if (barRef.current && !barRef.current.contains(e.target as Node)) close()
     }
     window.addEventListener('keydown', onKey)
-    document.addEventListener('pointerdown', onPointer)
+    document.addEventListener('click', onPointer)
     return () => {
       window.removeEventListener('keydown', onKey)
-      document.removeEventListener('pointerdown', onPointer)
+      document.removeEventListener('click', onPointer)
     }
+    // close only writes storage and state, so it never needs to re-subscribe
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [phase])
 
   useEffect(() => {
     if (phase !== 'done') return
-    const t = window.setTimeout(() => setPhase('hidden'), CLOSE_AFTER_SUCCESS_MS)
+    const t = window.setTimeout(() => {
+      releaseFocus()
+      setPhase('hidden')
+    }, CLOSE_AFTER_SUCCESS_MS)
     return () => window.clearTimeout(t)
   }, [phase])
 
@@ -188,11 +203,12 @@ export function LeadBar() {
               type="email"
               inputMode="email"
               autoComplete="email"
+              spellCheck={false}
               placeholder={lead.bar.placeholder}
               aria-invalid={error ? true : undefined}
               aria-describedby={subId}
               onInput={() => error && setError('')}
-              className="h-[30px] min-w-0 flex-1 bg-transparent text-[0.9rem] text-on-ink placeholder:text-on-ink-faint focus:outline-none"
+              className="h-[30px] min-w-0 flex-1 bg-transparent text-[0.9rem] text-on-ink placeholder:text-on-ink-faint"
             />
             {/* Honeypot: invisible to people and assistive tech */}
             <div aria-hidden="true" className="absolute -left-[10000px] h-px w-px overflow-hidden">
@@ -208,8 +224,9 @@ export function LeadBar() {
             <button
               type="submit"
               disabled={sending}
-              aria-label={lead.bar.send}
-              className="grid size-[30px] shrink-0 place-items-center rounded-[9px] bg-green text-on-ink transition-[background-color,transform] duration-200 hover:bg-green-deep active:scale-95 disabled:opacity-60"
+              aria-busy={sending}
+              aria-label={sending ? 'Sending…' : lead.bar.send}
+              className="grid size-[30px] shrink-0 place-items-center rounded-[9px] bg-green text-on-ink transition-[background-color,transform] duration-150 hover:bg-green-deep active:scale-95 disabled:opacity-60"
             >
               <Icon name="arrowUp" className="size-4" />
             </button>
@@ -249,7 +266,7 @@ export function LeadBar() {
               </p>
               <p
                 id={subId}
-                role={error ? 'alert' : undefined}
+                aria-live="polite"
                 className={`mt-0.5 text-[0.68rem] ${error ? 'text-on-ink' : 'text-on-ink-faint'}`}
               >
                 {error || lead.bar.sub}

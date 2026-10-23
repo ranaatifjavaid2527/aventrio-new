@@ -38,74 +38,77 @@ export function LegalPage({ doc }: { doc: LegalDoc }) {
         </div>
 
         <div className="mt-14 space-y-12">
-          {doc.sections.map((s) => (
-            <section key={s.title} aria-labelledby={`s-${s.title}`}>
-              <h2 id={`s-${s.title}`} className="text-[1.5rem]">
-                {s.title}
-              </h2>
-              <div className="mt-4 space-y-4 text-[1rem] text-ink-soft">
-                {s.blocks.map((b, i) => {
-                  if (b.type === 'p') return <p key={i}>{withLinks(b.text)}</p>
-                  if (b.type === 'h3')
-                    return (
-                      <h3 key={i} className="pt-2 text-[1.08rem] text-ink">
-                        {b.text}
-                      </h3>
-                    )
-                  if (b.type === 'ul')
-                    return (
-                      <ul key={i} className="list-disc space-y-2 pl-5 marker:text-green">
-                        {b.items.map((it) => (
-                          <li key={it}>{it}</li>
-                        ))}
-                      </ul>
-                    )
-                  return (
-                    <div
-                      key={i}
-                      className="overflow-x-auto rounded-card border border-line"
-                      tabIndex={0}
-                      role="region"
-                      aria-label={`${s.title} table`}
-                    >
-                      <table className="w-full min-w-[560px] border-collapse text-left text-[0.95rem]">
-                        <thead>
-                          <tr className="border-b border-line bg-surface">
-                            {b.head.map((h) => (
-                              <th key={h} scope="col" className="p-4 font-semibold text-ink">
-                                {h}
-                              </th>
-                            ))}
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {b.rows.map((r) => (
-                            <tr key={r[0]} className="border-b border-line last:border-0">
-                              {r.map((c, j) =>
-                                j === 0 ? (
-                                  <th
-                                    key={j}
-                                    scope="row"
-                                    className="p-4 align-top font-medium text-ink"
-                                  >
-                                    {c}
-                                  </th>
-                                ) : (
-                                  <td key={j} className="p-4 align-top">
-                                    {c}
-                                  </td>
-                                ),
-                              )}
-                            </tr>
+          {doc.sections.map((s) => {
+            const sid = `s-${s.title.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`
+            return (
+              <section key={s.title} aria-labelledby={sid}>
+                <h2 id={sid} className="text-[1.5rem]">
+                  {s.title}
+                </h2>
+                <div className="mt-4 space-y-4 text-[1rem] text-ink-soft">
+                  {s.blocks.map((b, i) => {
+                    if (b.type === 'p') return <p key={i}>{withLinks(b.text)}</p>
+                    if (b.type === 'h3')
+                      return (
+                        <h3 key={i} className="pt-2 text-[1.08rem] text-ink">
+                          {b.text}
+                        </h3>
+                      )
+                    if (b.type === 'ul')
+                      return (
+                        <ul key={i} className="list-disc space-y-2 pl-5 marker:text-green">
+                          {b.items.map((it) => (
+                            <li key={it}>{it}</li>
                           ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  )
-                })}
-              </div>
-            </section>
-          ))}
+                        </ul>
+                      )
+                    return (
+                      <div
+                        key={i}
+                        className="overflow-x-auto rounded-card border border-line"
+                        tabIndex={0}
+                        role="region"
+                        aria-label={`${s.title} table`}
+                      >
+                        <table className="w-full min-w-[560px] border-collapse text-left text-[0.95rem]">
+                          <thead>
+                            <tr className="border-b border-line bg-surface">
+                              {b.head.map((h) => (
+                                <th key={h} scope="col" className="p-4 font-semibold text-ink">
+                                  {h}
+                                </th>
+                              ))}
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {b.rows.map((r) => (
+                              <tr key={r[0]} className="border-b border-line last:border-0">
+                                {r.map((c, j) =>
+                                  j === 0 ? (
+                                    <th
+                                      key={j}
+                                      scope="row"
+                                      className="p-4 align-top font-medium text-ink"
+                                    >
+                                      {c}
+                                    </th>
+                                  ) : (
+                                    <td key={j} className="p-4 align-top">
+                                      {c}
+                                    </td>
+                                  ),
+                                )}
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    )
+                  })}
+                </div>
+              </section>
+            )
+          })}
         </div>
 
         <p className="mt-16 border-t border-line pt-6 text-[0.95rem] text-ink-soft">

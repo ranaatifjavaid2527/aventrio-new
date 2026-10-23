@@ -22,7 +22,7 @@ export function Faq() {
                   <h3 className="font-semibold">{item.q}</h3>
                   <span
                     aria-hidden="true"
-                    className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full border border-line-ink text-on-ink-soft transition-transform duration-300 group-open:rotate-45"
+                    className="mt-0.5 grid size-7 shrink-0 place-items-center rounded-full border border-line-ink text-on-ink-soft transition-transform duration-200 ease-out group-open:rotate-45"
                   >
                     +
                   </span>
