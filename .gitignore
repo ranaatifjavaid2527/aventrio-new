@@ -27,3 +27,4 @@ npm-debug.log*
 .claude/launch.json
 
 lighthouse-reports/
+.claude/

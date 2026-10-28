@@ -6,11 +6,12 @@
  * linked to its source and labelled when it is a vendor claim, no promised outcomes.
  */
 import type { BlogBlock, BlogPost } from './types'
+import { aiSdrVsHumanSdr } from './posts/ai-sdr-vs-human-sdr'
 import { coldEmailDeliverability2026 } from './posts/cold-email-deliverability-2026'
 
 export type { BlogBlock, BlogPost } from './types'
 
-const all: BlogPost[] = [coldEmailDeliverability2026]
+const all: BlogPost[] = [coldEmailDeliverability2026, aiSdrVsHumanSdr]
 
 /** Newest first; same-day posts keep the order above. */
 export const posts = [...all].sort((a, b) => b.published.localeCompare(a.published))

@@ -7,7 +7,7 @@ export const aiSdrVsHumanSdr: BlogPost = {
   description:
     'AI SDR tools are good at research and first drafts and weak at judgement. Where AI belongs in an outbound team, where people still matter, and the US rules on AI calls.',
   h1: 'AI SDR vs human SDR: where each one actually works.',
-  published: '2026-10-22',
+  published: '2026-10-28',
   tags: ['AI in sales', 'SDR teams'],
   takeaways: [
     'The useful question is not AI or people. It is which parts of the SDR job each does better.',
@@ -45,7 +45,10 @@ export const aiSdrVsHumanSdr: BlogPost = {
       ],
     },
     {
-      p: 'This is also where fully autonomous AI SDRs have struggled. Agency and analyst write ups, including [this review from Belkins](https://belkins.io/blog/ai-sdr), report that autonomous tools have not replaced human SDR teams at scale, largely because volume without judgement produces replies nobody handles well. Belkins is an outbound agency, so it has a view; read it with that in mind.',
+      p: 'This is also where fully autonomous AI SDRs have struggled. In a [2026 survey of 120 B2B sales professionals by Belkins](https://belkins.io/blog/ai-sdr), roughly a third said they plan to replace their SDR team with AI eventually, yet 35.4% said the vendor claim that AI will remove the need for an SDR team has not matched what they have seen. Belkins concludes that most teams do best with a hybrid model. Belkins is an outbound agency and the sample is small, so read it as one informed view, not a benchmark.',
+    },
+    {
+      p: 'There is a second cost that rarely appears in the comparisons: the sending domain. A tool that sends more generic email to more people raises complaint rates, and inbox providers now refuse mail from domains that cross their limits. We covered those rules in [cold email deliverability in 2026](/blog/cold-email-deliverability-2026).',
     },
     { h2: 'Be careful with the numbers' },
     {
@@ -53,7 +56,7 @@ export const aiSdrVsHumanSdr: BlogPost = {
     },
     { h2: 'The US rule on AI phone calls' },
     {
-      p: 'In February 2024 the FCC issued a [declaratory ruling](https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal) that AI generated voices are "artificial" voices under the Telephone Consumer Protection Act. In practice, a cold call made with an AI voice needs the same prior express consent as any prerecorded call, and for telemarketing that consent must be written. Without it, AI voice cold calling to US numbers carries real legal exposure. This is not legal advice; check with counsel before running any automated calling.',
+      p: 'On February 2, 2024 the FCC adopted a [declaratory ruling](https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf) confirming that AI technologies that generate human voices count as "artificial" voices under the Telephone Consumer Protection Act, so those calls require the prior express consent of the person called. In practice, a cold call made with an AI voice is treated like any prerecorded call, and for telemarketing that consent must be written. Without it, AI voice cold calling to US numbers carries real legal exposure. This is not legal advice; check with counsel before running any automated calling.',
     },
     { h2: 'What a sensible hybrid team looks like' },
     {
@@ -91,12 +94,12 @@ export const aiSdrVsHumanSdr: BlogPost = {
   ],
   sources: [
     {
-      label: 'FCC makes AI generated voices in robocalls illegal',
-      url: 'https://www.fcc.gov/document/fcc-makes-ai-generated-voices-robocalls-illegal',
+      label: 'Declaratory Ruling FCC 24-17 on AI generated voices under the TCPA',
+      url: 'https://docs.fcc.gov/public/attachments/FCC-24-17A1.pdf',
       publisher: 'Federal Communications Commission',
     },
     {
-      label: 'AI SDR review',
+      label: 'AI SDR vs human SDR, including a 2026 survey of 120 B2B sales professionals',
       url: 'https://belkins.io/blog/ai-sdr',
       publisher: 'Belkins, an outbound agency',
     },
