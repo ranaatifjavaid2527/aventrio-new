@@ -8,7 +8,9 @@
  *
  * Writes reports/YYYY-MM-DD.md with clicks, impressions, CTR and average
  * position for the last complete week, the week before, the change, top
- * queries and pages, and the tracked keywords from reports/tracked-keywords.json.
+ * queries and pages, a scorecard for every blog post, the blog's share of
+ * search traffic, and the tracked keywords from reports/tracked-keywords.json
+ * with the page that ranks for each.
  *
  * It never estimates. If Search Console is not connected, or returns no rows,
  * it says so and exits non-zero rather than writing numbers it does not have.
@@ -150,22 +152,32 @@ async function main() {
   const { cur, prev } = weeks()
   const range = (r: readonly [string, string]) => ({ startDate: r[0], endDate: r[1] })
 
-  const [totCur, totPrev, qCur, qPrev, pages] = await Promise.all([
-    query(token, siteUrl, { ...range(cur) }),
-    query(token, siteUrl, { ...range(prev) }),
-    query(token, siteUrl, { ...range(cur), dimensions: ['query'], rowLimit: 250 }),
-    query(token, siteUrl, { ...range(prev), dimensions: ['query'], rowLimit: 250 }),
-    query(token, siteUrl, { ...range(cur), dimensions: ['page'], rowLimit: 20 }),
-  ])
+  const blogFilter = {
+    dimensionFilterGroups: [
+      { filters: [{ dimension: 'page', operator: 'contains', expression: '/blog/' }] },
+    ],
+  }
+  const [totCur, totPrev, qCur, qPrev, pages, blogCur, blogPrev, blogQueries, queryPages] =
+    await Promise.all([
+      query(token, siteUrl, { ...range(cur) }),
+      query(token, siteUrl, { ...range(prev) }),
+      query(token, siteUrl, { ...range(cur), dimensions: ['query'], rowLimit: 250 }),
+      query(token, siteUrl, { ...range(prev), dimensions: ['query'], rowLimit: 250 }),
+      query(token, siteUrl, { ...range(cur), dimensions: ['page'], rowLimit: 20 }),
+      query(token, siteUrl, { ...range(cur), dimensions: ['page'], rowLimit: 100, ...blogFilter }),
+      query(token, siteUrl, { ...range(prev), dimensions: ['page'], rowLimit: 100, ...blogFilter }),
+      query(token, siteUrl, {
+        ...range(cur),
+        dimensions: ['page', 'query'],
+        rowLimit: 500,
+        ...blogFilter,
+      }),
+      query(token, siteUrl, { ...range(cur), dimensions: ['query', 'page'], rowLimit: 1000 }),
+    ])
 
+  // Connected but no rows is a real result for a young site: report zeros, do not fail
   const a = totCur[0]
   const b = totPrev[0]
-  if (!a && !b) {
-    die(
-      `Search Console is connected but returned no data for ${cur[0]} to ${cur[1]}. ` +
-        'New properties take a few days to collect data. No report was written.',
-    )
-  }
   const zero: Row = { clicks: 0, impressions: 0, ctr: 0, position: 0 }
   const A = a ?? zero
   const B = b ?? zero
@@ -180,6 +192,48 @@ async function main() {
     ? (JSON.parse(readFileSync(trackedFile, 'utf8')) as string[])
     : []
   const curByQuery = new Map(qCur.map((r) => [r.keys?.[0]?.toLowerCase() ?? '', r]))
+
+  const path = (url: string) => {
+    try {
+      return new URL(url).pathname
+    } catch {
+      return url
+    }
+  }
+
+  // Blog scorecard: every published post, including ones with no impressions yet
+  const sitemapPosts = await fetch('https://aventrio.co/sitemap.xml')
+    .then((r) => (r.ok ? r.text() : ''))
+    .then((xml) =>
+      [...xml.matchAll(/<loc>([^<]*\/blog\/[^<]+)<\/loc>/g)].map((m) => path(m[1] ?? '')),
+    )
+    .catch(() => [] as string[])
+  const blogPaths = [
+    ...new Set([...sitemapPosts, ...blogCur.map((r) => path(r.keys?.[0] ?? ''))]),
+  ].filter(Boolean)
+  const byPath = (rows: Row[]) => new Map(rows.map((r) => [path(r.keys?.[0] ?? ''), r]))
+  const blogNow = byPath(blogCur)
+  const blogBefore = byPath(blogPrev)
+  const topQueryFor = (p: string) =>
+    blogQueries
+      .filter((r) => path(r.keys?.[0] ?? '') === p)
+      .sort((x, y) => y.impressions - x.impressions)
+      .slice(0, 3)
+      .map((r) => `${r.keys?.[1]} (${fmt.pos(r.position)})`)
+      .join(', ')
+  const blogTotals = blogCur.reduce(
+    (t, r) => ({ clicks: t.clicks + r.clicks, impressions: t.impressions + r.impressions }),
+    { clicks: 0, impressions: 0 },
+  )
+  const share = (part: number, whole: number) => (whole ? fmt.pct(part / whole) : 'n/a')
+
+  // Which page ranks for each tracked keyword
+  const rankingPage = (k: string) => {
+    const rows = queryPages
+      .filter((r) => r.keys?.[0]?.toLowerCase() === k.toLowerCase())
+      .sort((x, y) => x.position - y.position)
+    return rows[0] ? path(rows[0].keys?.[1] ?? '') : ''
+  }
 
   const today = new Date().toISOString().slice(0, 10)
   const md = [
@@ -214,6 +268,45 @@ async function main() {
         ],
       ],
     ),
+    '',
+    ...(a
+      ? []
+      : [
+          '> Search Console is connected but recorded no impressions this week. That is normal for a',
+          '> young site: Google indexes first, then shows pages for long, specific searches. Watch the',
+          '> blog scorecard below for the first impressions.',
+          '',
+        ]),
+    '## Blog scorecard',
+    '',
+    `The blog earned ${fmt.n(blogTotals.impressions)} impressions (${share(blogTotals.impressions, A.impressions)} of the site) and ${fmt.n(blogTotals.clicks)} clicks (${share(blogTotals.clicks, A.clicks)} of the site) this week.`,
+    '',
+    blogPaths.length
+      ? table(
+          [
+            'Post',
+            'Impressions',
+            'Clicks',
+            'Position',
+            'Position change',
+            'Top searches (position)',
+          ],
+          blogPaths.map((p) => {
+            const r = blogNow.get(p)
+            const before = blogBefore.get(p)
+            return r
+              ? [
+                  p,
+                  fmt.n(r.impressions),
+                  fmt.n(r.clicks),
+                  fmt.pos(r.position),
+                  before ? fmt.delta(r.position, before.position, true) : 'new',
+                  topQueryFor(p) || 'none yet',
+                ]
+              : [p, '0', '0', 'not shown yet', '', '']
+          }),
+        )
+      : 'No blog posts found in the sitemap.',
     '',
     '## Top queries',
     '',
@@ -252,12 +345,12 @@ async function main() {
     '',
     tracked.length
       ? table(
-          ['Keyword', 'Position', 'Impressions'],
+          ['Keyword', 'Position', 'Impressions', 'Ranking page'],
           tracked.map((k) => {
             const r = curByQuery.get(k.toLowerCase())
             return r
-              ? [k, fmt.pos(r.position), fmt.n(r.impressions)]
-              : [k, 'not shown this week', '0']
+              ? [k, fmt.pos(r.position), fmt.n(r.impressions), rankingPage(k) || 'n/a']
+              : [k, 'not shown this week', '0', '']
           }),
         )
       : 'Add keywords to reports/tracked-keywords.json to track them here.',
