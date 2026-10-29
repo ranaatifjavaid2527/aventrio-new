@@ -410,3 +410,44 @@ img {
 .case-grid > li:last-child {
   animation: none;
 }
+
+/* ---------- Footer wordmark ---------- */
+/* Cropped by the bottom of the page, so the word reads as the floor of the site */
+.footer-mark {
+  position: relative;
+  margin-bottom: -6%;
+  user-select: none;
+}
+.footer-mark text {
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-size: 268px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+.footer-mark-base text {
+  fill: url(#footer-mark-fade);
+}
+.footer-mark-glow {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-out);
+  -webkit-mask-image: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    #000 0%,
+    transparent 70%
+  );
+  mask-image: radial-gradient(
+    240px circle at var(--mx, 50%) var(--my, 50%),
+    #000 0%,
+    transparent 70%
+  );
+}
+.footer-mark-glow text {
+  fill: var(--mint);
+}
+@media (hover: hover) and (pointer: fine) {
+  .footer-mark:hover .footer-mark-glow {
+    opacity: 1;
+  }
+}
