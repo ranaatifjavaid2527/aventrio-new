@@ -104,9 +104,12 @@ async function query(
     body: JSON.stringify(body),
   })
   if (res.status === 403) {
+    // Google's own message says which of the possible causes it is
     die(
-      `Search Console returned 403 for ${siteUrl}. Add the service account email as a user on that property ` +
-        '(Search Console, Settings, Users and permissions, Add user, Restricted is enough).',
+      `Search Console returned 403 for ${siteUrl}. Google says: ${await res.text()}\n\n` +
+        'Usual causes: the service account email is not a user on that property ' +
+        '(Search Console, Settings, Users and permissions, Add user, Restricted is enough), ' +
+        'or the Search Console API is not enabled in the Google Cloud project.',
     )
   }
   if (!res.ok) die(`Search Console query failed (${res.status}). ${await res.text()}`)
