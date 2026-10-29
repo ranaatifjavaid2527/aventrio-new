@@ -15,6 +15,9 @@ const securityHeaders = [
   { key: 'X-DNS-Prefetch-Control', value: 'on' },
 ]
 
+/** The private sales CRM is a separate Vercel project (repo aventrio-crm, basePath /crm), served under this domain. */
+const crmOrigin = process.env.CRM_ORIGIN ?? 'https://aventrio-crm.vercel.app'
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
@@ -24,6 +27,14 @@ const nextConfig: NextConfig = {
   },
   images: {
     formats: ['image/avif', 'image/webp'],
+  },
+  async rewrites() {
+    return {
+      beforeFiles: [
+        { source: '/crm', destination: `${crmOrigin}/crm` },
+        { source: '/crm/:path*', destination: `${crmOrigin}/crm/:path*` },
+      ],
+    }
   },
   async headers() {
     return [{ source: '/:path*', headers: securityHeaders }]

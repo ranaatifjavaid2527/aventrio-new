@@ -10,6 +10,9 @@ import { NextResponse, type NextRequest } from 'next/server'
  * attributes (next/image, Framer Motion initial states) and the Cal.com embed
  * inject inline styles, and a nonce cannot cover style attributes. Inline
  * styles cannot execute code; script-src is the XSS boundary and stays strict.
+ *
+ * /crm is excluded in the matcher below: it is a separate app (rewritten in next.config.ts)
+ * with its own CSP, and a second nonce policy on top would block its scripts.
  */
 export function proxy(request: NextRequest) {
   const nonce = Buffer.from(crypto.randomUUID()).toString('base64')
@@ -42,7 +45,7 @@ export function proxy(request: NextRequest) {
 export const config = {
   matcher: [
     {
-      source: '/((?!api|_next/static|_next/image|favicon.ico|icon.png|llms.txt|.*\\.png$).*)',
+      source: '/((?!api|crm(?:/|$)|_next/static|_next/image|favicon.ico|icon.png|llms.txt|.*\\.png$).*)',
       missing: [
         { type: 'header', key: 'next-router-prefetch' },
         { type: 'header', key: 'purpose', value: 'prefetch' },
