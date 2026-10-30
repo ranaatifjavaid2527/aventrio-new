@@ -94,6 +94,7 @@ and builds relationships with founders, operators and investors in tech.
   three a week, written by Atif Javaid. RSS: https://aventrio.co/blog/feed.xml
 - Cold email deliverability in 2026: https://aventrio.co/blog/cold-email-deliverability-2026
 - AI SDR vs human SDR: https://aventrio.co/blog/ai-sdr-vs-human-sdr
+- Signal based outbound: https://aventrio.co/blog/outbound-signals-over-volume
 
 ## Contact
 atif@aventrio.co

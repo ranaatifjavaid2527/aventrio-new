@@ -7,7 +7,7 @@ export const outboundSignalsOverVolume: BlogPost = {
   description:
     'Inbox enforcement, LinkedIn invitation limits and tired buyers have made high volume outbound expensive. How signal based targeting and shorter sequences replace it.',
   h1: 'Signal based outbound: why sending more stopped working.',
-  published: '2026-10-22',
+  published: '2026-10-30',
   tags: ['Outbound strategy', 'LinkedIn'],
   takeaways: [
     'Three things now tax volume: inbox providers reject non-compliant bulk mail, LinkedIn limits and penalises ignored invitations, and buyers ignore generic outreach.',
@@ -24,7 +24,7 @@ export const outboundSignalsOverVolume: BlogPost = {
     {
       ul: [
         'Email: Gmail and Outlook enforce authentication and complaint limits for bulk senders and increasingly refuse mail that fails them. We covered the detail in [cold email deliverability in 2026](/blog/cold-email-deliverability-2026).',
-        'LinkedIn: invitations are capped weekly, and LinkedIn does not publish the exact number. Practitioners, including [OneAway in its LinkedIn outbound guide](https://www.oneaway.io/blog/linkedin-outbound), report that a high share of ignored or declined invitations reduces what an account can send.',
+        "LinkedIn: invitations are capped weekly. The outbound agency OneAway, in its [LinkedIn outbound guide](https://www.oneaway.io/blog/linkedin-outbound), puts the cap at about 100 connection requests a week for most accounts and says accounts that send many requests without engaging with content get flagged. LinkedIn does not publish an exact number, and OneAway is an agency, so treat its figures as one practitioner's view.",
         'Buyers: senior buyers at tech companies receive more automated outreach than ever, and generic messages are easy to recognise and ignore.',
       ],
     },
@@ -86,7 +86,7 @@ export const outboundSignalsOverVolume: BlogPost = {
     {
       q: 'What is the LinkedIn weekly invitation limit?',
       a: [
-        'LinkedIn caps invitations per week and does not publish the exact figure. Practitioners report that many ignored or declined invitations lower what an account can send, so targeting matters more than volume.',
+        "LinkedIn caps invitations per week and does not publish an exact figure. The agency OneAway reports about 100 a week for most accounts, and says many ignored requests with little engagement get an account flagged. Treat that as one practitioner's view, and let targeting matter more than volume.",
       ],
     },
   ],
