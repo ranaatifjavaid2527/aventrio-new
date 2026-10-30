@@ -30,7 +30,7 @@ export const site = {
   },
 
   /** Company LinkedIn page. */
-  linkedin: null as string | null,
+  linkedin: 'https://www.linkedin.com/company/aventrioo/' as string | null,
 
   /** Legal details for the privacy policy and terms. Null renders a visible gap that fails the gate. */
   legal: {

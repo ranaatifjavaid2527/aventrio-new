@@ -97,4 +97,5 @@ and builds relationships with founders, operators and investors in tech.
 - Signal based outbound: https://aventrio.co/blog/outbound-signals-over-volume
 
 ## Contact
+Company page on LinkedIn: https://www.linkedin.com/company/aventrioo/
 atif@aventrio.co

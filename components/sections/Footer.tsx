@@ -114,6 +114,17 @@ export function Footer() {
                 </li>
               ) : null}
             </ul>
+            {site.linkedin ? (
+              <a
+                href={site.linkedin}
+                rel="me noopener"
+                target="_blank"
+                aria-label="Aventrio on LinkedIn (opens in a new tab)"
+                className="mt-8 grid size-11 place-items-center rounded-full border border-line-ink text-on-ink-soft transition-[color,border-color,transform] duration-200 ease-out hover:border-mint hover:text-mint active:scale-95"
+              >
+                <Icon name="linkedin" className="size-5" />
+              </a>
+            ) : null}
           </div>
 
           <section
