@@ -176,10 +176,7 @@ export function Footer() {
           ))}
         </nav>
 
-        <div className="mt-16 flex flex-col gap-5 border-t border-line-ink py-6 sm:flex-row sm:items-center sm:justify-between">
-          <p className="text-[0.85rem] text-on-ink-faint">
-            Outbound for tech companies selling into the US.
-          </p>
+        <div className="mt-16 flex flex-col gap-5 border-t border-line-ink py-6 sm:flex-row sm:items-center">
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.85rem] text-on-ink-faint">
             <li>
               © {year} {site.name}
