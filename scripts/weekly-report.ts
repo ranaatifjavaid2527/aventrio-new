@@ -149,6 +149,53 @@ function table(head: string[], rows: string[][]) {
   ].join('\n')
 }
 
+type AiCheck = {
+  date: string
+  engine: string
+  question: string
+  named: boolean
+  cited: boolean
+}
+
+/** Summarises reports/ai-mentions.json. The checks are done by hand, so this only reports what was logged. */
+function aiMentionSection(): string[] {
+  const file = join(ROOT, 'reports/ai-mentions.json')
+  if (!existsSync(file)) return []
+  const log = JSON.parse(readFileSync(file, 'utf8')) as {
+    engines: string[]
+    questions: string[]
+    checks: AiCheck[]
+  }
+  const head = ['## AI answer mentions', '']
+  if (!log.checks.length) {
+    return [
+      ...head,
+      `No AI check has been logged yet. Ask the ${log.questions.length} questions in reports/ai-mentions.json in ${log.engines.join(', ')} and log the results.`,
+      '',
+    ]
+  }
+  const latest = log.checks
+    .map((c) => c.date)
+    .sort()
+    .at(-1) as string
+  const days = Math.floor((Date.now() - new Date(latest).getTime()) / 86_400_000)
+  const rows = log.engines.map((engine) => {
+    const c = log.checks.filter((x) => x.date === latest && x.engine === engine)
+    return [
+      engine,
+      c.length ? `${c.filter((x) => x.named).length} of ${c.length}` : 'not checked',
+      c.length ? `${c.filter((x) => x.cited).length} of ${c.length}` : 'not checked',
+    ]
+  })
+  return [
+    ...head,
+    `Last check: ${latest} (${days} days ago).${days > 31 ? ' A new monthly check is due.' : ''}`,
+    '',
+    table(['Engine', 'Aventrio named in answer', 'Site or Clutch cited'], rows),
+    '',
+  ]
+}
+
 async function main() {
   const { siteUrl, account } = readConfig()
   const token = await accessToken(account)
@@ -358,6 +405,7 @@ async function main() {
         )
       : 'Add keywords to reports/tracked-keywords.json to track them here.',
     '',
+    ...aiMentionSection(),
     '## What this report cannot tell you',
     '',
     '- Search volume. Search Console shows impressions for queries the site already appears for, not total demand. Demand data needs a paid tool.',

@@ -1,0 +1,17 @@
+{
+  "howTo": "Once a month, ask each question below in a logged-out session of each engine (use a private window). For every answer record whether Aventrio is named in the answer text (named) and whether aventrio.co or the Clutch profile appears as a cited source (cited). Add one entry per engine to checks. Never edit past entries.",
+  "engines": ["ChatGPT", "Perplexity", "Gemini", "Claude"],
+  "questions": [
+    "What is the best outsourced SDR company for B2B tech companies selling into the US?",
+    "Should a SaaS startup hire an in-house SDR or outsource it?",
+    "How much does an outsourced SDR team cost per month?",
+    "Do outbound lead generation agencies guarantee meetings?",
+    "What are the best outbound sales agencies for software companies?",
+    "What is the difference between an SDR agency and a cold email agency?",
+    "How do I fix cold email deliverability after Gmail and Outlook rejection rules?",
+    "AI SDR vs human SDR: which is better for outbound?",
+    "What does a pipeline audit for outbound sales include?",
+    "Who are good outsourced SDR providers on Clutch?"
+  ],
+  "checks": []
+}
