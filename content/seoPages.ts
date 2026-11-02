@@ -118,11 +118,11 @@ export const seoPages: SeoPage[] = [
     group: 'compare',
     slug: 'in-house-vs-outsourced-sdr',
     keyword: 'in-house vs outsourced sdr',
-    title: 'In-House vs Outsourced SDR: Cost, Speed and Control | Aventrio',
+    title: 'Outsourced SDR vs In-House SDR: Cost and Speed | Aventrio',
     description:
-      'An honest comparison of hiring an in-house SDR, using a cold email agency, or an outsourced SDR team: time to first outreach, cost structure, control and data ownership.',
+      'Outsourced SDR vs in-house SDR, compared honestly: what a hire really costs, time to first outreach, control and data ownership, and when each one wins.',
     eyebrow: 'Honest comparison',
-    h1: 'In-house SDR vs outsourced SDR: an honest comparison.',
+    h1: 'Outsourced SDR vs in-house SDR: an honest comparison.',
     lede: 'Three ways to get meetings: hire an SDR, use a cold email agency, or bring in an outsourced SDR team. Each one is the right answer for someone. Here is how they compare on the things that decide it.',
     sections: [
       { heading: 'Side by side', comparisonTable: true },
@@ -162,6 +162,18 @@ export const seoPages: SeoPage[] = [
         q: 'Is an outsourced SDR team better than hiring in-house?',
         a: [
           'It depends on how fast you need pipeline and how complex your product is. An in-house SDR takes months to source, hire and ramp. An outsourced team starts in 14 days and the rep is replaced at the provider’s cost if they underperform. In-house wins when your product needs months of internal training or you want outbound knowledge to stay with permanent staff.',
+        ],
+      },
+      {
+        q: 'Should I hire an SDR or outsource?',
+        a: [
+          'Hire in-house if your product needs months of internal training or you already have a sales leader with time to coach SDRs. Outsource if you need outreach running this quarter, nobody internally has run outbound before, or an earlier attempt failed. Many companies start outsourced, learn what works, then hire.',
+        ],
+      },
+      {
+        q: 'How much does an outsourced SDR cost compared with an in-house SDR?',
+        a: [
+          'An outsourced SDR from Aventrio is a flat monthly fee per rep, with no commission stacking, benefits, separate tooling or data line items. The rate depends on seniority and the number of seats, so we quote it on the call. Compare that against a fully loaded in-house hire: salary, employer tax, benefits, tooling, recruiting and the ramp months before a rep produces anything. The minimum term is one quarter, then month-to-month.',
         ],
       },
       {
