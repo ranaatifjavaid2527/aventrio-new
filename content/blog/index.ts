@@ -9,10 +9,16 @@ import type { BlogBlock, BlogPost } from './types'
 import { aiSdrVsHumanSdr } from './posts/ai-sdr-vs-human-sdr'
 import { coldEmailDeliverability2026 } from './posts/cold-email-deliverability-2026'
 import { outboundSignalsOverVolume } from './posts/outbound-signals-over-volume'
+import { linkedinConnectionRequestLimit } from './posts/linkedin-connection-request-limit'
 
 export type { BlogBlock, BlogPost } from './types'
 
-const all: BlogPost[] = [coldEmailDeliverability2026, aiSdrVsHumanSdr, outboundSignalsOverVolume]
+const all: BlogPost[] = [
+  coldEmailDeliverability2026,
+  aiSdrVsHumanSdr,
+  outboundSignalsOverVolume,
+  linkedinConnectionRequestLimit,
+]
 
 /** Newest first; same-day posts keep the order above. */
 export const posts = [...all].sort((a, b) => b.published.localeCompare(a.published))

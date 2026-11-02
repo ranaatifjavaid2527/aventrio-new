@@ -8,6 +8,7 @@ export const outboundSignalsOverVolume: BlogPost = {
     'Inbox enforcement, LinkedIn invitation limits and tired buyers have made high volume outbound expensive. How signal based targeting and shorter sequences replace it.',
   h1: 'Signal based outbound: why sending more stopped working.',
   published: '2026-10-30',
+  updated: '2026-11-02',
   tags: ['Outbound strategy', 'LinkedIn'],
   takeaways: [
     'Three things now tax volume: inbox providers reject non-compliant bulk mail, LinkedIn limits and penalises ignored invitations, and buyers ignore generic outreach.',
@@ -24,7 +25,7 @@ export const outboundSignalsOverVolume: BlogPost = {
     {
       ul: [
         'Email: Gmail and Outlook enforce authentication and complaint limits for bulk senders and increasingly refuse mail that fails them. We covered the detail in [cold email deliverability in 2026](/blog/cold-email-deliverability-2026).',
-        "LinkedIn: invitations are capped weekly. The outbound agency OneAway, in its [LinkedIn outbound guide](https://www.oneaway.io/blog/linkedin-outbound), puts the cap at about 100 connection requests a week for most accounts and says accounts that send many requests without engaging with content get flagged. LinkedIn does not publish an exact number, and OneAway is an agency, so treat its figures as one practitioner's view.",
+        "LinkedIn: invitations are capped weekly. The outbound agency OneAway, in its [LinkedIn outbound guide](https://www.oneaway.io/blog/linkedin-outbound), puts the cap at about 100 connection requests a week for most accounts and says accounts that send many requests without engaging with content get flagged. LinkedIn does not publish an exact number, and OneAway is an agency, so treat its figures as one practitioner's view. What LinkedIn itself says is covered in [the LinkedIn connection request limit](/blog/linkedin-connection-request-limit).",
         'Buyers: senior buyers at tech companies receive more automated outreach than ever, and generic messages are easy to recognise and ignore.',
       ],
     },

@@ -17,3 +17,11 @@ One entry per published post.
 - Rechecked: Google sender guidelines (200) and OneAway's LinkedIn guide. OneAway now states roughly 100 connection requests a week and flagging of high-volume accounts; the post attributes this to OneAway as an agency view. Removed the unsupported "five to seven touches" vendor claim earlier; none remain.
 - Sources: https://support.google.com/a/answer/81126, https://www.oneaway.io/blog/linkedin-outbound
 - Next: Monday 2026-11-02, drafts folder is empty so a new researched post.
+
+## 2026-11-02: linkedin-connection-request-limit
+
+- Primary keyword: linkedin connection request limit
+- Why now: drafts folder empty. Search results this week were mostly vendor pages with confident LinkedIn limit numbers and no official source; no new announcement from Google, Microsoft or LinkedIn could be verified. Angle: what LinkedIn's own help pages say versus what automation vendors report, and where vendors disagree (Sales Navigator). Extends the LinkedIn section of the signals post; does not compete with any landing page keyword.
+- Sources read: LinkedIn Help "Types of restrictions for sending invitations" (a551012), LinkedIn Help "Prohibited software and extensions" (a1341387), LinkedIn User Agreement (effective November 3, 2025), Salesforge, GetSales, Evaboot (vendor claims, labelled).
+- Internal link added from outbound-signals-over-volume.
+- Next: Wednesday 2026-11-04, new researched post.
