@@ -41,6 +41,31 @@ export const coldEmailDeliverability2026: BlogPost = {
       ],
     },
     {
+      figure: {
+        kind: 'flow',
+        title: 'What a Gmail-bound message has to pass at 5,000 or more a day',
+        caption:
+          'Requirements for senders of more than 5,000 messages a day to Gmail accounts. Source: Google email sender guidelines.',
+        steps: [
+          { label: 'SPF and DKIM are set up for the sending domain' },
+          {
+            label: 'A DMARC record exists',
+            detail: 'The policy can be p=none, but the record must exist.',
+          },
+          { label: 'The From domain aligns with the SPF or DKIM domain' },
+          {
+            label: 'One-click unsubscribe is on marketing mail',
+            detail: 'Plus a visible unsubscribe link in the body.',
+          },
+          { label: 'The spam rate stays below 0.3% in Postmaster Tools' },
+        ],
+        outcome: {
+          pass: 'The message is accepted. Authentication gets mail accepted, it does not get it read.',
+          fail: 'The message can be refused at the server and comes back as a bounce, such as the 550 5.7.515 code Outlook uses.',
+        },
+      },
+    },
+    {
       p: "The 5,000 figure counts messages to Gmail addresses from your domain in a day, across every mailbox on that domain. A team of reps on one domain can cross it without any single rep sending much. Google's FAQ also says that once a domain is classed as a bulk sender it stays one permanently, so dropping back under the line does not reset anything.",
     },
     { h2: 'Why 0.1% is the number to watch' },
@@ -61,6 +86,28 @@ export const coldEmailDeliverability2026: BlogPost = {
         'Verify every address before it enters a sequence. Hard bounces are a reputation signal of their own.',
         'Warm new domains gradually and keep daily volume per mailbox modest. There is no published safe number, so ramp and watch.',
       ],
+    },
+    {
+      figure: {
+        kind: 'compare',
+        title: 'Why cold email gets its own domains',
+        caption: 'The reason the checklist above starts with separate sending domains.',
+        left: {
+          heading: 'Cold volume on your main domain',
+          points: [
+            'Outreach, invoices, support and customer mail share one reputation.',
+            'A complaint problem on outreach can reach all of it.',
+          ],
+        },
+        right: {
+          heading: 'Separate sending domains',
+          points: [
+            'Outreach runs on its own warmed domains.',
+            'A problem stays on those domains, away from invoices, support and customer mail.',
+            'Each domain is registered in Postmaster Tools and read weekly.',
+          ],
+        },
+      },
     },
     {
       note: 'This is the setup our [outsourced SDR teams](/services/outsourced-sdr) run on by default: separate warmed domains, SPF, DKIM and DMARC monitored daily, and verified data before anything is sent. If you want yours checked, the [pipeline audit](/services/pipeline-audit) covers deliverability as one of its four areas.',

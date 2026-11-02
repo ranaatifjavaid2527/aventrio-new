@@ -7,6 +7,7 @@ import { Container } from '@/components/ui/Container'
 import { Eyebrow } from '@/components/ui/Eyebrow'
 import { Icon } from '@/components/ui/Icon'
 import { FinalCta } from '@/components/sections/FinalCta'
+import { Figure } from './Figure'
 import { RichText } from './RichText'
 
 const cta = {
@@ -25,6 +26,7 @@ function Block({ b }: { b: BlogBlock }) {
         <RichText text={b.p} />
       </p>
     )
+  if ('figure' in b) return <Figure figure={b.figure} />
   if ('note' in b)
     return (
       <p className="rounded-card border border-line bg-surface p-5 text-ink">

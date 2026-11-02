@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
-import { postBySlug, postPath, posts } from '@/content/blog'
+import { blockText, postBySlug, postPath, posts } from '@/content/blog'
 import { founder } from '@/content/team'
 import { plainText } from '@/components/blog/RichText'
 import { PostView } from '@/components/blog/PostView'
@@ -47,8 +47,7 @@ export default async function Page({ params }: Props) {
   if (!post) notFound()
   const path = postPath(post)
   const wordCount = post.body
-    .flatMap((b) => Object.values(b).flat())
-    .map((t) => plainText(String(t)))
+    .map((b) => plainText(blockText(b)))
     .join(' ')
     .split(/\s+/).length
   return (

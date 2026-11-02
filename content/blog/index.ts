@@ -11,7 +11,7 @@ import { coldEmailDeliverability2026 } from './posts/cold-email-deliverability-2
 import { outboundSignalsOverVolume } from './posts/outbound-signals-over-volume'
 import { linkedinConnectionRequestLimit } from './posts/linkedin-connection-request-limit'
 
-export type { BlogBlock, BlogPost } from './types'
+export type { BlogBlock, BlogFigure, BlogPost } from './types'
 
 const all: BlogPost[] = [
   coldEmailDeliverability2026,
@@ -37,7 +37,17 @@ export const blog = {
   lede: 'Three short, sourced posts a week on sales development for software, SaaS and IT services companies. Every figure links to where it came from, and vendor numbers are labelled as vendor numbers.',
 }
 
-const words = (b: BlogBlock) => Object.values(b).flat().join(' ').split(/\s+/).length
+/** Every string inside a block, however deeply nested (figures hold objects and arrays). */
+export const blockText = (v: unknown): string =>
+  typeof v === 'string'
+    ? v
+    : Array.isArray(v)
+      ? v.map(blockText).join(' ')
+      : v && typeof v === 'object'
+        ? Object.values(v).map(blockText).join(' ')
+        : ''
+
+const words = (b: BlogBlock) => blockText(b).split(/\s+/).length
 
 export function readingMinutes(p: BlogPost) {
   const total = p.body.reduce((n, b) => n + words(b), 0) + p.takeaways.join(' ').split(/\s+/).length
