@@ -8,6 +8,8 @@ import { site } from './site'
 const fill = (value: string | null, label: string) => value ?? `[${label}]`
 
 const entity = fill(site.legal.entityName, 'legal entity name')
+/** Avoids "Aventrio (Aventrio)" when the registered name is the same as the brand. */
+const entityNote = entity === site.name ? '' : ` (${entity})`
 const address = fill(site.legal.registeredAddress, 'registered address')
 const law = fill(site.legal.governingLaw, 'country or state of registration')
 
@@ -41,7 +43,7 @@ export const privacy: LegalDoc = {
       blocks: [
         {
           type: 'p',
-          text: `Aventrio (${entity}) provides outbound sales development services to business clients. Our registered address is ${address}. For any question about this policy or your data, write to ${site.email}.`,
+          text: `Aventrio${entityNote} provides outbound sales development services to business clients. Our registered address is ${address}. For any question about this policy or your data, write to ${site.email}.`,
         },
         { type: 'p', text: 'For the information described here, Aventrio is the data controller.' },
       ],
@@ -247,7 +249,7 @@ export const terms: LegalDoc = {
       blocks: [
         {
           type: 'p',
-          text: `By using this website you accept these terms. If you do not accept them, please do not use the site. The site is operated by Aventrio (${entity}), ${address}.`,
+          text: `By using this website you accept these terms. If you do not accept them, please do not use the site. The site is operated by Aventrio${entityNote}, ${address}.`,
         },
       ],
     },

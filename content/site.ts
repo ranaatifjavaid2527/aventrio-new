@@ -36,7 +36,7 @@ export const site = {
 
   /** Legal details for the privacy policy and terms. Null renders a visible gap that fails the gate. */
   legal: {
-    entityName: null as string | null,
+    entityName: 'Aventrio' as string | null,
     registeredAddress: 'Lahore, Pakistan' as string | null,
     governingLaw: 'Pakistan' as string | null,
   },
