@@ -149,6 +149,8 @@ function authorLd() {
     name: founder.name,
     jobTitle: founder.role,
     url: `${site.url}/about`,
+    description: founder.bio,
+    ...(founder.photo ? { image: `${site.url}${founder.photo}` } : {}),
     worksFor: { '@id': ORG_ID },
     ...(founder.linkedin ? { sameAs: [founder.linkedin] } : {}),
   }

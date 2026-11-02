@@ -189,6 +189,47 @@ export function PostView({ post }: { post: BlogPost }) {
               <BookCallButton>Book a strategy call</BookCallButton>
             </div>
           </section>
+
+          <aside
+            aria-labelledby="post-author"
+            className="mt-14 flex gap-5 rounded-2xl border border-line-strong p-6"
+          >
+            {founder.photo ? (
+              <Image
+                src={founder.photo}
+                alt=""
+                width={64}
+                height={64}
+                className="size-16 shrink-0 rounded-full object-cover"
+              />
+            ) : null}
+            <div>
+              <h2 id="post-author" className="text-[1.05rem] font-semibold">
+                About the author
+              </h2>
+              <p className="mt-1 text-[0.95rem] font-semibold text-ink">
+                {founder.name}
+                <span className="font-normal text-subtle">, {founder.role}</span>
+              </p>
+              <p className="mt-2 text-[0.95rem]">{founder.bio}</p>
+              <p className="mt-3 flex flex-wrap gap-x-5 gap-y-1 text-[0.95rem]">
+                <Link href="/about" className="font-semibold text-green-deep hover:underline">
+                  More about {founder.name.split(' ')[0]}
+                </Link>
+                {founder.linkedin ? (
+                  <a
+                    href={founder.linkedin}
+                    rel="me noopener"
+                    target="_blank"
+                    className="font-semibold text-green-deep hover:underline"
+                  >
+                    LinkedIn
+                    <span className="sr-only"> (opens in a new tab)</span>
+                  </a>
+                ) : null}
+              </p>
+            </div>
+          </aside>
         </Container>
       </article>
       <FinalCta {...cta} />
