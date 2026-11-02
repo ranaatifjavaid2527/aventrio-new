@@ -17,6 +17,7 @@
     "format:check": "prettier --check .",
     "validate": "node scripts/validate-site.mjs",
     "check:dashes": "node scripts/check-dashes.mjs",
+    "indexnow": "node scripts/indexnow.mjs",
     "gate": "pnpm check:dashes && pnpm typecheck && pnpm lint && pnpm format:check && pnpm build && pnpm validate",
     "report:weekly": "node --experimental-strip-types scripts/weekly-report.ts",
     "report:competitors": "node --experimental-strip-types scripts/competitor-watch.ts"
