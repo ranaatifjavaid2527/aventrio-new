@@ -61,9 +61,33 @@ AI is strong at research, enrichment, list building and first drafts. People are
 Where we draw the line, and why: https://aventrio.co/blog/ai-sdr-vs-human-sdr
 
 **Signal based outbound**
-[Write after re-reading https://aventrio.co/blog/outbound-signals-over-volume and lifting its first two takeaways.]
+PENDING ATIF'S APPROVAL, do not post until he says so.
+
+Sending more stopped working. Here is why.
+
+Three things now put a cost on volume:
+1. Gmail and Outlook refuse bulk mail that fails their rules.
+2. LinkedIn caps weekly invitations and can flag accounts whose requests get ignored.
+3. Senior buyers ignore generic outreach.
+
+All three punish the same thing: writing to people who had no reason to hear from you.
+
+The alternative is signal based outbound. You write to an account because something happened, such as a new leader in the role, a job post describing the problem you solve, a funding round or a tool change. Then you say, in one line, why you are writing now.
+
+A shorter list, a shorter sequence, and a reason for every touch.
+
+How to start, and the sources: https://aventrio.co/blog/outbound-signals-over-volume
 
 ## 3. Reddit and Quora answers
+
+Platform rules (checked against Quora's Help Center on 2026-11-02; Reddit's own text could not be checked from here, so read it and each subreddit's rules before posting):
+
+- Quora requires disclosing any relevant affiliation in the answer or in your credential line. Say you run Aventrio.
+- Quora bans affiliate links and self promotion that is not part of a direct, helpful answer. An answer that only makes sense after clicking out can be collapsed or removed.
+- Quora asks that answers promoting a product or service come from a Professional Business Profile. Set one up for Aventrio, or keep answers purely informational.
+- Reddit's site rules ban spam, and many subreddits ban or limit self promotion and links. The common expectation is to take part as a member, not only to advertise, and to disclose that you are the business.
+- Never ask friends, staff or clients to upvote, and never use extra accounts. Both break the rules on both platforms.
+- Do not post any draft verbatim in two places. Rewrite it for the question, because identical answers look like spam.
 
 How to do this without it backfiring:
 
@@ -100,6 +124,31 @@ If all of that is fine, then it is the list and the message. The rules are in Go
 
 **Draft: "Do lead gen agencies guarantee meetings?"**
 Be wary of any that do. Meeting volume depends on your offer, market and timing, so a guarantee usually means they are counting something easy (any reply, a low quality booking) or padding the price. A better question is what they commit to: data verified before use, copy written per segment, replies answered within a stated time, and reporting that separates sent, replied, booked and held. Ask for those in writing. I work in this space, so treat that as my view.
+
+### More answers (no link in any of these, by design)
+
+**Draft: "How do I find out why my outbound is not working?"** (Reddit or Quora)
+I work in outbound, so I see this a lot. Work backwards through the funnel and stop at the first broken step:
+
+1. Are emails arriving? Check bounce codes and Google Postmaster Tools. If bounces are rising, fix authentication before anything else.
+2. Are they reaching the right people? Pull ten of your last closed deals and compare their titles and company type to your current list.
+3. Does the message say why you are writing now? If it could be sent to anyone, it will be treated that way.
+4. Are replies answered the same day? Warm replies that sit for three days turn cold.
+5. Are you measuring replies and meetings by segment, not just sent volume?
+
+Most weak outbound fails at step 1 or 2, before the copy matters. Disclosure: I run an outbound agency.
+
+**Draft: "Is LinkedIn automation safe in 2026?"** (Reddit or Quora)
+Nothing is fully safe, and LinkedIn does not publish exact limits, so any number you read is someone's estimate. What is consistently reported by practitioners: invitations are capped weekly, and accounts that send many requests that get ignored are more likely to be flagged. So the lower risk approach is fewer, better fitted invitations and some real activity on the account, rather than hunting for a higher safe number. Read LinkedIn's own User Agreement on automation before you decide. I run an outbound agency, so I'm cautious by habit.
+
+**Draft: "What should a good outbound report show?"** (Reddit or Quora)
+If a report only shows emails sent, you cannot tell whether it works. Ask for these as separate figures: sent, delivered, replied, positive replies, meetings booked, meetings held, and opportunities created. Booked and held are different, and many weak reports blur them. Also ask for it by segment, so you can see which targeting works. Disclosure: I run an outbound agency, and this is how we report.
+
+**Draft: "How many follow ups should a cold sequence have?"** (Reddit or Quora)
+There is no reliable independent benchmark, and vendors who quote one are usually selling a tool. A better rule is that every touch needs a new reason: a new angle, a new piece of evidence, or a new channel. When you run out of honest reasons, stop. Long cadences of ten or more touches were designed for high volume lists, and with a smaller, better fitted list there are only so many useful things to say. Disclosure: I run an outbound agency.
+
+**Draft: "Can I use AI voice for cold calling in the US?"** (Quora, careful)
+Not without consent. In 2024 the FCC ruled that AI generated voices count as artificial voices under the Telephone Consumer Protection Act, so calls using them need the prior express consent of the person called, and for telemarketing that consent must be written. This is general information, not legal advice, so check with a lawyer before running automated calls. Disclosure: I work in outbound sales.
 
 ## 4. Pitches
 
