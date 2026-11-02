@@ -27,6 +27,8 @@ export const site = {
     companyId: '2066105' as string | null,
     widgetType: '2',
     height: '45',
+    /** Copied from the live Clutch profile on 2026-11-02. Update when the profile changes. */
+    rating: { value: '5.0', count: 4 },
   },
 
   /** Company LinkedIn page. */

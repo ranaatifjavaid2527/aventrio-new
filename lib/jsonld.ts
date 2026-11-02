@@ -50,6 +50,17 @@ export function organizationLd() {
     description:
       'Aventrio builds and runs outbound sales development teams for B2B companies. Trained SDRs managed by US sales leaders handle research, copy, sending infrastructure and replies, and book qualified meetings into client calendars.',
     ...(sameAs.length ? { sameAs } : {}),
+    ...(site.clutch.profileUrl
+      ? {
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: site.clutch.rating.value,
+            reviewCount: site.clutch.rating.count,
+            bestRating: '5',
+            worstRating: '1',
+          },
+        }
+      : {}),
     founder: {
       '@type': 'Person',
       '@id': `${site.url}/about#founder`,

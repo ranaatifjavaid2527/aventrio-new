@@ -89,7 +89,8 @@ export function Footer() {
                     target="_blank"
                     className="group inline-flex items-center gap-2 text-on-ink-soft transition-colors hover:text-mint"
                   >
-                    Reviews on Clutch
+                    {site.clutch.rating.value} on Clutch, {site.clutch.rating.count} verified
+                    reviews
                     <Icon
                       name="arrowUpRight"
                       className="size-3.5 transition-transform duration-200 ease-out group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
