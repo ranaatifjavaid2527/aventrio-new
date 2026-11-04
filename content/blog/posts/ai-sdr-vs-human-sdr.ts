@@ -8,6 +8,7 @@ export const aiSdrVsHumanSdr: BlogPost = {
     'AI SDR tools are good at research and first drafts and weak at judgement. Where AI belongs in an outbound team, where people still matter, and the US rules on AI calls.',
   h1: 'AI SDR vs human SDR: where each one actually works.',
   published: '2026-10-28',
+  updated: '2026-11-04',
   tags: ['AI in sales', 'SDR teams'],
   takeaways: [
     'The useful question is not AI or people. It is which parts of the SDR job each does better.',
@@ -52,7 +53,7 @@ export const aiSdrVsHumanSdr: BlogPost = {
     },
     { h2: 'Be careful with the numbers' },
     {
-      p: 'Most AI SDR comparisons online are published by companies that sell either AI SDR software or human SDR services. Figures like reply rates, cost per meeting and "replaces three reps" rarely come with a method you can check. We have not seen an independent benchmark we would rely on, so we are not quoting one here.',
+      p: 'Most AI SDR comparisons online are published by companies that sell either AI SDR software or human SDR services. Figures like reply rates, cost per meeting and "replaces three reps" rarely come with a method you can check. We have not seen an independent benchmark we would rely on, so we are not quoting one here. The same is true of human SDR pricing, which we break down in [outsourced SDR cost](/blog/outsourced-sdr-cost).',
     },
     { h2: 'The US rule on AI phone calls' },
     {

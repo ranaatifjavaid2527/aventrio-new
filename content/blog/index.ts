@@ -10,6 +10,7 @@ import { aiSdrVsHumanSdr } from './posts/ai-sdr-vs-human-sdr'
 import { coldEmailDeliverability2026 } from './posts/cold-email-deliverability-2026'
 import { outboundSignalsOverVolume } from './posts/outbound-signals-over-volume'
 import { linkedinConnectionRequestLimit } from './posts/linkedin-connection-request-limit'
+import { outsourcedSdrCost } from './posts/outsourced-sdr-cost'
 
 export type { BlogBlock, BlogFigure, BlogPost } from './types'
 
@@ -18,6 +19,7 @@ const all: BlogPost[] = [
   aiSdrVsHumanSdr,
   outboundSignalsOverVolume,
   linkedinConnectionRequestLimit,
+  outsourcedSdrCost,
 ]
 
 /** Newest first; same-day posts keep the order above. */

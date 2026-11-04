@@ -8,6 +8,7 @@ export const linkedinConnectionRequestLimit: BlogPost = {
     'LinkedIn does not publish its connection request limit. What its help pages say, where vendor numbers disagree, and how to prospect without risking your account.',
   h1: 'The LinkedIn connection request limit: what LinkedIn says and what vendors guess.',
   published: '2026-11-02',
+  updated: '2026-11-04',
   tags: ['LinkedIn', 'Outbound strategy'],
   takeaways: [
     'LinkedIn confirms that it limits invitations for every member, Basic and Premium, but it does not publish the number.',
@@ -76,6 +77,26 @@ export const linkedinConnectionRequestLimit: BlogPost = {
         'Use InMail and shared groups for people you do not know, as LinkedIn recommends, and move warm contacts to email or phone.',
         'If you do get restricted, stop, wait it out and review who you were inviting.',
       ],
+    },
+    {
+      figure: {
+        kind: 'flow',
+        title: 'The invitation routine, step by step',
+        caption: 'The routine above as a loop. Restriction triggers are from LinkedIn Help.',
+        steps: [
+          { label: 'Pick a short list of accounts with a reason to talk now' },
+          { label: 'Send invitations by hand, spread across the week, with a short personal note' },
+          {
+            label: 'Track accepted, ignored and pending',
+            detail: 'Ignored, pending or spam-marked invitations are a restriction trigger.',
+          },
+          { label: 'Withdraw stale invitations on your own schedule' },
+        ],
+        outcome: {
+          pass: 'Acceptance holds up and you keep the account, and warm contacts move to email or phone.',
+          fail: 'Many invitations ignored or left pending, or suspected automation: LinkedIn may restrict the account, usually lifted within about a week.',
+        },
+      },
     },
     { h2: 'What this means for a sales team' },
     {
