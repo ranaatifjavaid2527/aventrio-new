@@ -27,6 +27,8 @@ const PAGES = [
   '/services/pipeline-audit',
   '/services/account-executives',
   '/compare/in-house-vs-outsourced-sdr',
+  '/compare/outsourced-sdr-vs-cold-email-agency',
+  '/compare/outsourced-sdr-vs-lead-generation-agency',
   '/glossary',
 ]
 const PAIRED = [

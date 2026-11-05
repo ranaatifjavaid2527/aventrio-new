@@ -35,6 +35,14 @@ function learn(): FooterLink[] {
   return [
     { label: 'In-house vs outsourced SDR', href: '/compare/in-house-vs-outsourced-sdr' },
     ...(caseStudies.length ? [{ label: 'Case studies', href: '/case-studies' }] : []),
+    {
+      label: 'Outsourced SDR vs cold email agency',
+      href: '/compare/outsourced-sdr-vs-cold-email-agency',
+    },
+    {
+      label: 'SDR team vs lead generation agency',
+      href: '/compare/outsourced-sdr-vs-lead-generation-agency',
+    },
     { label: 'Glossary', href: '/glossary' },
     { label: 'Blog', href: '/blog' },
     ...(latest ? [{ label: latest.h1, href: postPath(latest), note: 'Latest post' }] : []),

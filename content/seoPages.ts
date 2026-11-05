@@ -197,7 +197,201 @@ export const seoPages: SeoPage[] = [
     ],
     related: [
       { label: 'Outsourced SDR services', href: '/services/outsourced-sdr' },
+      {
+        label: 'Outsourced SDR vs cold email agency',
+        href: '/compare/outsourced-sdr-vs-cold-email-agency',
+      },
       { label: 'Pipeline audit', href: '/services/pipeline-audit' },
+    ],
+  },
+
+  {
+    path: '/compare/outsourced-sdr-vs-cold-email-agency',
+    group: 'compare',
+    slug: 'outsourced-sdr-vs-cold-email-agency',
+    keyword: 'outsourced sdr vs cold email agency',
+    title: 'Outsourced SDR vs Cold Email Agency: Which Fits? | Aventrio',
+    description:
+      'Outsourced SDR vs cold email agency, compared plainly: who handles replies, who owns the data, how results are reported, and when each one is the right choice.',
+    eyebrow: 'Honest comparison',
+    h1: 'Outsourced SDR vs cold email agency: which one fits your offer?',
+    lede: 'A cold email agency sends sequences and forwards you the replies. An outsourced SDR team staffs named people who handle the replies, the objections and the booking. Which one you need depends on how much of the conversation your offer needs a human for.',
+    sections: [
+      {
+        heading: 'What each one does',
+        bullets: [
+          'Cold email agency: builds a list, writes a sequence, runs the sending infrastructure and forwards replies to you. The conversation starts when the reply lands in your inbox.',
+          'Outsourced SDR team: does the same research and sending, then a named rep handles the reply, answers the first objection, books the call and chases the reschedule, across email, LinkedIn and phone.',
+          'Both can run sequences at scale. The difference is who owns the conversation between the first reply and the booked meeting.',
+        ],
+      },
+      {
+        heading: 'Questions to ask any provider',
+        bullets: [
+          'Who handles replies and objections, and are they the same named person each time?',
+          'Which domains do you send from, and is any cold volume ever sent from my primary domain?',
+          'Who owns the lists, sequences, sending domains and call notes if I leave, and can I export them?',
+          'How is progress reported: are booked and held meetings counted separately?',
+          'If a number of meetings is promised, what exactly is counted, and what happens if it is missed?',
+          'How many accounts does each person work at once?',
+        ],
+      },
+      {
+        heading: 'When a cold email agency is the better choice',
+        bullets: [
+          'Your offer is simple and a buyer can say yes from one email.',
+          'You have people in-house who will reply to and book every response quickly.',
+          'You want the lowest cost way to test whether email works for your market.',
+        ],
+      },
+      {
+        heading: 'When an outsourced SDR team is the better choice',
+        bullets: [
+          'Buyers have questions or objections that need a real conversation before they will book.',
+          'Nobody on your team has time to work replies the same day.',
+          'You want email, LinkedIn and phone worked by the same person.',
+          'You want account executives available on the same engagement to run the demo and close.',
+        ],
+      },
+      {
+        heading: 'How Aventrio is set up',
+        body: [
+          'Aventrio staffs named reps, capped at three accounts each, who work from separate warmed sending domains so cold volume never touches your primary domain. Pricing is a flat monthly fee per rep with no per-meeting surcharge, a minimum of one quarter, then month-to-month.',
+          'We report sent, opened, replied, booked, held and converted as six separate figures every week, and you own your lists, sequences, sending domains and call notes. We do not promise a number of meetings: volume depends on your offer, market and timing.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the difference between an outsourced SDR and a cold email agency?',
+        a: [
+          'A cold email agency sends sequences and forwards you the replies. An outsourced SDR team staffs people: named reps handle the objection, book the call and chase the reschedule, across email, LinkedIn and phone.',
+        ],
+      },
+      {
+        q: 'Is a cold email agency cheaper than an outsourced SDR team?',
+        a: [
+          'Usually, because less human work is included. For a simple offer that converts off one email, an agency can be the better value. If replies need a real conversation, the cost moves to whoever in your team has to handle them.',
+        ],
+      },
+      {
+        q: 'Can I start with a cold email agency and move to an SDR team later?',
+        a: [
+          'Yes, if you own your lists, sequences and sending domains. Check the contract for who owns them before you start, because moving a working motion is only easy when the data is yours.',
+        ],
+      },
+      {
+        q: 'Does Aventrio guarantee a number of meetings?',
+        a: [
+          'No. Meeting volume depends on your offer, market and timing. Aventrio commits to the work: verified data, copy rewritten monthly, monitored sending infrastructure, named reps capped at three accounts and weekly reporting.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'Outsourced SDR services', href: '/services/outsourced-sdr' },
+      { label: 'In-house vs outsourced SDR', href: '/compare/in-house-vs-outsourced-sdr' },
+      { label: 'Pipeline audit', href: '/services/pipeline-audit' },
+    ],
+  },
+
+  {
+    path: '/compare/outsourced-sdr-vs-lead-generation-agency',
+    group: 'compare',
+    slug: 'outsourced-sdr-vs-lead-generation-agency',
+    keyword: 'sdr vs lead generation agency',
+    title: 'SDR Team vs Lead Generation Agency: How to Choose | Aventrio',
+    description:
+      'An outsourced SDR team or a lead generation agency? What a lead really means, how pricing differs, what to ask a provider, and when each model fits.',
+    eyebrow: 'Honest comparison',
+    h1: 'SDR team vs lead generation agency: what you are really buying.',
+    lede: 'The word lead can mean anything from a name in a spreadsheet to a booked, qualified meeting. Before you compare an outsourced SDR team with a lead generation agency, agree what counts as a lead, because that decides what you pay for and what you get.',
+    sections: [
+      {
+        heading: 'What a lead can mean',
+        bullets: [
+          'A contact record: a name, title and email that fits your target profile.',
+          'A reply: someone answered, with any response.',
+          'An interested reply: someone asked to hear more.',
+          'A qualified lead: someone confirmed to fit your ICP and to have a reason to talk.',
+          'A booked meeting: a time on the calendar.',
+          'A held meeting: the person turned up.',
+        ],
+      },
+      {
+        heading: 'How the two models differ',
+        bullets: [
+          'Lead generation agency: usually responsible for delivering leads, however the agreement defines them, and often priced around the number delivered. What happens to a lead afterwards is typically your team’s job.',
+          'Outsourced SDR team: responsible for the conversation that turns a prospect into a booked, qualified meeting, with a named rep who researches, writes, replies and books.',
+          'Both can use email, LinkedIn and phone. The difference is where the work stops.',
+        ],
+      },
+      {
+        heading: 'Questions to ask before you sign',
+        bullets: [
+          'What exactly counts as a lead, and who decides when one has been delivered?',
+          'Is pricing per lead, per meeting or a flat fee, and what incentives does that create?',
+          'Who follows up with a lead after delivery?',
+          'Do you report booked and held meetings separately?',
+          'Who owns the data and can I export it at any time?',
+        ],
+      },
+      {
+        heading: 'When a lead generation agency fits',
+        bullets: [
+          'You already have a sales team with capacity to follow up every lead quickly.',
+          'You mainly need names and contact data to feed your own outreach.',
+          'You have a clear, agreed definition of a qualified lead and a way to check it.',
+        ],
+      },
+      {
+        heading: 'When an outsourced SDR team fits',
+        bullets: [
+          'You want meetings on the calendar, not a list to work.',
+          'Nobody internally has time to chase replies and reschedules.',
+          'You prefer a flat monthly cost to a price that rises with volume.',
+          'You want to read booked and held as separate numbers each week.',
+        ],
+      },
+      {
+        heading: 'How Aventrio is set up',
+        body: [
+          'Aventrio is an outsourced SDR team. A named rep handles research, sending, replies and booking, with account executives available on the same engagement. The fee is flat per rep, with no per-meeting surcharge, a minimum of one quarter, then month-to-month. We do not guarantee a number of meetings, because volume depends on your offer, market and timing.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the difference between an SDR team and a lead generation agency?',
+        a: [
+          'A lead generation agency usually delivers leads, often priced by number delivered, and leaves the follow-up to you. An outsourced SDR team owns the conversation as well: a named rep handles replies and books the qualified meeting.',
+        ],
+      },
+      {
+        q: 'Is lead generation the same as appointment setting?',
+        a: [
+          'Not always. Lead generation is the broader term and can stop at delivering contacts or interested replies. Appointment setting ends with a meeting booked on your calendar.',
+        ],
+      },
+      {
+        q: 'Should I pay per lead or per meeting?',
+        a: [
+          'Neither is automatically better. Per-lead pricing rewards volume, so the definition of a lead matters. Per-meeting pricing rewards bookings, so check whether held meetings are counted. A flat monthly fee removes the per-unit incentive, but then reporting should show the numbers separately so you can judge the work.',
+        ],
+      },
+      {
+        q: 'Who owns the data when you work with Aventrio?',
+        a: [
+          'You do. Lists, sequences, sending domains and call notes are exportable at any time, including if you cancel.',
+        ],
+      },
+    ],
+    related: [
+      { label: 'Outsourced SDR services', href: '/services/outsourced-sdr' },
+      {
+        label: 'Outsourced SDR vs cold email agency',
+        href: '/compare/outsourced-sdr-vs-cold-email-agency',
+      },
+      { label: 'In-house vs outsourced SDR', href: '/compare/in-house-vs-outsourced-sdr' },
     ],
   },
 

@@ -88,6 +88,8 @@ and builds relationships with founders, operators and investors in tech.
   the page.
 - Outsourced SDR services: https://aventrio.co/services/outsourced-sdr
 - In-house vs outsourced SDR: https://aventrio.co/compare/in-house-vs-outsourced-sdr
+- Outsourced SDR vs cold email agency: https://aventrio.co/compare/outsourced-sdr-vs-cold-email-agency
+- SDR team vs lead generation agency: https://aventrio.co/compare/outsourced-sdr-vs-lead-generation-agency
 - Pipeline audit: https://aventrio.co/services/pipeline-audit
 - Account executives: https://aventrio.co/services/account-executives
 - Glossary: https://aventrio.co/glossary : plain definitions of outbound terms (SDR, ICP,

@@ -178,6 +178,8 @@ One primary keyword per page. No two pages share a primary or a secondary.
 | `/services/account-based-marketing` | account based outbound | abm outreach for b2b | **New, low priority** |
 | `/services/revenue-operations` | revops services for b2b startups | crm hygiene for sales teams | **New, low priority** |
 | `/compare/in-house-vs-outsourced-sdr` | in-house vs outsourced sdr | outsourced sdr cost, fully loaded cost of an sdr, how long to ramp an sdr | **New** |
+| `/compare/outsourced-sdr-vs-cold-email-agency` | outsourced sdr vs cold email agency | cold email agency vs sdr team, who handles replies | Added 2026-11-05 |
+| `/compare/outsourced-sdr-vs-lead-generation-agency` | sdr vs lead generation agency | what counts as a lead, per lead vs per meeting pricing | Added 2026-11-05 |
 | `/industries/software-saas` | outsourced sdr for saas | outbound agency for saas | **Scaffold, content later** |
 | `/industries/it-services` | lead generation for it services companies | msp lead generation | **Scaffold, content later** |
 | `/book` | none (conversion page) | | New, `noindex` is reasonable but optional |
