@@ -187,3 +187,26 @@ After posting anything, note it in this table, so the monthly AI check can show 
 | Date | Where | What | Link |
 | ---- | ----- | ---- | ---- |
 |      |       |      |      |
+
+## Clutch review request (send from Clutch's "Request a Review" feature)
+
+Reviews are the heaviest factor in Clutch rankings, and the profile is now set to lead generation for tech companies. Send this only to real clients you have worked with. Do not offer anything in return (no discount, gift or favour): Clutch's rules and basic honesty both rule it out. Do not ask for a good review, only an honest one.
+
+**Message (edit the first line per client):**
+
+> Hi [first name],
+>
+> Thank you for working with us on [outbound / the pipeline audit / the SDR engagement]. I'd value your honest feedback on how it went.
+>
+> Clutch runs independent, verified reviews, and a short interview with one of their researchers takes about 15 minutes. If you are happy to do it, the link below is personal to you. Whatever you say, good or critical, is your call, and I will not see or edit it before it is published.
+>
+> [Clutch review link]
+>
+> If you'd rather not, no problem at all.
+>
+> Atif
+
+**Notes**
+- If the work was lead generation or appointment setting for a tech company, say so neutrally ("the outbound work") so the reviewer describes the service accurately. Do not tell them what to write.
+- Send to a few clients at a time and follow up once after about a week, not repeatedly.
+- Only ask clients whose engagement was recent enough for them to describe it accurately.
