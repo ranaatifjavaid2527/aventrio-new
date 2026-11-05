@@ -35,6 +35,7 @@ function learn(): FooterLink[] {
   return [
     { label: 'In-house vs outsourced SDR', href: '/compare/in-house-vs-outsourced-sdr' },
     ...(caseStudies.length ? [{ label: 'Case studies', href: '/case-studies' }] : []),
+    { label: 'Glossary', href: '/glossary' },
     { label: 'Blog', href: '/blog' },
     ...(latest ? [{ label: latest.h1, href: postPath(latest), note: 'Latest post' }] : []),
   ]

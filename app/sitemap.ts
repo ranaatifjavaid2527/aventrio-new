@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { postPath, posts } from '@/content/blog'
 import { caseStudies } from '@/content/caseStudies'
+import { glossary } from '@/content/glossary'
 import { industryPages } from '@/content/industries'
 import { seoPages } from '@/content/seoPages'
 import { site } from '@/content/site'
@@ -12,6 +13,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const core: MetadataRoute.Sitemap = [
     { url: url('/'), lastModified: now, changeFrequency: 'weekly', priority: 1 },
     { url: url('/about'), lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
+    { url: url(glossary.path), lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
     { url: url('/book'), lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: url('/privacy'), lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
     { url: url('/terms'), lastModified: now, changeFrequency: 'yearly', priority: 0.2 },

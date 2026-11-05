@@ -27,6 +27,7 @@ const PAGES = [
   '/services/pipeline-audit',
   '/services/account-executives',
   '/compare/in-house-vs-outsourced-sdr',
+  '/glossary',
 ]
 const PAIRED = [
   'section',
