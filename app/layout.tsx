@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next'
 import { Google_Sans_Code, Google_Sans_Flex } from 'next/font/google'
+import { Analytics } from '@vercel/analytics/next'
 import { headers } from 'next/headers'
 import type { ReactNode } from 'react'
 import { nav, site } from '@/content/site'
@@ -80,6 +81,7 @@ export default async function RootLayout({ children }: { children: ReactNode }) 
           <Footer />
           <DeferredWidgets leadEnabled={leadEnabled} />
         </MotionProvider>
+        <Analytics />
       </body>
     </html>
   )

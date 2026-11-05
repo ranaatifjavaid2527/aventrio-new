@@ -35,7 +35,7 @@ export const privacy: LegalDoc = {
   updated: '9 October 2026',
   intro: [
     'This policy explains what Aventrio collects when you visit this website or contact us, why we collect it, and what you can do about it. It is written to be read, not to be survived.',
-    'In short: we collect the details you choose to give us, plus basic analytics if you allow them. We do not sell your data, and we do not add you to a marketing list because you read a page.',
+    'In short: we collect the details you choose to give us, plus basic page-view analytics that set no cookies. We do not sell your data, and we do not add you to a marketing list because you read a page.',
   ],
   sections: [
     {
@@ -64,7 +64,7 @@ export const privacy: LegalDoc = {
           type: 'ul',
           items: [
             'Server logs kept by our hosting provider: IP address, browser type, pages requested and timestamps. These exist for security, rate limiting and to keep the site running.',
-            'Analytics, only if you accept analytics cookies. These tell us which pages are read and how people arrive, in aggregate.',
+            'Page-view analytics from Vercel Web Analytics. It sets no cookies and does not follow you across other sites or build a profile of you: visits are counted from the request itself, in aggregate, to tell us which pages are read and how people arrive.',
           ],
         },
         {
@@ -91,8 +91,8 @@ export const privacy: LegalDoc = {
             ],
             [
               'Analytics',
-              'Counting visits and understanding which pages are useful, in aggregate.',
-              'No. Only after you accept.',
+              'Counting visits and understanding which pages are useful, in aggregate. Our analytics sets no cookies.',
+              'Not applicable: no analytics cookie is set.',
             ],
             [
               'Third-party embeds',
@@ -108,7 +108,7 @@ export const privacy: LegalDoc = {
         },
         {
           type: 'p',
-          text: 'Where analytics is offered, you can change your choice at any time using the Cookie preferences link in the footer, or by clearing cookies in your browser. Declining analytics does not limit anything on this site.',
+          text: 'You can clear cookies and browser storage in your browser at any time. Our analytics sets no cookies, so there is no analytics choice to make, and nothing on this site depends on it.',
         },
       ],
     },
@@ -118,8 +118,8 @@ export const privacy: LegalDoc = {
         {
           type: 'ul',
           items: [
-            'Your consent, for analytics cookies and for replying to an email address you gave us through the form. You can withdraw it at any time.',
-            'Legitimate interests, for replying to an enquiry, running and securing the website, and keeping records of our business conversations. We balance this against your rights and keep collection minimal.',
+            'Your consent, for replying to an email address you gave us through the form. You can withdraw it at any time.',
+            'Legitimate interests, for replying to an enquiry, running and securing the website, understanding in aggregate which pages are read, and keeping records of our business conversations. We balance this against your rights and keep collection minimal.',
             'Contract, where we are delivering services you have engaged us for.',
             'Legal obligation, where tax or accounting rules require us to keep records.',
           ],
@@ -141,7 +141,7 @@ export const privacy: LegalDoc = {
             'Cal.com, our scheduling tool, when you book a call',
             'Clutch, whose review widget is shown on this site',
             'Our email and calendar providers',
-            'Analytics, if you accepted analytics cookies',
+            'Vercel Web Analytics, for aggregate page-view statistics',
             'Our CRM, to track business conversations',
           ],
         },
