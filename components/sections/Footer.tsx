@@ -30,6 +30,16 @@ const company: FooterLink[] = [
   { label: 'FAQ', href: '/#faq' },
 ]
 
+const askPrompt = `Summarize what Aventrio (aventrio.co) does and how its outsourced SDR service works.`
+const askAi = [
+  { label: 'ChatGPT', href: `https://chatgpt.com/?q=${encodeURIComponent(askPrompt)}` },
+  { label: 'Claude', href: `https://claude.ai/new?q=${encodeURIComponent(askPrompt)}` },
+  {
+    label: 'Perplexity',
+    href: `https://www.perplexity.ai/search?q=${encodeURIComponent(askPrompt)}`,
+  },
+]
+
 function learn(): FooterLink[] {
   const latest = posts[0]
   return [
@@ -186,7 +196,28 @@ export function Footer() {
           ))}
         </nav>
 
-        <div className="mt-16 flex flex-col gap-5 border-t border-line-ink py-6 sm:flex-row sm:items-center">
+        <div className="mt-12 flex flex-wrap items-center gap-x-5 gap-y-3 border-t border-line-ink pt-8 text-[0.9rem]">
+          <p className="font-mono text-[0.7rem] tracking-[0.12em] text-on-ink-faint uppercase">
+            Ask an AI about Aventrio
+          </p>
+          <ul className="flex flex-wrap gap-3">
+            {askAi.map((a) => (
+              <li key={a.label}>
+                <a
+                  href={a.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 rounded-full border border-line-ink px-4 py-1.5 text-on-ink-soft transition-colors hover:border-mint hover:text-on-ink"
+                >
+                  {a.label}
+                  <span className="sr-only"> (opens in a new tab)</span>
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        <div className="mt-8 flex flex-col gap-5 border-t border-line-ink py-6 sm:flex-row sm:items-center">
           <ul className="flex flex-wrap items-center gap-x-6 gap-y-2 text-[0.85rem] text-on-ink-faint">
             <li>
               © {year} {site.name}
