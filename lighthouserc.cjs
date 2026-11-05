@@ -22,9 +22,19 @@ module.exports = {
     collect: {
       startServerCommand: `node node_modules/next/dist/bin/next start -p ${port}`,
       startServerReadyPattern: 'Ready',
-      url: ['/', '/about', '/book', '/privacy', '/terms'].map(
-        (p) => `http://localhost:${port}${p}`,
-      ),
+      url: [
+        '/',
+        '/about',
+        '/book',
+        '/privacy',
+        '/terms',
+        '/blog',
+        '/blog/cold-email-deliverability-2026',
+        '/glossary',
+        '/services/outsourced-sdr',
+        '/compare/in-house-vs-outsourced-sdr',
+        '/compare/outsourced-sdr-vs-cold-email-agency',
+      ].map((p) => `http://localhost:${port}${p}`),
       numberOfRuns: 3,
       settings: {
         formFactor: 'mobile',

@@ -45,7 +45,7 @@ function Flow({ figure }: { figure: Extract<BlogFigure, { kind: 'flow' }> }) {
           {figure.outcome.pass}
         </p>
         <p className="rounded-xl border border-line-strong bg-surface-2 p-4 text-[0.95rem] text-ink">
-          <span className="block text-[0.75rem] font-semibold tracking-wider text-subtle uppercase">
+          <span className="block text-[0.75rem] font-semibold tracking-wider text-ink-soft uppercase">
             Any step fails
           </span>
           {figure.outcome.fail}
