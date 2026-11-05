@@ -431,3 +431,25 @@ export const finalCta = {
   primary: 'Book your strategy call',
   secondary: { label: 'See how it runs', href: '/#process' },
 }
+
+/** Illustration only. Every line is an example, labelled as one on the page. */
+export const planCard = {
+  eyebrow: 'What week one sets up',
+  title: 'The buyer, the trigger and the first message, defined before anything is sent.',
+  intro:
+    'Week one is where the outreach gets its shape. Here is an example of the kind of plan a segment is built around.',
+  tag: 'Example',
+  fields: [
+    { label: 'ICP', value: 'Mid-market SaaS companies' },
+    { label: 'Persona', value: 'VP Sales' },
+    { label: 'Trigger', value: 'New sales hire announced' },
+    { label: 'Channels', value: 'Email, LinkedIn, phone' },
+  ],
+  emailLabel: 'First email, example',
+  email: [
+    'Hi Sam,',
+    'Saw you recently brought on a new AE. Is pipeline coverage a priority for the next quarter?',
+    'We run outbound for software companies. Worth a short chat?',
+  ],
+  note: 'For illustration only. Real segments, triggers and copy are written for each client’s offer.',
+}

@@ -4,6 +4,7 @@ import { JsonLd } from '@/components/ui/JsonLd'
 import { Hero } from '@/components/sections/home/Hero'
 import { StatStrip } from '@/components/sections/home/StatStrip'
 import { Process } from '@/components/sections/home/Process'
+import { PlanCard } from '@/components/sections/home/PlanCard'
 import { Services } from '@/components/sections/home/Services'
 import { Included } from '@/components/sections/home/Included'
 import { WhySwitch } from '@/components/sections/home/WhySwitch'
@@ -37,6 +38,7 @@ export default function HomePage() {
       <Hero />
       <StatStrip />
       <Process />
+      <PlanCard />
       <Services />
       <Included />
       {/* The one light-to-dark switch on the page */}
