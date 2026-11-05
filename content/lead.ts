@@ -12,7 +12,8 @@ export const lead = {
     dismiss: 'Not now',
     done: "Got it. We'll be in touch from atif@aventrio.co.",
     invalid: "That email doesn't look right. Check it and try again.",
-    pillLabel: (label: string) => `Book a call on ${label}`,
+    pillLabel: (d: { weekday: string; day: string | number; label: string }) =>
+      `${d.weekday} ${d.day}: book a call on ${d.label}`,
   },
   body: "Leave your work email and we'll reply personally. No list, no drip sequence.",
   placeholder: 'you@company.com',

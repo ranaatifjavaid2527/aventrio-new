@@ -244,7 +244,7 @@ export function LeadBar() {
                   <a
                     href={d.href}
                     onClick={(e) => onPick(e, d)}
-                    aria-label={lead.bar.pillLabel(d.label)}
+                    aria-label={lead.bar.pillLabel(d)}
                     data-date={d.date}
                     className="lead-pill"
                   >

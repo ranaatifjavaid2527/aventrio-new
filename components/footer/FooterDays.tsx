@@ -31,7 +31,7 @@ export function FooterDays() {
               <a
                 href={d.href}
                 onClick={(e) => onPick(e, d)}
-                aria-label={`Book a call on ${d.label}`}
+                aria-label={`${d.weekday} ${d.day}: book a call on ${d.label}`}
                 className="lead-pill py-2.5"
               >
                 <span className="block text-[0.66rem] text-on-ink-soft">{d.weekday}</span>
