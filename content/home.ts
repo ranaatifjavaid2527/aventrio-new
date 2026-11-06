@@ -10,7 +10,7 @@ export const hero = {
   titleAccent: '14 days.',
   lede: 'No four-month hire, no ramp-up to manage. Trained SDRs, managed by US sales leaders, research, write and send the outreach for software, SaaS and IT services companies selling into the US, then book qualified meetings for your account executives.',
   primaryCta: 'Book a 30 minute call',
-  secondaryCta: { label: "See what's included", href: '#included' },
+  secondaryCta: { label: 'See the ways to work', href: '#ways' },
   note: '60 day pilot, then month to month. You leave the call with a sample target list for your ICP.',
 }
 

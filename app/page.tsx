@@ -6,9 +6,7 @@ import { StatStrip } from '@/components/sections/home/StatStrip'
 import { PlanCard } from '@/components/sections/home/PlanCard'
 import { ThreeWays } from '@/components/sections/home/ThreeWays'
 import { Services } from '@/components/sections/home/Services'
-import { Included } from '@/components/sections/home/Included'
 import { Pricing } from '@/components/sections/home/Pricing'
-import { WhySwitch } from '@/components/sections/home/WhySwitch'
 import { Comparison } from '@/components/sections/home/Comparison'
 import { Industries } from '@/components/sections/home/Industries'
 import { Situations } from '@/components/sections/home/Situations'
@@ -41,11 +39,9 @@ export default function HomePage() {
       <ThreeWays />
       <PlanCard />
       <Services />
-      <Included />
       <Pricing />
       {/* The one light-to-dark switch on the page */}
       <RindBand />
-      <WhySwitch />
       <Comparison />
       <Industries />
       <Situations />

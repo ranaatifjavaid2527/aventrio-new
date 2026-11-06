@@ -21,7 +21,7 @@ export function SectionHeading({
 }: Props) {
   const centered = align === 'center'
   return (
-    <Reveal className={`mb-14 max-w-3xl ${centered ? 'mx-auto text-center' : ''}`}>
+    <Reveal className={`mb-10 max-w-3xl ${centered ? 'mx-auto text-center' : ''}`}>
       <Eyebrow
         className={`${centered ? 'justify-center' : ''} ${tone === 'ink' ? 'text-mint' : ''}`}
       >

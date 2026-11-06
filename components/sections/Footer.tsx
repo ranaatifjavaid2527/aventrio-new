@@ -26,7 +26,6 @@ const services: FooterLink[] = [
 const company: FooterLink[] = [
   { label: 'About', href: '/about' },
   { label: 'Ways to work', href: '/#ways' },
-  { label: "What's included", href: '/#included' },
   { label: 'FAQ', href: '/#faq' },
 ]
 

@@ -28,7 +28,7 @@
   --grid-ink: rgba(255, 252, 244, 0.06);
 
   --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
-  --section-y: clamp(80px, 10vw, 140px);
+  --section-y: clamp(56px, 7vw, 96px);
 
   color-scheme: light;
 }
