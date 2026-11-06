@@ -11,6 +11,7 @@ import { coldEmailDeliverability2026 } from './posts/cold-email-deliverability-2
 import { outboundSignalsOverVolume } from './posts/outbound-signals-over-volume'
 import { linkedinConnectionRequestLimit } from './posts/linkedin-connection-request-limit'
 import { outsourcedSdrCost } from './posts/outsourced-sdr-cost'
+import { whenToOutsourceSdr } from './posts/when-to-outsource-sdr'
 
 export type { BlogBlock, BlogFigure, BlogPost } from './types'
 
@@ -20,6 +21,7 @@ const all: BlogPost[] = [
   outboundSignalsOverVolume,
   linkedinConnectionRequestLimit,
   outsourcedSdrCost,
+  whenToOutsourceSdr,
 ]
 
 /** Newest first; same-day posts keep the order above. */

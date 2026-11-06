@@ -8,7 +8,7 @@ export const aiSdrVsHumanSdr: BlogPost = {
     'AI SDR tools are good at research and first drafts and weak at judgement. Where AI belongs in an outbound team, where people still matter, and the US rules on AI calls.',
   h1: 'AI SDR vs human SDR: where each one actually works.',
   published: '2026-10-28',
-  updated: '2026-11-04',
+  updated: '2026-11-06',
   tags: ['AI in sales', 'SDR teams'],
   takeaways: [
     'The useful question is not AI or people. It is which parts of the SDR job each does better.',
@@ -70,7 +70,7 @@ export const aiSdrVsHumanSdr: BlogPost = {
       ],
     },
     {
-      note: 'That is how our [outsourced SDR teams](/services/outsourced-sdr) work: named reps on three accounts at most, using tools for preparation and owning every reply themselves. If you are deciding between building a team and outsourcing one, the [in-house vs outsourced SDR comparison](/compare/in-house-vs-outsourced-sdr) sets out the trade offs.',
+      note: 'That is how our [outsourced SDR teams](/services/outsourced-sdr) work: named reps on three accounts at most, using tools for preparation and owning every reply themselves. If you are deciding between building a team and outsourcing one, the [in-house vs outsourced SDR comparison](/compare/in-house-vs-outsourced-sdr) sets out the trade offs, and [when to outsource SDR work](/blog/when-to-outsource-sdr) gives a five-question readiness test.',
     },
   ],
   faq: [

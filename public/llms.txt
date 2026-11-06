@@ -101,6 +101,7 @@ and builds relationships with founders, operators and investors in tech.
 - Signal based outbound: https://aventrio.co/blog/outbound-signals-over-volume
 - LinkedIn connection request limit: https://aventrio.co/blog/linkedin-connection-request-limit
 - Outsourced SDR cost: https://aventrio.co/blog/outsourced-sdr-cost
+- When to outsource SDR work: https://aventrio.co/blog/when-to-outsource-sdr
 
 ## Reviews
 Rated 5.0 out of 5 from 4 verified client reviews on Clutch (reviews are collected and verified by Clutch, not written by Aventrio): https://clutch.co/profile/aventrio

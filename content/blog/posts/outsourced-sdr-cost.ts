@@ -8,6 +8,7 @@ export const outsourcedSdrCost: BlogPost = {
     'Outsourced SDR cost is usually quoted as a monthly retainer, a per-meeting fee or both. What published ranges say, why they clash, and how to compare quotes.',
   h1: 'What outsourced SDR cost really means: the monthly fee is not the price of a meeting.',
   published: '2026-11-04',
+  updated: '2026-11-06',
   tags: ['Outsourced SDR', 'Outbound strategy'],
   takeaways: [
     'Outsourced SDR cost is quoted in three ways: a monthly retainer, a fee per meeting, or a smaller retainer plus a fee per meeting.',
@@ -94,7 +95,7 @@ export const outsourcedSdrCost: BlogPost = {
     { h2: 'A checklist for comparing outsourced SDR quotes' },
     {
       ol: [
-        'Write down your definition of a qualified meeting before you talk to anyone: who attends, what problem, what budget or timing.',
+        'Write down your definition of a qualified meeting before you talk to anyone: who attends, what problem, what budget or timing. If you cannot, read [when to outsource SDR work](/blog/when-to-outsource-sdr) first.',
         'Ask for the total monthly cost including setup, data, tools and any per-meeting or per-opportunity fee.',
         'Ask who the reps are, how many accounts each carries and who manages them day to day.',
         'Ask what happens if a rep underperforms, and who pays for the replacement and re-ramp.',

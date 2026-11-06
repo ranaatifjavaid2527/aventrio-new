@@ -41,3 +41,19 @@ One entry per published post.
 - Internal links added from ai-sdr-vs-human-sdr.
 - Better than the previous post: more direct first-two-sentence answer, a compare diagram, a quotable checklist, and it targets a query with actual impressions; it adds the held-versus-booked cost angle that the ranking vendor pages blur.
 - Next: Friday 2026-11-06.
+
+### Review of outsourced-sdr-cost (done 2026-11-06)
+
+- Evidence: no Search Console report newer than 2026-10-30 exists, so there is no data for this post yet. A web search for site:aventrio.co/blog returned nothing from the site, so indexing could not be confirmed. Judged on a critical read only.
+- Worked: direct two-sentence answer, a compare diagram, a checklist, and a query that already showed impressions. Weakness: it did not tell a reader who is not ready to buy that they should not yet, and had no link to a readiness piece. Fixed now: added a link from its checklist to the new post and set its updated date.
+- Across posts: Search Console shows the in-house versus outsourced and "should i hire an sdr or outsource" queries with impressions and no matching blog page, so this week stays on the buyer decision cluster.
+
+## 2026-11-06: when-to-outsource-sdr
+
+- Primary keyword: when to outsource sdr
+- Why now: Search Console (2026-10-30) shows "should i hire an sdr or outsource" and several in-house versus outsourced queries with impressions and no blog page. No verifiable announcement from Google, Microsoft or LinkedIn this week (search found only the November 2025 Gmail and 2026 Outlook enforcement already covered in the deliverability post), so a buyer query won.
+- Angle: every ranking guide says "have a playbook first" but none turns it into a testable pass or fail checklist. The post gives a five-question readiness test with a flow diagram, a keep versus outsource compare diagram, and a pre-signing checklist. Does not compete with the comparison page keyword (in-house vs outsourced sdr) or the cost post.
+- Sources read: LeadGenius, Prospeo, Martal (all labelled vendor claims). The "7% said outsourced SDRs really worked" survey figure is repeated by Prospeo and Martal; the original could not be opened, so the post says so and does not rely on it.
+- Internal links added from outsourced-sdr-cost and ai-sdr-vs-human-sdr.
+- Better than the previous post: a decision flow diagram plus a compare diagram (previous had one), and a pass or fail test instead of a list of ranges; it covers a decision question ("am I ready") that the ranking vendor guides state loosely, and it flags an unverifiable statistic instead of repeating it.
+- Next: Monday 2026-11-09, check for a new Search Console report first.
