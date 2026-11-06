@@ -52,7 +52,7 @@ export type NavItem = { label: string; href: string }
 /** Case studies are added after Services by the layout, only once at least one exists. */
 export const nav: NavItem[] = [
   { label: 'Services', href: '/#services' },
-  { label: 'How it runs', href: '/#process' },
+  { label: 'Ways to work', href: '/#ways' },
   { label: 'FAQ', href: '/#faq' },
   { label: 'Blog', href: '/blog' },
   { label: 'About', href: '/about' },

@@ -3,7 +3,6 @@ import { RindBand } from '@/components/ui/RindBand'
 import { JsonLd } from '@/components/ui/JsonLd'
 import { Hero } from '@/components/sections/home/Hero'
 import { StatStrip } from '@/components/sections/home/StatStrip'
-import { Process } from '@/components/sections/home/Process'
 import { PlanCard } from '@/components/sections/home/PlanCard'
 import { ThreeWays } from '@/components/sections/home/ThreeWays'
 import { Services } from '@/components/sections/home/Services'
@@ -39,9 +38,8 @@ export default function HomePage() {
       />
       <Hero />
       <StatStrip />
-      <Process />
-      <PlanCard />
       <ThreeWays />
+      <PlanCard />
       <Services />
       <Included />
       <Pricing />

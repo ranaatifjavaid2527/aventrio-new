@@ -26,7 +26,7 @@ const cta = {
   title: 'Find out whether outbound is worth it for you.',
   body: 'Thirty minutes, no deck. You’ll leave with a sample target list matched to your ICP, a view of what your first fourteen days would look like, and a straight answer on whether outbound suits your offer, including if that answer is no.',
   primary: 'Book your strategy call',
-  secondary: { label: 'See how it runs', href: '/#process' },
+  secondary: { label: 'See the ways to work', href: '/#ways' },
 }
 
 export default function CaseStudiesPage() {
