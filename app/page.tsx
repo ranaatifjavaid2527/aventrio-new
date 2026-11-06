@@ -5,6 +5,7 @@ import { Hero } from '@/components/sections/home/Hero'
 import { StatStrip } from '@/components/sections/home/StatStrip'
 import { Process } from '@/components/sections/home/Process'
 import { PlanCard } from '@/components/sections/home/PlanCard'
+import { ThreeWays } from '@/components/sections/home/ThreeWays'
 import { Services } from '@/components/sections/home/Services'
 import { Included } from '@/components/sections/home/Included'
 import { Pricing } from '@/components/sections/home/Pricing'
@@ -40,6 +41,7 @@ export default function HomePage() {
       <StatStrip />
       <Process />
       <PlanCard />
+      <ThreeWays />
       <Services />
       <Included />
       <Pricing />

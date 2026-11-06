@@ -488,3 +488,75 @@ export const pricing = {
   cta: 'Book a 30 minute call',
   note: 'We do not promise a number of meetings. Results depend on your offer, your market and timing.',
 }
+
+/** "Three ways in": a tabbed section. Visuals are labelled examples, never real accounts or results. */
+export const threeWays = {
+  eyebrow: 'Three ways to work with us',
+  title: 'Start where it makes sense. Add the rest later.',
+  intro:
+    'Most clients start with outbound done for you. Some start with a review. Some add a closer after the meeting is booked.',
+  exampleTag: 'Example',
+  ways: [
+    {
+      id: 'sdr',
+      tab: 'Outbound, done for you',
+      tag: 'Most requested',
+      title: 'We run your outbound, start to finish.',
+      body: 'Research, verified data, copy, sending setup and named reps who work the replies and book meetings on your calendar.',
+      points: [
+        'Named reps, three accounts at most each',
+        'Email, LinkedIn and phone, in one sequence',
+        'A weekly report with six separate figures',
+      ],
+      cta: { label: 'See how it works', href: '/services/outsourced-sdr' },
+      chip: { label: 'Read the terms', href: '/clear-terms' },
+    },
+    {
+      id: 'ae',
+      tab: 'Account executives',
+      tag: 'Close the loop',
+      title: 'Someone to run the call after the meeting is booked.',
+      body: 'Add an account executive to the same engagement. They run the demo and the follow-up, working in your process and your CRM.',
+      points: [
+        'Joins the same engagement and the same terms',
+        'Works in your process and your CRM',
+        'Gets the meeting brief before every call',
+      ],
+      cta: { label: 'See how it works', href: '/services/account-executives' },
+      chip: { label: 'How a meeting is defined', href: '/clear-terms#meeting' },
+    },
+    {
+      id: 'audit',
+      tab: 'Pipeline audit',
+      tag: 'Start with a review',
+      title: 'See what is leaking before you spend more.',
+      body: 'We look at your targeting, messaging, sending setup and data, then tell you what to fix first.',
+      points: [
+        'Targeting and messaging reviewed',
+        'Sending setup and data checked',
+        'A prioritized list of what to fix first',
+      ],
+      cta: { label: 'See how it works', href: '/services/pipeline-audit' },
+      chip: { label: 'Read the terms', href: '/clear-terms' },
+    },
+  ],
+  auditExample: {
+    title: 'Audit findings layout',
+    rows: [
+      { area: 'Targeting', note: 'Who is on the list, and why', stage: 'Reviewed' },
+      { area: 'Messaging', note: 'What the first email says', stage: 'Reviewed' },
+      { area: 'Sending setup', note: 'Domains, authentication, limits', stage: 'Reviewed' },
+      { area: 'Data', note: 'Verification and list upkeep', stage: 'Reviewed' },
+    ],
+    footer: 'Ends with a prioritized list: fix first, fix next, leave alone.',
+  },
+  also: {
+    label: 'Also available',
+    items: [
+      'Account-based marketing',
+      'LinkedIn authority',
+      'Revenue operations',
+      'Optional: sales recruitment',
+    ],
+  },
+}
