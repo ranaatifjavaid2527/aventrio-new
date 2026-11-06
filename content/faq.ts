@@ -48,7 +48,7 @@ export const faq: FaqItem[] = [
     q: 'What does it cost?',
     a: [
       // K7: minimum term added so the answer stands alone
-      'A flat monthly fee per rep. No commission stacking, no benefits, no separate tooling or data line items, and no per-meeting surcharge that punishes a good month. The rate depends on seniority, since an SDR seat and an AE seat are priced differently, and on how many seats you run, so we quote it on the call once we know the shape of the team. The minimum term is one quarter, then month-to-month.',
+      'A flat monthly fee per rep. No commission stacking, no benefits, no separate tooling or data line items, and no per-meeting surcharge that punishes a good month. The rate depends on seniority, since an SDR seat and an AE seat are priced differently, and on how many seats you run, so we quote it on the call once we know the shape of the team, and put the figure in writing before anything is signed. The first 60 days are a pilot, then it is month to month on 30 days’ notice.',
       // C5: unsupported ratio removed
       'Compare that against a fully loaded in-house hire: salary, employer tax, benefits, tooling, recruiting and the ramp months before a rep produces anything.',
     ],
@@ -80,7 +80,7 @@ export const faq: FaqItem[] = [
   {
     q: "What's the minimum commitment?",
     a: [
-      "One quarter, then month-to-month. Anything shorter can't distinguish a bad offer from a slow start. You'd be cancelling right as the data becomes readable.",
+      'Sixty days, then month to month on 30 days’ notice. Sixty days is long enough to see first replies and held meetings, and short enough that you are never locked in. If outreach is not live by day 14, your next invoice waits.',
     ],
   },
 ]

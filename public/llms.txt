@@ -46,8 +46,9 @@ figures; and replacement of an underperforming rep at Aventrio's cost.
 
 ## Commercial model
 A flat monthly fee per rep. No commission stacking, benefits, tooling line
-items, or per-meeting surcharge. Minimum engagement is one quarter, then
-month-to-month. Underperforming reps are replaced and re-ramped at Aventrio's
+items, or per-meeting surcharge. Priced per rep and quoted on a call.
+The first 60 days are a pilot, then month to month on 30 days' notice. If first
+outreach is not live by day 14, the next invoice waits. Underperforming reps are replaced and re-ramped at Aventrio's
 cost. Clients own their lists, sequences, sending domains, and call notes, and
 can export them at any time.
 
@@ -65,8 +66,8 @@ client's primary domain.
   named reps capped at three accounts, and weekly reporting that separates
   booked, held and converted.
 - How fast does it start? First outreach goes out 14 days after kickoff.
-- What does it cost? A flat monthly fee per rep, quoted on a call. Minimum
-  term one quarter, then month-to-month.
+- What does it cost? A flat monthly fee per rep, quoted on a call. The
+  first 60 days are a pilot, then month to month on 30 days' notice.
 - Who owns the data? The client: lists, sequences, sending domains and call
   notes are exportable at any time, including on cancellation.
 - Outsourced SDR team or in-house hire? An in-house SDR takes months to
@@ -94,6 +95,8 @@ and builds relationships with founders, operators and investors in tech.
 - Account executives: https://aventrio.co/services/account-executives
 - Glossary: https://aventrio.co/glossary : plain definitions of outbound terms (SDR, ICP,
   SPF, DKIM, DMARC, signal-based outbound, appointment setting).
+- Clear terms: https://aventrio.co/clear-terms : how pricing works, 60 day
+  pilot then month to month, live by day 14, meeting definition, data ownership.
 - Blog: https://aventrio.co/blog : sourced posts on outbound for tech companies,
   three a week, written by Atif Javaid. RSS: https://aventrio.co/blog/feed.xml
 - Cold email deliverability in 2026: https://aventrio.co/blog/cold-email-deliverability-2026

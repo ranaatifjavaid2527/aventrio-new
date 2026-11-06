@@ -149,7 +149,7 @@ export const whenToOutsourceSdr: BlogPost = {
       p: 'Even when every answer is yes, do not expect an instant result. Vendor guides describe a ramp of months before you can judge the program, and nobody can promise a number of meetings.',
     },
     {
-      note: 'If you cannot tell which of the five questions you would fail, a [pipeline audit](/services/pipeline-audit) looks at your ICP, offer, data and follow-up and tells you where the gap is. If you are ready, our [outsourced SDR](/services/outsourced-sdr) reps work a maximum of three accounts each, for a flat monthly fee per rep, with a minimum of one quarter and then month-to-month.',
+      note: 'If you cannot tell which of the five questions you would fail, a [pipeline audit](/services/pipeline-audit) looks at your ICP, offer, data and follow-up and tells you where the gap is. If you are ready, our [outsourced SDR](/services/outsourced-sdr) reps work a maximum of three accounts each, for a flat monthly fee per rep, with a 60 day pilot and then month to month.',
     },
   ],
   faq: [

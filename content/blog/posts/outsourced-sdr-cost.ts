@@ -112,7 +112,7 @@ export const outsourcedSdrCost: BlogPost = {
       p: 'Prospeo, which sells data to outbound teams, puts a fully loaded in-house SDR at $125,000 to $150,000 a year including salary, benefits, tools, management, ramp and turnover. That is a vendor estimate. The principle holds without trusting the figure: an in-house hire carries cost before it books anything, and ramp takes months. Price your own version using your salary band, benefits rate, tools and the manager hours it will take, then compare it with the quote on the same basis, cost per held, qualified meeting. Our [comparison page](/compare/in-house-vs-outsourced-sdr) covers the other factors, such as control and speed.',
     },
     {
-      note: 'Aventrio charges a flat monthly fee per rep, quoted on a call, with no commissions, tooling line items or per-meeting surcharges. The minimum term is one quarter, then month-to-month, and we replace a rep who is not performing at our cost. We do not promise a number of meetings. See [outsourced SDR](/services/outsourced-sdr) for how a team works, or book a [pipeline audit](/services/pipeline-audit) if you are not sure outbound is your problem.',
+      note: 'Aventrio charges a flat monthly fee per rep, quoted on a call, with no commissions, tooling line items or per-meeting surcharges. The first 60 days are a pilot, then it is month to month on 30 days’ notice, and we replace a rep who is not performing at our cost. We do not promise a number of meetings. See [outsourced SDR](/services/outsourced-sdr) for how a team works, or book a [pipeline audit](/services/pipeline-audit) if you are not sure outbound is your problem.',
     },
   ],
   faq: [

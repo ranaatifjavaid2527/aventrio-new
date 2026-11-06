@@ -15,7 +15,7 @@ export const founderNote = {
     'We started Aventrio after watching the same thing happen over and over, first to software firms and then to everyone else: a business with real depth and a delivery record worth bragging about, and a sales function that amounted to referrals, an inbound trickle, and whoever had time to send LinkedIn messages that week.',
     'When those companies tried outbound, it usually failed for reasons that had nothing to do with what they sold. The list was scraped and half-dead. The email went out from the primary domain and torched deliverability. Sequences were written once and never touched again. And when a prospect finally replied with a real question, the reply sat in an inbox for three days because nobody owned it.',
     "None of that is a sales problem. It's a staffing problem. Outbound done properly is a job: research, writing, sending infrastructure, follow-up discipline, and someone who can handle an objection without a script. Most companies our size can't justify hiring four people to cover it, so they hire one and hope, or they buy a tool and hope harder.",
-    "So we built the team instead. Reps who work a maximum of three accounts, managed by people who have carried a US quota, running on infrastructure we own and monitor. You get the function without building the department, and you can stop after a quarter if the numbers don't hold up.",
+    "So we built the team instead. Reps who work a maximum of three accounts, managed by people who have carried a US quota, running on infrastructure we own and monitor. You get the function without building the department, and you can stop after the first 60 days if the numbers don't hold up.",
     "If you're weighing whether outbound is even the right move for you right now, book the call and ask. We turn down accounts we don't think we can sell, and we'd rather tell you that in thirty minutes than three months.",
   ],
 }
@@ -75,7 +75,7 @@ export const rules = {
   eyebrow: 'How we operate',
   title: "Four rules we don't break.",
   intro:
-    "These exist because we've watched the alternative. Each one costs us something: a faster start, an easier yes, a bigger roster. And each one is why clients stay past the first quarter.",
+    "These exist because we've watched the alternative. Each one costs us something: a faster start, an easier yes, a bigger roster. And each one is why clients stay past the first 60 days.",
   items: [
     {
       title: "We turn down accounts we can't sell",

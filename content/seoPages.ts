@@ -39,7 +39,7 @@ export const seoPages: SeoPage[] = [
     keyword: 'outsourced sdr services',
     title: 'Outsourced SDR Services for Tech Companies | Aventrio',
     description:
-      'Outsourced SDR services for software, SaaS and IT services companies. Named reps on three accounts at most, first outreach in 14 days, month-to-month after a quarter.',
+      'Outsourced SDR services for software, SaaS and IT services companies. Named reps on three accounts at most, first outreach in 14 days, month to month after a 60 day start.',
     eyebrow: 'Outsourced SDR services',
     h1: 'Outsourced SDR services, run by named reps who learn your product.',
     lede: 'Aventrio places trained SDRs on your account, managed by sales leads who have carried a US quota. They research, write, send, follow up, handle the first objection and book meetings into your calendar. You get a working outbound team without building the department.',
@@ -75,7 +75,7 @@ export const seoPages: SeoPage[] = [
       {
         heading: 'SDR as a service, on terms you can leave',
         body: [
-          'A flat monthly fee per rep, with no commission stacking, no benefits, no separate tooling or data line items and no per-meeting surcharge. The minimum term is one quarter, then month-to-month.',
+          'A flat monthly fee per rep, with no commission stacking, no benefits, no separate tooling or data line items and no per-meeting surcharge. The first 60 days are a pilot, then it is month to month on 30 days’ notice.',
           'You own the lists, sequences, sending domains and call notes, and can export them at any time, including if you cancel.',
         ],
       },
@@ -90,7 +90,7 @@ export const seoPages: SeoPage[] = [
       {
         q: 'How much does an outsourced SDR cost?',
         a: [
-          'Aventrio charges a flat monthly fee per rep. The rate depends on seniority and on how many seats you run, so it is quoted on a call. There are no commissions, benefits, tooling line items or per-meeting surcharges, and the minimum term is one quarter, then month-to-month.',
+          'Aventrio charges a flat monthly fee per rep. The rate depends on seniority and on how many seats you run, so it is quoted on a call. There are no commissions, benefits, tooling line items or per-meeting surcharges, and the first 60 days are a pilot, then it is month to month on 30 days’ notice.',
         ],
       },
       {
@@ -173,7 +173,7 @@ export const seoPages: SeoPage[] = [
       {
         q: 'How much does an outsourced SDR cost compared with an in-house SDR?',
         a: [
-          'An outsourced SDR from Aventrio is a flat monthly fee per rep, with no commission stacking, benefits, separate tooling or data line items. The rate depends on seniority and the number of seats, so we quote it on the call. Compare that against a fully loaded in-house hire: salary, employer tax, benefits, tooling, recruiting and the ramp months before a rep produces anything. The minimum term is one quarter, then month-to-month.',
+          'An outsourced SDR from Aventrio is a flat monthly fee per rep, with no commission stacking, benefits, separate tooling or data line items. The rate depends on seniority and the number of seats, so we quote it on the call. Compare that against a fully loaded in-house hire: salary, employer tax, benefits, tooling, recruiting and the ramp months before a rep produces anything. The first 60 days are a pilot, then it is month to month on 30 days’ notice.',
         ],
       },
       {
@@ -256,7 +256,7 @@ export const seoPages: SeoPage[] = [
       {
         heading: 'How Aventrio is set up',
         body: [
-          'Aventrio staffs named reps, capped at three accounts each, who work from separate warmed sending domains so cold volume never touches your primary domain. Pricing is a flat monthly fee per rep with no per-meeting surcharge, a minimum of one quarter, then month-to-month.',
+          'Aventrio staffs named reps, capped at three accounts each, who work from separate warmed sending domains so cold volume never touches your primary domain. Pricing is a flat monthly fee per rep with no per-meeting surcharge, a 60 day pilot, then month to month on 30 days’ notice.',
           'We report sent, opened, replied, booked, held and converted as six separate figures every week, and you own your lists, sequences, sending domains and call notes. We do not promise a number of meetings: volume depends on your offer, market and timing.',
         ],
       },
@@ -355,7 +355,7 @@ export const seoPages: SeoPage[] = [
       {
         heading: 'How Aventrio is set up',
         body: [
-          'Aventrio is an outsourced SDR team. A named rep handles research, sending, replies and booking, with account executives available on the same engagement. The fee is flat per rep, with no per-meeting surcharge, a minimum of one quarter, then month-to-month. We do not guarantee a number of meetings, because volume depends on your offer, market and timing.',
+          'Aventrio is an outsourced SDR team. A named rep handles research, sending, replies and booking, with account executives available on the same engagement. The fee is flat per rep, with no per-meeting surcharge, a 60 day pilot, then month to month on 30 days’ notice. We do not guarantee a number of meetings, because volume depends on your offer, market and timing.',
         ],
       },
     ],

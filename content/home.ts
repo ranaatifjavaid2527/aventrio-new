@@ -5,13 +5,13 @@
 
 export const hero = {
   eyebrow: 'Outbound for tech companies, built and run end to end',
-  // K3: category term in the H1, "pipeline" stays the accent word
-  titleLead: 'Outbound SDR teams that build your',
-  titleAccent: 'pipeline.',
-  lede: 'Trained SDRs, managed by US sales leaders, booking qualified meetings for software, SaaS and IT services companies. We build the whole outbound function for tech teams selling into the US: research, data, copy, sending infrastructure, and the people working the replies.',
-  primaryCta: 'Book a strategy call',
+  // Category term stays in the H1 for search; the hook is the concrete 14 day start
+  titleLead: 'An outsourced SDR team, sending in',
+  titleAccent: '14 days.',
+  lede: 'No four-month hire, no ramp-up to manage. Trained SDRs, managed by US sales leaders, research, write and send the outreach for software, SaaS and IT services companies selling into the US, then book qualified meetings for your account executives.',
+  primaryCta: 'Book a 30 minute call',
   secondaryCta: { label: "See what's included", href: '#included' },
-  note: 'First outreach goes out in 14 days. Month-to-month after the first quarter.',
+  note: '60 day pilot, then month to month. You leave the call with a sample target list for your ICP.',
 }
 
 /** Hero tabs. Every panel is labelled as an example view: no real accounts or results. */
@@ -339,25 +339,18 @@ export const comparison = {
 }
 
 export const industries = {
-  eyebrow: "Where we've sold",
-  title: 'Any market with a buyer we can name.',
+  eyebrow: 'Who we work with',
+  title: 'Built for technology companies selling into the US.',
   intro:
-    'Most of our work is with technology companies: startups finding their first repeatable buyer, and established firms opening a new segment. The method transfers to any B2B market with a buyer we can name.',
+    'Startups finding their first repeatable buyer, and established firms opening a new segment. The method is the same: a named buyer, a clear trigger, and a rep who knows your product.',
   items: [
     'B2B SaaS',
     'Software development',
-    'IT staff augmentation',
+    'IT services and staff augmentation',
     'Cybersecurity',
-    'Professional services',
-    'Management consulting',
-    'Financial services',
-    'Marketing & creative agencies',
-    'Logistics & supply chain',
-    'Manufacturing & industrial',
-    'Healthtech & medtech',
-    'Recruitment & staffing',
-    'Construction & proptech',
-    'Training & e-learning',
+    'Devtools and infrastructure',
+    'Fintech and healthtech platforms',
+    'AI and data companies',
   ],
 }
 
@@ -428,7 +421,7 @@ export const commitments = {
 export const finalCta = {
   title: 'Find out whether outbound is worth it for you.',
   body: "Thirty minutes, no deck. You'll leave with a sample target list matched to your ICP, a view of what your first fourteen days would look like, and a straight answer on whether outbound suits your offer, including if that answer is no.",
-  primary: 'Book your strategy call',
+  primary: 'Book a 30 minute call',
   secondary: { label: 'See how it runs', href: '/#process' },
 }
 
@@ -452,4 +445,46 @@ export const planCard = {
     'We run outbound for software companies. Worth a short chat?',
   ],
   note: 'For illustration only. Real segments, triggers and copy are written for each client’s offer.',
+}
+
+/** Terms section. No price is published by design. */
+export const pricing = {
+  eyebrow: 'Clear terms',
+  title: 'The terms, before you book a call.',
+  intro:
+    'Most outbound providers keep their terms behind a sales call. Here they are, in writing, so you can decide before you talk to anyone.',
+  priceCard: {
+    label: 'How pricing works',
+    headline: 'One flat fee per rep, per month.',
+    note: 'No commissions, no per-meeting surcharge, no separate tooling or data charges. We quote it on the first call and put the figure in writing before anything is signed.',
+  },
+  includes: [
+    'A named rep on three accounts at most',
+    'Verified data, exportable at any time',
+    'Separate warmed sending domains, in your name',
+    'Sequences written per segment and rewritten monthly',
+    'A weekly report with six separate figures',
+    'A manager who has carried a US quota',
+  ],
+  terms: [
+    {
+      title: '60 day pilot, then month to month',
+      body: 'Thirty days’ notice after the pilot. No annual contract, no deposit you cannot get back.',
+    },
+    {
+      title: 'Live by day 14, or the next invoice waits',
+      body: 'Counted from the day we have your sign-off and access. This is about our delivery, not about results.',
+    },
+    {
+      title: 'A meeting is defined in writing first',
+      body: 'Before launch we agree what counts as qualified. A no-show is reported as a no-show.',
+    },
+    {
+      title: 'Everything is yours',
+      body: 'Lists, sequences, sending domains, call notes and reports stay yours and can be exported at any time, including after you leave.',
+    },
+  ],
+  link: { label: 'Read the full terms', href: '/clear-terms' },
+  cta: 'Book a 30 minute call',
+  note: 'We do not promise a number of meetings. Results depend on your offer, your market and timing.',
 }

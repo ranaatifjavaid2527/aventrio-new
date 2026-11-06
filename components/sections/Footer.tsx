@@ -54,6 +54,7 @@ function learn(): FooterLink[] {
       href: '/compare/outsourced-sdr-vs-lead-generation-agency',
     },
     { label: 'Glossary', href: '/glossary' },
+    { label: 'Clear terms', href: '/clear-terms' },
     { label: 'Blog', href: '/blog' },
     ...(latest ? [{ label: latest.h1, href: postPath(latest), note: 'Latest post' }] : []),
   ]

@@ -7,6 +7,7 @@ import { Process } from '@/components/sections/home/Process'
 import { PlanCard } from '@/components/sections/home/PlanCard'
 import { Services } from '@/components/sections/home/Services'
 import { Included } from '@/components/sections/home/Included'
+import { Pricing } from '@/components/sections/home/Pricing'
 import { WhySwitch } from '@/components/sections/home/WhySwitch'
 import { Comparison } from '@/components/sections/home/Comparison'
 import { Industries } from '@/components/sections/home/Industries'
@@ -41,6 +42,7 @@ export default function HomePage() {
       <PlanCard />
       <Services />
       <Included />
+      <Pricing />
       {/* The one light-to-dark switch on the page */}
       <RindBand />
       <WhySwitch />

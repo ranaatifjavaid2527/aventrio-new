@@ -30,6 +30,7 @@ const PAGES = [
   '/compare/outsourced-sdr-vs-cold-email-agency',
   '/compare/outsourced-sdr-vs-lead-generation-agency',
   '/glossary',
+  '/clear-terms',
 ]
 const PAIRED = [
   'section',
